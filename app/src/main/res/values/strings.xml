@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Channel Bridge</string>
+
+
+
+    //Login
+    <string name="icon_deviceid">&#xf109;</string>
+    <string name="icon_user">&#xf007;</string>
+    <string name="icon_password">&#xf084;</string>
+    <string name="icon_close">&#xf05c;</string>
 </resources>
