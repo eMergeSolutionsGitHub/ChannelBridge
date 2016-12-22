@@ -13,18 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        new Channelbridgesdialog(MainActivity.this, Channelbridgesdialog.WARNING_TYPE)
-                .setTitleText("Delete")
-                .setMessageText("Are you sure delete?")
-                .setConfirmText("Yes")
-                .setConfirmClickListener(new Channelbridgesdialog.OnClickListener() {
-                    @Override
-                    public void onClick(Channelbridgesdialog channelBridgesDialog) {
-                        //Your Code
-                        // channelBridgesDialog.cancel();
-                    }
-                })
-                .show();
 
     }
 }
