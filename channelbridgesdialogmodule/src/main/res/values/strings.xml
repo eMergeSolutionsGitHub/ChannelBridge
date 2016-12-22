@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">channelbridgesdialogs</string>
+
+    <string name="icon_warring">&#xf071;</string>
+    <string name="icon_error">&#xf05e;</string>
+    <string name="icon_suecces">&#xf05d;</string>
+    <string name="icon_normal">&#xf0e7;</string>
+    <string name="icon_loading">&#xf251;</string>
+    <string name="progress_loading">BallSpinFadeLoaderIndicator</string>
+
+
+</resources>
