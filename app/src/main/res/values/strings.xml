@@ -4,12 +4,15 @@
 
     //type_[activity/class name]_elimentName_stringName
 
-    //Login icon
+    //Login
     <string name="icon_login_textview_user">&#xf007;</string>
     <string name="icon_login_textview_password">&#xf084;</string>
-
-    //Login
     <string name="string_login_edittext_usernamehint">User Name</string>
     <string name="string_login_edittext_passwordhint">Password</string>
+    <string name="string_login_button_login">Log in</string>
+    <string name="string_login_button_passwordforgot">Forgot your password ?</string>
+    
+
+
 
 </resources>

@@ -2,6 +2,7 @@ package emerge.lk.channelbridge.Layout;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import emerge.lk.channelbridge.R;
 
@@ -15,5 +16,7 @@ public class Login extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_login);
+
+
     }
 }
