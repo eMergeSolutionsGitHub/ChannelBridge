@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">Channel Bridge</string>
+    <string name="version">Version 1.0.0</string>
 
+    //type_[activity/class name]_elimentName_stringName
 
+    //Login icon
+    <string name="icon_login_textview_user">&#xf007;</string>
+    <string name="icon_login_textview_password">&#xf084;</string>
 
     //Login
-    <string name="icon_deviceid">&#xf109;</string>
-    <string name="icon_user">&#xf007;</string>
-    <string name="icon_password">&#xf084;</string>
-    <string name="icon_close">&#xf05c;</string>
+    <string name="string_login_edittext_usernamehint">User Name</string>
+    <string name="string_login_edittext_passwordhint">Password</string>
+
 </resources>
