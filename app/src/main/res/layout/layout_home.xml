@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="handlermenu"
+            type="emerge.lk.channelbridge.Layout.Home.OnClickMenuHandler" />
+    </data>
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/appWhite">
+
+            <RelativeLayout
+                android:id="@+id/relLayout_home_bar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/titlebar">
+
+                <RelativeLayout
+                    android:onClick="@{handlermenu.onUpdateMenuOnClick}"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+                    <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/icon_home_menu"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorNavigationBar" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/relLayout_home_bar"
+                android:background="@color/appWhite">
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/drawer"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/colorNavigationBar">
+
+            <RelativeLayout
+                android:id="@+id/relLayout_userimage"
+                android:layout_width="match_parent"
+                android:layout_height="150dip">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageView_comm_profile"
+                    android:layout_width="100dip"
+                    android:layout_height="100dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/user"
+                    app:civ_border_color="@color/appWhite"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true" />
+
+                <emerge.lk.channelbridge.Font.FontTitle
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView_comm_profile"
+                    android:layout_centerHorizontal="true"
+                    android:text="A.S.G.Kumara"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/appWhite" />
+            </RelativeLayout>
+
+
+            <ListView
+                android:id="@+id/listView_navigation"
+                android:layout_below="@+id/relLayout_userimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:dividerHeight="15dip"
+                android:divider="@color/colorNavigationBar"
+               />
+
+        </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
+</layout>

@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="handlers"
+            type="emerge.lk.channelbridge.Layout.Login.OnClickLoginHandler"/>
+    </data>
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appWhite">
 
     <ImageView
-        android:layout_height="250dp"
+        android:layout_height="250dip"
         android:id="@+id/imgView"
         android:src="@drawable/logo2"
-        android:layout_width="250dp"
+        android:layout_width="250dip"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -40,7 +45,7 @@
                 android:layout_centerHorizontal="true"
                 android:textColorHint="@color/appBlack"
                 android:hint="@string/string_login_edittext_passwordhint"
-                android:textSize="24sp"
+                android:textSize="25sp"
                 android:textColor="@color/appBlack" />
 
             <RelativeLayout
@@ -69,7 +74,7 @@
             android:id="@+id/relLayout_login_username"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dip">
 
             <EditText
                 android:layout_width="250dip"
@@ -79,7 +84,7 @@
                 android:layout_centerHorizontal="true"
                 android:textColorHint="@color/appBlack"
                 android:hint="@string/string_login_edittext_usernamehint"
-                android:textSize="24sp"
+                android:textSize="25sp"
                 android:textColor="@color/appBlack" />
 
             <RelativeLayout
@@ -118,25 +123,26 @@
                 android:layout_centerHorizontal="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 style="?android:borderlessButtonStyle"
-                android:layout_width="250dp"
-                android:layout_height="40dp"
+                android:layout_width="250dip"
+                android:layout_height="40dip"
                 android:textColor="@color/colorNavigationBar"
                 android:textSize="18sp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dip"/>
 
             <Button
                 android:text="@string/string_login_button_login"
-                android:layout_height="50dp"
+                android:layout_height="50dip"
                 android:id="@+id/btn_login_login"
+                android:onClick="@{handlers.onUpdateLoginOnClick}"
                 android:background="@color/colorNavigationBar"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="250dp"
+                android:layout_width="250dip"
                 android:textSize="18sp"
                 android:layout_alignParentTop="true"
                 android:layout_alignLeft="@+id/btn_login_passwordforgot"
                 android:layout_alignStart="@+id/btn_login_passwordforgot"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="20dip"
                 android:textColor="@color/appWhite" />
         </RelativeLayout>
 
@@ -150,7 +156,7 @@
         android:layout_above="@+id/relLayout_login_initial"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView3"
-        android:textSize="36sp"
+        android:textSize="35sp"
         android:textColor="@color/colorNavigationBar"
         android:textStyle="bold" />
 

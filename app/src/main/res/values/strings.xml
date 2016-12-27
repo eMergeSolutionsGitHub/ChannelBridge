@@ -11,8 +11,26 @@
     <string name="string_login_edittext_passwordhint">Password</string>
     <string name="string_login_button_login">Log in</string>
     <string name="string_login_button_passwordforgot">Forgot your password ?</string>
-    
 
+
+    //navigation icon
+    <string name="icon_navigation_home">&#xf015;</string>
+    <string name="icon_navigation_customer">&#xf0c0;</string>
+    <string name="icon_navigation_product">&#xf1d9;</string>
+    <string name="icon_navigation_report">&#xf0ea;</string>
+    <string name="icon_navigation_collectionnote">&#xf155;</string>
+    <string name="icon_navigation_password">&#xf084;</string>
+    <string name="icon_navigation_itinerary">&#xf0d1;</string>
+    <string name="icon_navigation_print">&#xf02f;</string>
+    <string name="icon_navigation_sync">&#xf021;</string>
+    <string name="icon_navigation_backup">&#xf1c0;</string>
+    <string name="icon_navigation_admin">&#xf0e7;</string>
+    <string name="icon_navigation_attendens">&#xf017;</string>
+    <string name="icon_navigation_return">&#xf0e2;</string>
+
+
+    //home
+    <string name="icon_home_menu">&#xf0c9;</string>
 
 
 </resources>

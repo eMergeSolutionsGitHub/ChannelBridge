@@ -19,6 +19,14 @@
          android:screenOrientation="landscape"
          android:windowSoftInputMode="stateHidden"/>
 
+        <activity android:name=".Layout.Home"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden"/>
+
+        <activity android:name=".Layout.Itinerary"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden"/>
+
     </application>
 
 </manifest>
