@@ -81,14 +81,14 @@ public class NavigationDrawer {
                     }
                 }
                 if (position == 1) {
-                   /* if(position==1){
+                   if(position==1){
                         dLayout.closeDrawer(Gravity.LEFT);
                     }else {
                         Intent i = new Intent(activity, Itinerary.class);
                         Bundle bndlanimation = ActivityOptions.makeCustomAnimation(activity, R.anim.animation, R.anim.animation2).toBundle();
                         activity.finish();
                         activity.startActivity(i, bndlanimation);
-                    }*/
+                    }
 
                 }
                 if (position == 2) {
