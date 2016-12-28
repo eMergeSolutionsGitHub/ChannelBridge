@@ -18,6 +18,8 @@ import emerge.lk.channelbridge.databinding.LayoutHomeBinding;
 
 public class Home extends Activity {
     NavigationDrawer navigationDrawer;
+
+    //Test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
