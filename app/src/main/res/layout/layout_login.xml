@@ -4,7 +4,7 @@
     <data>
         <variable
             name="handlers"
-            type="emerge.lk.channelbridge.Layout.Login.OnClickLoginHandler"/>
+            type="emerge.lk.channelbridge.Layout.UserLogin.OnClickLoginHandler"/>
     </data>
 
 <RelativeLayout

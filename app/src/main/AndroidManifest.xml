@@ -15,7 +15,7 @@
             </intent-filter>
         </activity>
 
-     <activity android:name=".Layout.Login"
+     <activity android:name=".Layout.UserLogin"
          android:screenOrientation="landscape"
          android:windowSoftInputMode="stateHidden"/>
 

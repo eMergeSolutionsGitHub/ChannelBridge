@@ -22,7 +22,7 @@ public class Splash extends Activity {
 
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                Intent i = new Intent(Splash.this,Login.class);
+                Intent i = new Intent(Splash.this,UserLogin.class);
                 Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.animation, R.anim.animation2).toBundle();
                 finish();
                 startActivity(i, bndlanimation);
