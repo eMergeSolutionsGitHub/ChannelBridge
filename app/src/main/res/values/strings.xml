@@ -30,7 +30,7 @@
 
 
     //home
-
+    <string name="string_home_textview_title">Dashboard</string>
 
     //title bar
     <string name="icon_logout">&#xf011;</string>

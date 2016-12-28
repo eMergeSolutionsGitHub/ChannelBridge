@@ -28,6 +28,7 @@
                 android:background="@color/titlebar">
 
                 <RelativeLayout
+                    android:id="@+id/relLayout_manue_bar"
                     android:onClick="@{handlermenu.onUpdateMenuOnClick}"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
@@ -44,6 +45,17 @@
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorNavigationBar" />
                 </RelativeLayout>
+
+                <emerge.lk.channelbridge.Font.FontTitle
+                    android:text="@string/string_home_textview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/relLayout_manue_bar"
+                    android:layout_toEndOf="@+id/relLayout_manue_bar"
+                    android:textColor="@color/colorNavigationBar" />
             </RelativeLayout>
 
             <RelativeLayout
