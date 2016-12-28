@@ -24,10 +24,10 @@ public class UserLogin extends Activity {
         setContentView(R.layout.layout_login);
 
         LayoutLoginBinding logingBinding = DataBindingUtil.setContentView(this, R.layout.layout_login);
-
-
         OnClickLoginHandler handler = new OnClickLoginHandler();
         logingBinding.setHandlers(handler);
+
+        System.out.println("sdssds");
     }
 
     public class OnClickLoginHandler {
