@@ -15,5 +15,8 @@ public class Itinerary extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_itinerary);
+
+
+        System.out.println("sdnfhssvdss");
     }
 }
