@@ -100,7 +100,7 @@
                 android:layout_centerHorizontal="true"
                 android:dividerHeight="15dip"
                 android:divider="@color/colorNavigationBar"
-               />
+                />
 
         </RelativeLayout>
     </android.support.v4.widget.DrawerLayout>

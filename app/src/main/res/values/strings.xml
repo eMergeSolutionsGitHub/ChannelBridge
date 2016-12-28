@@ -30,7 +30,12 @@
 
 
     //home
+
+
+    //title bar
+    <string name="icon_logout">&#xf011;</string>
     <string name="icon_home_menu">&#xf0c9;</string>
+
 
 
 </resources>

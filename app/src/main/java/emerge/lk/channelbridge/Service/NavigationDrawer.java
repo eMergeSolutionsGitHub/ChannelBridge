@@ -3,6 +3,7 @@ package emerge.lk.channelbridge.Service;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
@@ -18,6 +19,7 @@ import emerge.lk.channelbridge.Entity.NavigationEntity;
 import emerge.lk.channelbridge.Layout.Home;
 import emerge.lk.channelbridge.Layout.Itinerary;
 import emerge.lk.channelbridge.R;
+
 
 /**
  * Created by Himanshu on 12/27/2016.
@@ -38,6 +40,7 @@ public class NavigationDrawer {
 
         listView_navigation = (ListView) activity.findViewById(R.id.listView_navigation);
         dLayout = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
+
 
     }
 
@@ -63,12 +66,12 @@ public class NavigationDrawer {
         dLayout.openDrawer(Gravity.LEFT);
     }
 
-    public void setDrawerItem() {
+    public void setDrawerItem()  {
         listView_navigation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    if(activity.getLocalClassName().equals("Layout.Home")){
+                   if(position==0){
                         dLayout.closeDrawer(Gravity.LEFT);
                     }else {
                         Intent i = new Intent(activity, Home.class);
@@ -76,17 +79,17 @@ public class NavigationDrawer {
                         activity.finish();
                         activity.startActivity(i, bndlanimation);
                     }
-
                 }
                 if (position == 1) {
-                    if(activity.getLocalClassName().equals("Layout.Itinerary")){
+                   /* if(position==1){
                         dLayout.closeDrawer(Gravity.LEFT);
                     }else {
                         Intent i = new Intent(activity, Itinerary.class);
                         Bundle bndlanimation = ActivityOptions.makeCustomAnimation(activity, R.anim.animation, R.anim.animation2).toBundle();
                         activity.finish();
                         activity.startActivity(i, bndlanimation);
-                    }
+                    }*/
+
                 }
                 if (position == 2) {
 
