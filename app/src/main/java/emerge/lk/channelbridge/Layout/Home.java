@@ -30,6 +30,7 @@ import emerge.lk.channelbridge.databinding.LayoutHomeBinding;
  * Created by Himanshu on 12/27/2016.
  */
 
+
 public class Home extends Activity {
     NavigationDrawer navigationDrawer;
     BarChart chart1;
@@ -40,7 +41,6 @@ public class Home extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_home);
-        
 
         LayoutHomeBinding homeBinding = DataBindingUtil.setContentView(this,R.layout.layout_home);
         OnClickMenuHandler handler = new OnClickMenuHandler();
