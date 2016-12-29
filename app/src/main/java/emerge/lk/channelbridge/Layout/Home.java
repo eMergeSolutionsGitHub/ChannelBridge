@@ -40,10 +40,7 @@ public class Home extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_home);
-
-
-
-
+        
 
         LayoutHomeBinding homeBinding = DataBindingUtil.setContentView(this,R.layout.layout_home);
         OnClickMenuHandler handler = new OnClickMenuHandler();

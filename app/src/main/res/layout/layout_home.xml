@@ -2,11 +2,14 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="handlermenu"
             type="emerge.lk.channelbridge.Layout.Home.OnClickMenuHandler" />
     </data>
+
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -28,12 +31,11 @@
                 android:background="@color/titlebar">
 
                 <RelativeLayout
-                    android:id="@+id/relLayout_manue_bar"
-                    android:onClick="@{handlermenu.onUpdateMenuOnClick}"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true">
+                    android:layout_alignParentStart="true"
+                    android:onClick="@{handlermenu.onUpdateMenuOnClick}">
 
                     <emerge.lk.channelbridge.Font.TextViewFontAwesome
                         android:id="@+id/textView5"
@@ -45,26 +47,89 @@
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textColor="@color/colorNavigationBar" />
                 </RelativeLayout>
-
-                <emerge.lk.channelbridge.Font.FontTitle
-                    android:text="@string/string_home_textview_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView6"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/relLayout_manue_bar"
-                    android:layout_toEndOf="@+id/relLayout_manue_bar"
-                    android:textColor="@color/colorNavigationBar" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/relLayout_home_bar"
-                android:background="@color/appWhite">
+                android:background="@color/appHome">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:id="@+id/linearOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp"
+                            android:id="@+id/lineHomeLeft"
+                            android:background="@drawable/shadow_borders"
+                            android:orientation="horizontal">
+
+                            <com.github.mikephil.charting.charts.BarChart
+                                android:id="@+id/bar_chart1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_margin="4dp"
+                            android:id="@+id/lineHomeRight"
+                            android:background="@drawable/shadow_borders"
+                            android:orientation="horizontal">
+
+                            <com.github.mikephil.charting.charts.BubbleChart
+                                android:id="@+id/bar_chart2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_below="@id/linearOne"
+                        android:layout_weight="1"
+                        android:layout_margin="4dp"
+                        android:id="@+id/lineHomeBottom"
+                        android:background="@drawable/shadow_borders"
+                        android:orientation="horizontal">
+
+                        <com.github.mikephil.charting.charts.HorizontalBarChart
+                            android:id="@+id/bar_chart_h"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
 
             </RelativeLayout>
         </RelativeLayout>
@@ -106,13 +171,12 @@
 
             <ListView
                 android:id="@+id/listView_navigation"
-                android:layout_below="@+id/relLayout_userimage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/relLayout_userimage"
                 android:layout_centerHorizontal="true"
-                android:dividerHeight="15dip"
                 android:divider="@color/colorNavigationBar"
-                />
+                android:dividerHeight="15dip" />
 
         </RelativeLayout>
     </android.support.v4.widget.DrawerLayout>
