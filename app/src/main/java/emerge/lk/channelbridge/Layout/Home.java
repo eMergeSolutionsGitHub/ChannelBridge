@@ -10,20 +10,20 @@ import android.view.View;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.BubbleChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
-import com.github.mikephil.charting.charts.PieChart;
+
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.BubbleData;
 import com.github.mikephil.charting.data.BubbleDataSet;
 import com.github.mikephil.charting.data.BubbleEntry;
-import com.github.mikephil.charting.data.PieData;
+
 
 import java.util.ArrayList;
 
 import emerge.lk.channelbridge.R;
 import emerge.lk.channelbridge.Service.NavigationDrawer;
-import emerge.lk.channelbridge.databinding.LayoutHomeBinding;
+
 
 
 /**
@@ -40,11 +40,8 @@ public class Home extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_home);
+        setContentView(R.layout.layout_dashboard);
 
-        LayoutHomeBinding homeBinding = DataBindingUtil.setContentView(this,R.layout.layout_home);
-        OnClickMenuHandler handler = new OnClickMenuHandler();
-        homeBinding.setHandlermenu(handler);
 
         navigationDrawer = new NavigationDrawer(this);
         navigationDrawer.drowNavigationDrawer();
@@ -105,11 +102,7 @@ public class Home extends Activity {
 
 
     }
-    public class OnClickMenuHandler {
-        public void onUpdateMenuOnClick(View view) {
-            navigationDrawer.openNavigationDrawer();
-        }
-    }
+
 }
 
 

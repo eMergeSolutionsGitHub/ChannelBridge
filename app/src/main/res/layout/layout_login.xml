@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <data>
-        <variable
-            name="handlers"
-            type="emerge.lk.channelbridge.Layout.UserLogin.OnClickLoginHandler"/>
-    </data>
-
 <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appWhite">
@@ -133,7 +127,6 @@
                 android:text="@string/string_login_button_login"
                 android:layout_height="50dip"
                 android:id="@+id/btn_login_login"
-                android:onClick="@{handlers.onUpdateLoginOnClick}"
                 android:background="@color/colorNavigationBar"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 style="@style/Widget.AppCompat.Button.Colored"
@@ -161,4 +154,3 @@
         android:textStyle="bold" />
 
 </RelativeLayout>
-</layout>
