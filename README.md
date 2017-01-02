@@ -28,7 +28,5 @@ btn_login_login
 relLayout_login_button
 
 
-
-https://github.com/DevExchanges/DataBindingExample
-https://www.youtube.com/watch?v=omg95YrQEa4
+http://jakewharton.github.io/butterknife/
 
