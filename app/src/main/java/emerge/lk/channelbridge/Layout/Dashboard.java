@@ -2,9 +2,9 @@ package emerge.lk.channelbridge.Layout;
 
 import android.app.Activity;
 
-import android.databinding.DataBindingUtil;
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -21,6 +21,7 @@ import com.github.mikephil.charting.data.BubbleEntry;
 
 import java.util.ArrayList;
 
+import butterknife.OnClick;
 import emerge.lk.channelbridge.R;
 import emerge.lk.channelbridge.Service.NavigationDrawer;
 
@@ -31,7 +32,7 @@ import emerge.lk.channelbridge.Service.NavigationDrawer;
  */
 
 
-public class Home extends Activity {
+public class Dashboard extends Activity {
     NavigationDrawer navigationDrawer;
     BarChart chart1;
     BubbleChart chart2;
@@ -41,7 +42,6 @@ public class Home extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_dashboard);
-
 
         navigationDrawer = new NavigationDrawer(this);
         navigationDrawer.drowNavigationDrawer();
@@ -81,7 +81,7 @@ public class Home extends Activity {
         labels.add("June");
 
         BarDataSet dataset = new BarDataSet(entries, "Num sales");
-        dataset.setColors(new int[] { android.R.color.holo_red_dark, android.R.color.holo_blue_bright, android.R.color.holo_green_dark, android.R.color.holo_blue_dark }, Home.this);
+        dataset.setColors(new int[] { android.R.color.holo_red_dark, android.R.color.holo_blue_bright, android.R.color.holo_green_dark, android.R.color.holo_blue_dark }, Dashboard.this);
         BarData data = new BarData(labels, dataset);
 
         BubbleDataSet dataSet2 = new BubbleDataSet(entries2, "Num sales");
@@ -100,7 +100,10 @@ public class Home extends Activity {
         bar_chart_h.invalidate();
 
 
-
+    }
+    @OnClick(R.id.relLayout_channelbridge_menu)
+    public void logIn() {
+        navigationDrawer.openNavigationDrawer();
     }
 
 }

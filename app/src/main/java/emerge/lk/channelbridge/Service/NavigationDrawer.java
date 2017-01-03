@@ -3,20 +3,18 @@ package emerge.lk.channelbridge.Service;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import emerge.lk.channelbridge.Adapters.NavigationAdapter;
 import emerge.lk.channelbridge.Entity.NavigationEntity;
-import emerge.lk.channelbridge.Layout.Home;
+import emerge.lk.channelbridge.Layout.Dashboard;
 import emerge.lk.channelbridge.Layout.Itinerary;
 import emerge.lk.channelbridge.R;
 
@@ -46,7 +44,7 @@ public class NavigationDrawer {
 
     public void drowNavigationDrawer() {
         navigationAdapter = new NavigationAdapter(activity, navigationItems);
-        navigationItems.add(new NavigationEntity("Home", R.string.icon_navigation_home));
+        navigationItems.add(new NavigationEntity("Dashboard", R.string.icon_navigation_home));
         navigationItems.add(new NavigationEntity("Itinerary", R.string.icon_navigation_itinerary));
         navigationItems.add(new NavigationEntity("Customer", R.string.icon_navigation_customer));
         navigationItems.add(new NavigationEntity("Products", R.string.icon_navigation_product));
@@ -71,7 +69,7 @@ public class NavigationDrawer {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    Intent i = new Intent(activity, Home.class);
+                    Intent i = new Intent(activity, Dashboard.class);
                     Bundle bndlanimation = ActivityOptions.makeCustomAnimation(activity, R.anim.animation, R.anim.animation2).toBundle();
                     activity.finish();
                     activity.startActivity(i, bndlanimation);

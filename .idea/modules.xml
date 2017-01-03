@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Channe lBridge.iml" filepath="$PROJECT_DIR$/Channe lBridge.iml" />
       <module fileurl="file://$PROJECT_DIR$/Channel Bridge.iml" filepath="$PROJECT_DIR$/Channel Bridge.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChannelBridge.iml" filepath="$PROJECT_DIR$/ChannelBridge.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/channelbridgesdialogmodule/channelbridgesdialogmodule.iml" filepath="$PROJECT_DIR$/channelbridgesdialogmodule/channelbridgesdialogmodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/channelbridgesdialogmodule/channelbridgesdialogmodule.iml" filepath="$PROJECT_DIR$/channelbridgesdialogmodule/channelbridgesdialogmodule.iml" />
     </modules>
   </component>
