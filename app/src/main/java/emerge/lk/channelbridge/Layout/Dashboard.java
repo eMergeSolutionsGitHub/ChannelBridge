@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -21,6 +22,8 @@ import com.github.mikephil.charting.data.BubbleEntry;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import emerge.lk.channelbridge.R;
 import emerge.lk.channelbridge.Service.NavigationDrawer;
@@ -34,6 +37,7 @@ import emerge.lk.channelbridge.Service.NavigationDrawer;
 
 public class Dashboard extends Activity {
     NavigationDrawer navigationDrawer;
+    @BindView(R.id.txtView_channelbridge_title) TextView menuBarTitle;
     BarChart chart1;
     BubbleChart chart2;
     HorizontalBarChart bar_chart_h;
@@ -42,10 +46,13 @@ public class Dashboard extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_dashboard);
+        ButterKnife.bind(this);
 
         navigationDrawer = new NavigationDrawer(this);
         navigationDrawer.drowNavigationDrawer();
         navigationDrawer.setDrawerItem();
+
+        menuBarTitle.setText(R.string.string_dashboard_titlebar_title);
 
 
         chart1 = (BarChart) findViewById(R.id.bar_chart1);
@@ -102,7 +109,7 @@ public class Dashboard extends Activity {
 
     }
     @OnClick(R.id.relLayout_channelbridge_menu)
-    public void logIn() {
+    public void titleBarMenuClick() {
         navigationDrawer.openNavigationDrawer();
     }
 

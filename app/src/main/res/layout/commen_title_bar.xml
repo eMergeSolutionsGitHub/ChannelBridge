@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:id="@+id/relLayout_channelbridge_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/titlebar">
+
+        <RelativeLayout
+            android:id="@+id/relLayout_channelbridge_menu"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/icon_home_menu"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorNavigationBar" />
+        </RelativeLayout>
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtView_channelbridge_title"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/relLayout_channelbridge_menu"
+            android:layout_toEndOf="@+id/relLayout_channelbridge_menu"
+            android:textColor="@color/colorNavigationBar" />
+    </RelativeLayout>
