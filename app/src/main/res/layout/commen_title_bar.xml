@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="@string/icon_home_menu"
+                android:text="@string/icon_menu"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/colorNavigationBar" />
         </RelativeLayout>
@@ -37,4 +37,25 @@
             android:layout_toRightOf="@+id/relLayout_channelbridge_menu"
             android:layout_toEndOf="@+id/relLayout_channelbridge_menu"
             android:textColor="@color/colorNavigationBar" />
+
+    <RelativeLayout
+        android:id="@+id/relLayout_channelbridge_logout"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icon_logout"
+            android:textSize="40sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorNavigationBar" />
+
+
     </RelativeLayout>
+
+</RelativeLayout>

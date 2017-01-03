@@ -51,8 +51,9 @@ public class Dashboard extends Activity {
         navigationDrawer = new NavigationDrawer(this);
         navigationDrawer.drowNavigationDrawer();
         navigationDrawer.setDrawerItem();
-
         menuBarTitle.setText(R.string.string_dashboard_titlebar_title);
+
+
 
 
         chart1 = (BarChart) findViewById(R.id.bar_chart1);
