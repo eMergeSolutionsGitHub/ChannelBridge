@@ -29,17 +29,13 @@ public class NavigationDrawer {
 
     ArrayList<NavigationEntity> navigationItems;
     NavigationAdapter navigationAdapter;
-
     ListView listView_navigation;
 
     public NavigationDrawer(Activity activity) {
         this.activity = activity;
         navigationItems = new ArrayList<NavigationEntity>();
-
         listView_navigation = (ListView) activity.findViewById(R.id.listView_navigation);
         dLayout = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
-
-
     }
 
     public void drowNavigationDrawer() {

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
+    android:layout_width="250dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@color/colorNavigationBar">
+
+    <RelativeLayout
+        android:id="@+id/relLayout_userimage"
+        android:layout_width="match_parent"
+        android:layout_height="150dip">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imageView_comm_profile"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/user"
+            app:civ_border_color="@color/appWhite"
+            app:civ_border_width="4dp"
+            app:civ_shadow="true" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView_comm_profile"
+            android:layout_centerHorizontal="true"
+            android:text="A.S.G.Kumara"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/appWhite" />
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/listView_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relLayout_userimage"
+        android:layout_centerHorizontal="true"
+        android:divider="@color/colorNavigationBar"
+        android:dividerHeight="15dip"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>
+
+

@@ -29,13 +29,15 @@
     <string name="icon_navigation_return">&#xf0e2;</string>
 
 
-    //home
-    <string name="string_home_textview_title">Dashboard</string>
+    //Dashboard
+    <string name="string_dashboard_titlebar_title">Dashboard</string>
 
     //title bar
     <string name="icon_logout">&#xf011;</string>
-    <string name="icon_home_menu">&#xf0c9;</string>
+    <string name="icon_menu">&#xf0c9;</string>
 
+    //Itinerary
+    <string name="string_itinerary_titlebar_title">Itinerary</string>
 
 
 </resources>
