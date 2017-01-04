@@ -2,29 +2,35 @@ package emerge.lk.channelbridge.Layout;
 
 import android.app.Activity;
 
-import android.app.ActivityOptions;
-import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 
+import com.borax12.materialdaterangepicker.date.DatePickerDialog;
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.BubbleChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 
+import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.BubbleData;
-import com.github.mikephil.charting.data.BubbleDataSet;
 import com.github.mikephil.charting.data.BubbleEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import emerge.lk.channelbridge.R;
 import emerge.lk.channelbridge.Service.NavigationDrawer;
-
 
 
 /**
@@ -32,25 +38,38 @@ import emerge.lk.channelbridge.Service.NavigationDrawer;
  */
 
 
-public class Dashboard extends Activity {
+public class Dashboard extends Activity implements DatePickerDialog.OnDateSetListener {
+
     NavigationDrawer navigationDrawer;
-    BarChart chart1;
-    BubbleChart chart2;
+    BarChart barChart;
+    PieChart pie_chart1, pie_chart2, pie_chart3, pie_chart4;
     HorizontalBarChart bar_chart_h;
+
+    TextView textView_channelbridge_date;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_dashboard);
+        ButterKnife.bind(this);
 
         navigationDrawer = new NavigationDrawer(this);
         navigationDrawer.drowNavigationDrawer();
         navigationDrawer.setDrawerItem();
+        textView_channelbridge_date = (TextView) findViewById(R.id.textView_channelbridge_date);
 
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        textView_channelbridge_date.setText("Appointment Date: " + dateFormat.format(date));
 
-        chart1 = (BarChart) findViewById(R.id.bar_chart1);
-        chart2 = (BubbleChart) findViewById(R.id.bar_chart2);
+        barChart = (BarChart) findViewById(R.id.bar_chart);
         bar_chart_h = (HorizontalBarChart)findViewById(R.id.bar_chart_h);
+
+        pie_chart1 = (PieChart)findViewById(R.id.pie_chart1);
+        pie_chart2 = (PieChart)findViewById(R.id.pie_chart2);
+        pie_chart3 = (PieChart)findViewById(R.id.pie_chart3);
+        pie_chart4 = (PieChart)findViewById(R.id.pie_chart4);
 
 
 
@@ -62,7 +81,7 @@ public class Dashboard extends Activity {
         entries.add(new BarEntry(18f, 4));
         entries.add(new BarEntry(9f, 5));
 
-        ArrayList<BubbleEntry> entries2 = new ArrayList<>();
+        ArrayList<Entry> entries2 = new ArrayList<>();
         entries2.add(new BubbleEntry(1, 3f, 5));
         entries2.add(new BubbleEntry(2, 13f, 5));
         entries2.add(new BubbleEntry(3, 32f, 5));
@@ -84,27 +103,47 @@ public class Dashboard extends Activity {
         dataset.setColors(new int[] { android.R.color.holo_red_dark, android.R.color.holo_blue_bright, android.R.color.holo_green_dark, android.R.color.holo_blue_dark }, Dashboard.this);
         BarData data = new BarData(labels, dataset);
 
-        BubbleDataSet dataSet2 = new BubbleDataSet(entries2, "Num sales");
-        BubbleData data2 = new BubbleData(labels, dataSet2);
-
-        chart1.setData(data);
-        chart1.animateXY(2000, 2000);
-        chart1.invalidate();
-
-        chart2.setData(data2);
-        chart2.animateXY(3000, 3000);
-        chart2.invalidate();
+        barChart.setData(data);
+        barChart.animateXY(2000, 2000);
+        barChart.invalidate();
 
         bar_chart_h.setData(data);
         bar_chart_h.animateXY(1000, 1000);
         bar_chart_h.invalidate();
 
+        PieDataSet pieDataSet = new PieDataSet(entries2, "Monthly sales");
+        PieData pieData = new PieData(labels, pieDataSet);
 
+        pie_chart1.setData(pieData);
+        pie_chart2.setData(pieData);
+        pie_chart3.setData(pieData);
+        pie_chart4.setData(pieData);
     }
+
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
+        textView_channelbridge_date.setText("Appointment Date: "+year+"/"+(monthOfYear+1)+"/"+dayOfMonth+" - "+yearEnd+"/"+(monthOfYearEnd+1)+"/"+dayOfMonthEnd);
+    }
+
+
+
     @OnClick(R.id.relLayout_channelbridge_menu)
     public void logIn() {
         navigationDrawer.openNavigationDrawer();
     }
+
+    @OnClick(R.id.relLayout_channelbridge_date)
+    public void openDatepicker() {
+        Calendar now = Calendar.getInstance();
+        DatePickerDialog dpd = DatePickerDialog.newInstance(
+                Dashboard.this,
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH)
+        );
+        dpd.show(getFragmentManager(), "Datepickerdialog");
+    }
+
 
 }
 

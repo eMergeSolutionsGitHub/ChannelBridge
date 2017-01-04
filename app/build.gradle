@@ -23,6 +23,7 @@ android {
     }
 }
 
+
 dependencies {
     compile 'com.android.support:multidex:1.0.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -38,4 +39,7 @@ dependencies {
     compile files('/libs/mpandroidchartlibrary-2-2-4.jar')
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.borax12.materialdaterangepicker:library:1.9'
+    compile files('/libs/mpandroidchartlibrary-2-2-4.jar')
+
 }
