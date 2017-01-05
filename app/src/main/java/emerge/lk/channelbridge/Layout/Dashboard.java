@@ -50,7 +50,6 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
     @BindView(R.id.pie_chart4) PieChart pie_chart4;
 
 
-
     TextView textView_channelbridge_date;
 
     //Test
