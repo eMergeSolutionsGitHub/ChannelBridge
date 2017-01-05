@@ -47,7 +47,7 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
 
     TextView textView_channelbridge_date;
 
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
