@@ -16,7 +16,9 @@ import emerge.lk.channelbridge.Entity.NavigationEntity;
 import emerge.lk.channelbridge.Font.TextViewFontAwesome;
 import emerge.lk.channelbridge.R;
 
-
+/**
+ * Created by Himanshu on 01/05/2017.
+ */
 
 public class NavigationAdapter extends BaseAdapter {
     Context mContext;
