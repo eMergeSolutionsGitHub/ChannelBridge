@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import emerge.lk.channelbridge.R;
@@ -41,13 +42,17 @@ import emerge.lk.channelbridge.Service.NavigationDrawer;
 public class Dashboard extends Activity implements DatePickerDialog.OnDateSetListener {
 
     NavigationDrawer navigationDrawer;
-    BarChart barChart;
-    PieChart pie_chart1, pie_chart2, pie_chart3, pie_chart4;
-    HorizontalBarChart bar_chart_h;
+    @BindView(R.id.bar_chart) BarChart barChart;
+    @BindView(R.id.bar_chart_h) HorizontalBarChart bar_chart_h;
+    @BindView(R.id.pie_chart1) PieChart pie_chart1;
+    @BindView(R.id.pie_chart2) PieChart pie_chart2;
+    @BindView(R.id.pie_chart3) PieChart pie_chart3;
+    @BindView(R.id.pie_chart4) PieChart pie_chart4;
+
 
     TextView textView_channelbridge_date;
 
-    
+    //Test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,15 +67,6 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
         textView_channelbridge_date.setText("Appointment Date: " + dateFormat.format(date));
-
-        barChart = (BarChart) findViewById(R.id.bar_chart);
-        bar_chart_h = (HorizontalBarChart)findViewById(R.id.bar_chart_h);
-
-        pie_chart1 = (PieChart)findViewById(R.id.pie_chart1);
-        pie_chart2 = (PieChart)findViewById(R.id.pie_chart2);
-        pie_chart3 = (PieChart)findViewById(R.id.pie_chart3);
-        pie_chart4 = (PieChart)findViewById(R.id.pie_chart4);
-
 
 
         ArrayList<BarEntry> entries = new ArrayList<>();

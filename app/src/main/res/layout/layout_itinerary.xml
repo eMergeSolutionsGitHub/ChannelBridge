@@ -17,11 +17,6 @@
     </RelativeLayout>
 
 
-
-
-
-
-
     <include
         android:id="@+id/drawer"
         layout="@layout/commen_navigation_drawer" />
