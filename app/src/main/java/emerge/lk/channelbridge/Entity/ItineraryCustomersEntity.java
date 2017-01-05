@@ -9,9 +9,6 @@ public class ItineraryCustomersEntity {
 String itineraryCustomersID,itineraryCustomersName,itineraryCustomersCity,itineraryCustomersImageName;
 
 
-    public ItineraryCustomersEntity(String itineraryCustomersName) {
-        this.itineraryCustomersName = itineraryCustomersName;
-    }
 
     public String getItineraryCustomersID() {
         return itineraryCustomersID;

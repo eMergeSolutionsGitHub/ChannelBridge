@@ -60,9 +60,10 @@ public class Itinerary extends Activity {
         recyclerViewItineraryCustomer.setItemAnimator(new DefaultItemAnimator());
 
         itineraryCustomersAdapter = new ItineraryCustomersAdapter(this,itineraryCustomersEntities);
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("Himanshu"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("Sasdsdsdf"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("Ksdsf"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
 
         recyclerViewItineraryCustomer.setAdapter(itineraryCustomersAdapter);
 

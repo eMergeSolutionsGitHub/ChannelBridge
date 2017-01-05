@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     android:theme="@style/AppTheme">
 
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -20,184 +15,166 @@
             android:id="@+id/relLayout_channelbridge_bar"
             layout="@layout/commen_title_bar" />
 
-
-
-
-
-        <RelativeLayout
-            android:id="@+id/relLayout_channelbridge_div"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="4dp"
+            android:layout_height="match_parent"
             android:layout_below="@id/relLayout_channelbridge_bar">
-
-            <TextView
-                android:id="@+id/textView_channelbridge_date"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:gravity="center"
-                android:text="Date: "
-                android:textStyle="bold" />
-
-
-            <RelativeLayout
-                android:layout_width="70dp"
-                android:layout_height="match_parent"
-                android:id="@+id/relLayout_channelbridge_date"
-                android:layout_alignParentRight="true">
-
-
-            <emerge.lk.channelbridge.Font.TextViewFontAwesome
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/icon_navigation_attendens"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorNavigationBar"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp" />
-            </RelativeLayout>
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/relLayout_channelbridge_div"
-            android:background="@color/appHome">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:orientation="vertical"
-                android:weightSum="4">
+                android:layout_height="match_parent">
 
-
-                <LinearLayout
-                    android:id="@+id/linearOne"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:layout_height="match_parent">
 
-                    <LinearLayout
-                        android:id="@+id/lineHomeLeft"
-                        android:layout_width="0dp"
-                        android:layout_height="250dp"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/shadow_borders"
-                        android:orientation="horizontal">
-
-                        <com.github.mikephil.charting.charts.HorizontalBarChart
-                            android:id="@+id/bar_chart_h"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/lineHomeRight"
-                        android:layout_width="0dp"
-                        android:layout_height="250dp"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/shadow_borders"
-                        android:orientation="horizontal">
-
-                        <com.github.mikephil.charting.charts.BarChart
-                            android:id="@+id/bar_chart"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/lineHomeBottom"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_below="@id/linearOne"
-                    android:layout_margin="4dp"
-                    android:layout_weight="2"
-                    android:background="@drawable/shadow_borders"
-                    android:orientation="horizontal">
-
-
-                    <GridLayout
+                    <RelativeLayout
+                        android:id="@+id/relLayout_channelbridge_div"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:columnCount="4"
-                        android:orientation="horizontal"
-                        android:rowCount="1">
+                        android:layout_height="50dp"
+                        android:layout_margin="4dp">
 
-                        <com.github.mikephil.charting.charts.PieChart
-                            android:id="@+id/pie_chart1"
-                            android:layout_width="250dp"
-                            android:layout_height="250dp"
-                            android:layout_column="0"
-                            android:layout_gravity="left|top"
-                            android:layout_row="0" />
+                        <TextView
+                            android:id="@+id/textView_channelbridge_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="Date: "
+                            android:textStyle="bold" />
+                        <RelativeLayout
+                            android:id="@+id/relLayout_channelbridge_date"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true">
+                            <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                android:id="@+id/textView7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginRight="8dp"
+                                android:gravity="center"
+                                android:text="@string/icon_navigation_attendens"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@color/colorNavigationBar" />
+                        </RelativeLayout>
+                    </RelativeLayout>
 
-                        <com.github.mikephil.charting.charts.PieChart
-                            android:id="@+id/pie_chart2"
-                            android:layout_width="250dp"
-                            android:layout_height="250dp"
-                            android:layout_column="1"
-                            android:layout_gravity="right|top"
-                            android:layout_row="0" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/relLayout_channelbridge_div"
+                        android:background="@color/appHome">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:orientation="vertical"
+                            android:weightSum="4">
+                            <LinearLayout
+                                android:id="@+id/linearOne"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+                                <LinearLayout
+                                    android:id="@+id/lineHomeLeft"
+                                    android:layout_width="0dp"
+                                    android:layout_height="250dp"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shadow_borders"
+                                    android:orientation="horizontal">
 
-                        <com.github.mikephil.charting.charts.PieChart
-                            android:id="@+id/pie_chart3"
-                            android:layout_width="250dp"
-                            android:layout_height="250dp"
-                            android:layout_column="2"
-                            android:layout_gravity="left|bottom"
-                            android:layout_row="0" />
+                                    <com.github.mikephil.charting.charts.HorizontalBarChart
+                                        android:id="@+id/bar_chart_h"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" />
 
-                        <com.github.mikephil.charting.charts.PieChart
-                            android:id="@+id/pie_chart4"
-                            android:layout_width="250dp"
-                            android:layout_height="250dp"
-                            android:layout_column="3"
-                            android:layout_gravity="right|bottom"
-                            android:layout_row="0" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:id="@+id/lineHomeRight"
+                                    android:layout_width="0dp"
+                                    android:layout_height="250dp"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shadow_borders"
+                                    android:orientation="horizontal">
 
+                                    <com.github.mikephil.charting.charts.BarChart
+                                        android:id="@+id/bar_chart"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" />
 
-                    </GridLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/lineHomeBottom"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_below="@id/linearOne"
+                                android:layout_margin="4dp"
+                                android:layout_weight="2"
+                                android:background="@drawable/shadow_borders"
+                                android:orientation="horizontal">
 
+                                <GridLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:columnCount="4"
+                                    android:orientation="horizontal"
+                                    android:rowCount="1">
 
-                </LinearLayout>
+                                    <com.github.mikephil.charting.charts.PieChart
+                                        android:id="@+id/pie_chart1"
+                                        android:layout_width="250dp"
+                                        android:layout_height="250dp"
+                                        android:layout_column="0"
+                                        android:layout_gravity="left|top"
+                                        android:layout_row="0" />
 
+                                    <com.github.mikephil.charting.charts.PieChart
+                                        android:id="@+id/pie_chart2"
+                                        android:layout_width="250dp"
+                                        android:layout_height="250dp"
+                                        android:layout_column="1"
+                                        android:layout_gravity="right|top"
+                                        android:layout_row="0" />
 
+                                    <com.github.mikephil.charting.charts.PieChart
+                                        android:id="@+id/pie_chart3"
+                                        android:layout_width="250dp"
+                                        android:layout_height="250dp"
+                                        android:layout_column="2"
+                                        android:layout_gravity="left|bottom"
+                                        android:layout_row="0" />
+
+                                    <com.github.mikephil.charting.charts.PieChart
+                                        android:id="@+id/pie_chart4"
+                                        android:layout_width="250dp"
+                                        android:layout_height="250dp"
+                                        android:layout_column="3"
+                                        android:layout_gravity="right|bottom"
+                                        android:layout_row="0" />
+                                </GridLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
             </LinearLayout>
-
-
-        </RelativeLayout>
-
-
+        </ScrollView>
     </RelativeLayout>
-
-</ScrollView>
-
 
     <include
         android:id="@+id/drawer"

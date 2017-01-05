@@ -7,7 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
 import emerge.lk.channelbridge.R;
 
@@ -20,28 +26,24 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
     Context mContext;
     ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities;
 
-    boolean status = false;
-
-
     public ItineraryCustomersAdapter(Context mContext, ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities) {
         this.mContext = mContext;
         this.itineraryCustomersEntities = itineraryCustomersEntities;
     }
 
-
-
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_itinerary_customer, parent, false);
-
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
+        String cutomerImagePath="file:///android_asset/image/"+itineraryCustomersEntities.get(position).getItineraryCustomersImageName();
 
         holder.textViewCustomerName.setText(itineraryCustomersEntities.get(position).getItineraryCustomersName());
-
+        holder.textViewCustomerCity.setText(itineraryCustomersEntities.get(position).getItineraryCustomersCity());
+        Picasso.with(mContext).load(cutomerImagePath).into( holder.imageViewCustomerImage);
 
     }
 
@@ -57,29 +59,14 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-
-        ImageView imageViewCustomerImage;
-        TextView textViewCustomerName,textViewCustomerCity;
-
-      /*  @BindView(R.id.imgView_itinerary_customer) ImageView imageViewCustomerImage;
+        @BindView(R.id.imgView_itinerary_customer) ImageView imageViewCustomerImage;
         @BindView(R.id.textView_itinerary_customername) TextView textViewCustomerName;
-        @BindView(R.id.textView_itinerary_customercity) TextView textViewCustomerCity;*/
-
+        @BindView(R.id.textView_itinerary_customercity) TextView textViewCustomerCity;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
-
-          //  imageViewCustomerImage = (ImageView) itemView.findViewById(R.id.imgView_itinerary_customer);
-           textViewCustomerName = (TextView) itemView.findViewById(R.id.textView_itinerary_customername);
-          //  textViewCustomerCity = (TextView) itemView.findViewById(R.id.textView_itinerary_customercity);
-
-
-
+            ButterKnife.bind(this, itemView);
         }
-
-
-
     }
 
 }
