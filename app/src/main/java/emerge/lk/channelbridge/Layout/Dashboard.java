@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import emerge.lk.channelbridge.R;
@@ -44,6 +45,7 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
     BarChart barChart;
     PieChart pie_chart1, pie_chart2, pie_chart3, pie_chart4;
     HorizontalBarChart bar_chart_h;
+
 
     TextView textView_channelbridge_date;
 
