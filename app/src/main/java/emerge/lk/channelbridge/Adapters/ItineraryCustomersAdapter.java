@@ -1,12 +1,17 @@
 package emerge.lk.channelbridge.Adapters;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -39,12 +44,25 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        String cutomerImagePath="file:///android_asset/image/"+itineraryCustomersEntities.get(position).getItineraryCustomersImageName();
+        String cutomerImagePath = "file:///android_asset/image/" + itineraryCustomersEntities.get(position).getItineraryCustomersImageName();
 
         holder.textViewCustomerName.setText(itineraryCustomersEntities.get(position).getItineraryCustomersName());
         holder.textViewCustomerCity.setText(itineraryCustomersEntities.get(position).getItineraryCustomersCity());
-        Picasso.with(mContext).load(cutomerImagePath).into( holder.imageViewCustomerImage);
+        Picasso.with(mContext).load(cutomerImagePath).into(holder.imageViewCustomerImage);
 
+        holder.linLayout_itinerary_item.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Dialog dialog = new Dialog(mContext);
+                dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.dialogbox_customer_details);
+                dialog.show();
+                Window window = dialog.getWindow();
+                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+
+                return true;
+            }
+        });
     }
 
     @Override
@@ -59,9 +77,14 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.imgView_itinerary_customer) ImageView imageViewCustomerImage;
-        @BindView(R.id.textView_itinerary_customername) TextView textViewCustomerName;
-        @BindView(R.id.textView_itinerary_customercity) TextView textViewCustomerCity;
+        @BindView(R.id.imgView_itinerary_customer)
+        ImageView imageViewCustomerImage;
+        @BindView(R.id.textView_itinerary_customername)
+        TextView textViewCustomerName;
+        @BindView(R.id.textView_itinerary_customercity)
+        TextView textViewCustomerCity;
+        @BindView(R.id.linLayout_itinerary_item)
+        LinearLayout linLayout_itinerary_item;
 
         public MyViewHolder(View itemView) {
             super(itemView);

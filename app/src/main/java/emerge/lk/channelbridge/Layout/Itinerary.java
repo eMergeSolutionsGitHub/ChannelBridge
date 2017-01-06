@@ -5,7 +5,12 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -41,8 +46,8 @@ public class Itinerary extends Activity {
         navigationDrawer.setDrawerItem();
 
 
-
         setDayItinerary();
+
 
         menuBarTitle.setText(R.string.string_itinerary_titlebar_title);
 
@@ -69,4 +74,5 @@ public class Itinerary extends Activity {
 
 
     }
+
 }
