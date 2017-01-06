@@ -39,7 +39,7 @@
                 android:layout_centerHorizontal="true"
                 android:textColorHint="@color/appBlack"
                 android:hint="@string/string_login_edittext_passwordhint"
-                android:textSize="25sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/appBlack" />
 
             <RelativeLayout
@@ -78,7 +78,7 @@
                 android:layout_centerHorizontal="true"
                 android:textColorHint="@color/appBlack"
                 android:hint="@string/string_login_edittext_usernamehint"
-                android:textSize="25sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/appBlack" />
 
             <RelativeLayout

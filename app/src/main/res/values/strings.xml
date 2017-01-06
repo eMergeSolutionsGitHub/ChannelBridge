@@ -42,6 +42,12 @@
 
     //Itinerary
     <string name="string_itinerary_titlebar_title">Itinerary</string>
+    <string name="string_itinerary_last_invoices">Last Invoices</string>
+    <string name="string_itinerary_lastinvoices_table_invoicesno">Invoice No</string>
+    <string name="string_itinerary_lastinvoices_table_invoicesvalue">Invoice Value</string>
+    <string name="string_itinerary_lastinvoices_table_invoicesdue">Invoice Due Date</string>
+
+
 
 
 </resources>

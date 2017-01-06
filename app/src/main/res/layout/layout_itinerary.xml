@@ -42,28 +42,79 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayout11"
-                    android:layout_width="match_parent"
-                    android:layout_toRightOf="@+id/relLayout_itinerary_customer"
-                    android:layout_height="200dip"
-                    android:background="@color/appWhite"
-                    android:layout_alignTop="@+id/relLayout_itinerary_customer"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginRight="5dp">
-
-                </RelativeLayout>
-
-                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_alignLeft="@+id/relativeLayout11"
-                    android:layout_alignStart="@+id/relativeLayout11"
-                    android:layout_below="@+id/relativeLayout11"
-                    android:layout_marginBottom="5dp"
+                    android:layout_alignTop="@+id/relLayout_itinerary_customer"
+                    android:layout_toRightOf="@+id/relLayout_itinerary_customer"
+                    android:layout_toEndOf="@+id/relLayout_itinerary_customer"
+                    android:background="@color/appWhite"
                     android:layout_marginRight="5dp"
-                    android:background="@color/appWhite">
+                    android:layout_marginBottom="5dp">
 
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:text="@string/string_itinerary_last_invoices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/txtView_itinerary_lastinvoicetitel"
+                        android:paddingTop="5dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/relLayou_itinerary_lastinvoicetitel"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_below="@+id/txtView_itinerary_lastinvoicetitel"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/colorNavigationBar"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:text="@string/string_itinerary_lastinvoices_table_invoicesno"
+                            android:layout_width="100dip"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:id="@+id/txtView_itinerary_lastinvoiceno"
+                            android:textColor="@color/appWhite"
+                            android:layout_marginLeft="5dp" />
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:text="@string/string_itinerary_lastinvoices_table_invoicesvalue"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtView_itinerary_lastinvoicevalue"
+                            android:textColor="@color/appWhite"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_marginLeft="5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/txtView_itinerary_lastinvoiceno"
+                            android:layout_toEndOf="@+id/txtView_itinerary_lastinvoiceno" />
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:text="@string/string_itinerary_lastinvoices_table_invoicesdue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView11"
+                            android:textColor="@color/appWhite"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_marginLeft="5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/txtView_itinerary_lastinvoicevalue"
+                            android:layout_toEndOf="@+id/txtView_itinerary_lastinvoicevalue" />
+                    </RelativeLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycview_itinerary_lastinvoice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_below="@+id/relLayou_itinerary_lastinvoicetitel"
+                      />
                 </RelativeLayout>
+
 
             </RelativeLayout>
 

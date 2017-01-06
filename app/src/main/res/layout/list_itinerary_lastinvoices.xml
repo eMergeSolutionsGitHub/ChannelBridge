@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/appWhite"
+    android:layout_height="70dip">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="4dp"
+        card_view:contentPadding="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="@color/appWhite"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <emerge.lk.channelbridge.Font.FontTitle
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/txtView_list_itinerary_lastinvoiceno"
+                android:textColor="@color/colorNavigationBar"
+                android:layout_marginLeft="5dp" />
+
+            <emerge.lk.channelbridge.Font.FontTitle
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtView_list_itinerary_lastinvoicevalue"
+                android:textColor="@color/colorNavigationBar"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/txtView_list_itinerary_lastinvoiceno"
+                android:layout_toEndOf="@+id/txtView_list_itinerary_lastinvoiceno" />
+
+            <emerge.lk.channelbridge.Font.FontTitle
+                android:text="@string/string_itinerary_lastinvoices_table_invoicesdue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtView_list_itinerary_lastinvoiceduedate"
+                android:textColor="@color/colorNavigationBar"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/txtView_list_itinerary_lastinvoicevalue"
+                android:layout_toEndOf="@+id/txtView_list_itinerary_lastinvoicevalue" />
+        </RelativeLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
