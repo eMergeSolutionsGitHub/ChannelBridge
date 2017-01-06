@@ -48,11 +48,10 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
     @BindView(R.id.pie_chart2) PieChart pie_chart2;
     @BindView(R.id.pie_chart3) PieChart pie_chart3;
     @BindView(R.id.pie_chart4) PieChart pie_chart4;
+    @BindView(R.id.textView_channelbridge_date) TextView textView_channelbridge_date;
 
 
-    TextView textView_channelbridge_date;
 
-    //Test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +61,6 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
         navigationDrawer = new NavigationDrawer(this);
         navigationDrawer.drowNavigationDrawer();
         navigationDrawer.setDrawerItem();
-        textView_channelbridge_date = (TextView) findViewById(R.id.textView_channelbridge_date);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date();
@@ -83,8 +81,6 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
         entries2.add(new BubbleEntry(3, 32f, 5));
         entries2.add(new BubbleEntry(4, 10f, 5));
         entries2.add(new BubbleEntry(5, 5f, 5));
-
-
 
 
         ArrayList<String> labels = new ArrayList<>();

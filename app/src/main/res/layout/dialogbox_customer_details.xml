@@ -41,8 +41,9 @@
 
                 <emerge.lk.channelbridge.Font.FontTitle
                     android:id="@+id/dialogbox_customer_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:layout_below="@id/imgView_dialogbox_customer"
                     android:text="Name"
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
@@ -84,8 +85,21 @@
                         <emerge.lk.channelbridge.Font.FontTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/dialogbox_card01_title"
                             android:text="Contact details"
                             android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+
+                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                            android:text="@string/icon_dialog_town"
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:layout_below="@id/dialogbox_card01_title"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginStart="13dp"
+                            android:id="@+id/textView9"
+                            app:text="@string/icon_dialog_own_ba_no" />
+
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -106,6 +120,7 @@
                         <emerge.lk.channelbridge.Font.FontTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/dialogbox_card02_title"
                             android:text="Location details"
                             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -128,6 +143,7 @@
                         <emerge.lk.channelbridge.Font.FontTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/dialogbox_card03_title"
                             android:text="Owner's details"
                             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -151,6 +167,7 @@
                         <emerge.lk.channelbridge.Font.FontTitle
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/dialogbox_card04_title"
                             android:text="Other details"
                             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -162,5 +179,13 @@
         </ScrollView>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgView_dialogbox_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:clickable="true"
+        android:src="@android:drawable/btn_dialog" />
 
 </LinearLayout>

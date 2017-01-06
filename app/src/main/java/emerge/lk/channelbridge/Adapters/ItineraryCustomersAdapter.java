@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.annotations.Nullable;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -53,13 +54,27 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
         holder.linLayout_itinerary_item.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                Dialog dialog = new Dialog(mContext);
+                final Dialog dialog = new Dialog(mContext);
                 dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.dialogbox_customer_details);
-                dialog.show();
+                TextView customerName = (TextView)dialog.findViewById(R.id.dialogbox_customer_name);
+                ImageView customerImage = (ImageView)dialog.findViewById(R.id.imgView_dialogbox_customer);
+                ImageView ivCloseDialog = (ImageView)dialog.findViewById(R.id.imgView_dialogbox_close);
+
+                ivCloseDialog.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                customerName.setText(itineraryCustomersEntities.get(position).getItineraryCustomersName());
+                Picasso.with(mContext).load("file:///android_asset/image/" + itineraryCustomersEntities.get(position).getItineraryCustomersImageName()).into(customerImage);
+
+
                 Window window = dialog.getWindow();
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-
+                dialog.show();
                 return true;
             }
         });
