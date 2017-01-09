@@ -28,7 +28,7 @@ public class Splash extends Activity {
                 startActivity(i, bndlanimation);
 
             }
-        }, 3500);
+        }, 500);
 
     }
 }
