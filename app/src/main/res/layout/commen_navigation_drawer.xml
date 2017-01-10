@@ -44,6 +44,7 @@
         android:layout_below="@+id/relLayout_userimage"
         android:layout_centerHorizontal="true"
         android:divider="@color/colorNavigationBar"
+        android:listSelector="@color/colorNavigationBarLite"
         android:dividerHeight="15dip"
         android:layout_marginTop="20dp" />
 

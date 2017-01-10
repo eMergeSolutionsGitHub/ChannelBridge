@@ -2,6 +2,7 @@ package emerge.lk.channelbridge.Adapters;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +33,7 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
 
     Context mContext;
     ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities;
+    int selectedPosition=-1;
 
     public ItineraryCustomersAdapter(Context mContext, ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities) {
         this.mContext = mContext;
@@ -44,12 +47,40 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
         String cutomerImagePath = "file:///android_asset/image/" + itineraryCustomersEntities.get(position).getItineraryCustomersImageName();
 
         holder.textViewCustomerName.setText(itineraryCustomersEntities.get(position).getItineraryCustomersName());
         holder.textViewCustomerCity.setText(itineraryCustomersEntities.get(position).getItineraryCustomersCity());
         Picasso.with(mContext).load(cutomerImagePath).into(holder.imageViewCustomerImage);
+
+        if(selectedPosition==position) {
+            holder.itemView.setBackgroundColor(mContext.getResources().getColor(R.color.colorNavigationBar));
+        }else {
+            holder.itemView.setBackgroundColor(mContext.getResources().getColor(R.color.appWhite));
+        }
+
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedPosition=position;
+                notifyDataSetChanged();
+
+            }
+        });
+
+        holder.relLayoutItineraryInvoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "sdsddsdsdsd", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
 
         holder.linLayout_itinerary_item.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -101,7 +132,10 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
         @BindView(R.id.linLayout_itinerary_item)
         LinearLayout linLayout_itinerary_item;
 
-        public MyViewHolder(View itemView) {
+        @BindView(R.id.relLayout_itinerary_invoice)
+        RelativeLayout relLayoutItineraryInvoice;
+
+        public MyViewHolder(final View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

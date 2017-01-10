@@ -5,6 +5,7 @@
     <color name="colorAccent">#ff4081</color>
 
     <color name="colorNavigationBar">#2A3F54</color>
+    <color name="colorNavigationBarLite">#446587</color>
     <color name="fontcolorwhite">#F2F5F7</color>
     <color name="titlebar">#EDEDED</color>
     <color name="background_one">#f4f4f4</color>
