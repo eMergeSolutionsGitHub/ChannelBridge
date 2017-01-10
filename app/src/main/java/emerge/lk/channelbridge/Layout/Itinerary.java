@@ -1,7 +1,9 @@
 package emerge.lk.channelbridge.Layout;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import emerge.lk.channelbridge.Adapters.ItineraryCustomersAdapter;
+import emerge.lk.channelbridge.Dialog.CustomerDialog;
 import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
 import emerge.lk.channelbridge.R;
 import emerge.lk.channelbridge.Service.NavigationDrawer;
@@ -26,7 +29,7 @@ import emerge.lk.channelbridge.Service.NavigationDrawer;
  * Created by Himanshu on 12/27/2016.
  */
 
-public class Itinerary extends Activity {
+public class Itinerary extends AppCompatActivity {
     NavigationDrawer navigationDrawer;
     @BindView(R.id.txtView_channelbridge_title) TextView menuBarTitle;
     @BindView(R.id.recycview_itinerary_customer) RecyclerView recyclerViewItineraryCustomer;
@@ -73,6 +76,13 @@ public class Itinerary extends Activity {
         recyclerViewItineraryCustomer.setAdapter(itineraryCustomersAdapter);
 
 
+    }
+
+    public void setupDialogFragment(int position ,ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities){
+
+        FragmentManager fm = getFragmentManager();
+        CustomerDialog customerDialog = new CustomerDialog (position, itineraryCustomersEntities);
+        customerDialog.show(fm, "Sample Fragment");
     }
 
 }

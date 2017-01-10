@@ -1,6 +1,8 @@
 package emerge.lk.channelbridge.Adapters;
 
 import android.app.Dialog;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,7 +22,9 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import emerge.lk.channelbridge.Dialog.CustomerDialog;
 import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
+import emerge.lk.channelbridge.Layout.Itinerary;
 import emerge.lk.channelbridge.R;
 
 
@@ -31,10 +35,13 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
 
     Context mContext;
     ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities;
+    CustomerDialog customerDialog;
+    FragmentManager fragmentManager;
 
     public ItineraryCustomersAdapter(Context mContext, ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities) {
         this.mContext = mContext;
         this.itineraryCustomersEntities = itineraryCustomersEntities;
+
     }
 
     @Override
@@ -45,7 +52,7 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        String cutomerImagePath = "file:///android_asset/image/" + itineraryCustomersEntities.get(position).getItineraryCustomersImageName();
+        final String cutomerImagePath = "file:///android_asset/image/" + itineraryCustomersEntities.get(position).getItineraryCustomersImageName();
 
         holder.textViewCustomerName.setText(itineraryCustomersEntities.get(position).getItineraryCustomersName());
         holder.textViewCustomerCity.setText(itineraryCustomersEntities.get(position).getItineraryCustomersCity());
@@ -54,27 +61,11 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
         holder.linLayout_itinerary_item.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                final Dialog dialog = new Dialog(mContext);
-                dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.dialogbox_customer_details);
-                TextView customerName = (TextView)dialog.findViewById(R.id.dialogbox_customer_name);
-                ImageView customerImage = (ImageView)dialog.findViewById(R.id.imgView_dialogbox_customer);
-                ImageView ivCloseDialog = (ImageView)dialog.findViewById(R.id.imgView_dialogbox_close);
 
-                ivCloseDialog.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
+                if(mContext instanceof Itinerary){
+                    ((Itinerary)mContext).setupDialogFragment(position, itineraryCustomersEntities);
+                }
 
-                customerName.setText(itineraryCustomersEntities.get(position).getItineraryCustomersName());
-                Picasso.with(mContext).load("file:///android_asset/image/" + itineraryCustomersEntities.get(position).getItineraryCustomersImageName()).into(customerImage);
-
-
-                Window window = dialog.getWindow();
-                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-                dialog.show();
                 return true;
             }
         });
