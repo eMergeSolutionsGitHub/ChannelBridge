@@ -68,6 +68,45 @@
                 android:layout_toRightOf="@+id/relLayout_itinerary_customerimage"
                 android:layout_toEndOf="@+id/relLayout_itinerary_customerimage" />
 
+            <RelativeLayout
+                android:id="@+id/relLayout_itinerary_invoice"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="70dp"
+                android:layout_height="100dp">
+
+                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                    android:text="@string/icon_listitinerarycustomer_invoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView8"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/colorNavigationBar"
+                    android:textSize="36sp" />
+
+                <emerge.lk.channelbridge.Font.FontTitle
+                    android:text="@string/string_listitinerarycustomer_invoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView9"
+                    android:layout_below="@+id/textView8"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/colorNavigationBar" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/relLayout_itinerary_invoice"
+                android:layout_toStartOf="@+id/relLayout_itinerary_invoice"
+                android:background="@color/background_one"
+                android:layout_marginTop="20dp">
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
 

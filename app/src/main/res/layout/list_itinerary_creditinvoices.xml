@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="50dip">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="2dp"
+        card_view:contentPadding="0dp"
+        card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/colorNavigationBarLite"
+            android:layout_height="40dip"
+            android:layout_centerHorizontal="true">
+
+            <emerge.lk.channelbridge.Font.FontTitle
+                android:text="@string/string_itinerary_table_invoicesno"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/txtView_listitinerary_creditinvoice_num"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/appWhite" />
+
+            <emerge.lk.channelbridge.Font.FontTitle
+                android:text="@string/string_itinerary_creditinvoice_table_invoicesdate"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtView_listitinerary_creditinvoice_date"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/txtView_listitinerary_creditinvoice_num"
+                android:layout_toEndOf="@+id/txtView_listitinerary_creditinvoice_num"
+                android:textColor="@color/appWhite"
+                android:layout_marginLeft="5dp"
+                android:layout_width="120dp" />
+
+            <emerge.lk.channelbridge.Font.FontTitle
+                android:text="@string/string_itinerary_creditinvoice_table_totalvalue"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtView_listitinerary_creditinvoice_totvalue"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/txtView_listitinerary_creditinvoice_date"
+                android:layout_toEndOf="@+id/txtView_listitinerary_creditinvoice_date"
+                android:textColor="@color/appWhite" />
+
+            <emerge.lk.channelbridge.Font.FontTitle
+                android:text="@string/string_itinerary_creditinvoice_table_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtView_listitinerary_creditinvoice_balance"
+                android:textColor="@color/appWhite"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/txtView_listitinerary_creditinvoice_totvalue"
+                android:layout_toEndOf="@+id/txtView_listitinerary_creditinvoice_totvalue" />
+        </RelativeLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -31,26 +31,19 @@
     <string name="string_home_textview_title">Dashboard</string>
 
 
-    //dialog icon
+    //customer details dialog icon
     <string name="icon_dialog_address">&#xf2bb;</string>
     <string name="icon_dialog_phone">&#xf095;</string>
-
     <string name="icon_dialog_email">&#xf0e0;</string>
     <string name="icon_dialog_web">&#xf26b;</string>
     <string name="icon_dialog_fax">&#xf1ac;</string>
-
-
     <string name="icon_dialog_area">&#xf0ac;</string>
     <string name="icon_dialog_town">&#xf279;</string>
     <string name="icon_dialog_district">&#xf095;</string>
     <string name="icon_dialog_latitude">&#xf124;</string>
     <string name="icon_dialog_longitude">&#xf124;</string>
-
-
     <string name="icon_dialog_own_name">&#xf2bd;</string>
     <string name="icon_dialog_own_phone">&#xf095;</string>
-
-
     <string name="icon_dialog_own_ba_no">&#xf0f7;</string>
     <string name="icon_dialog_own_reg_no">&#xf1ad;</string>
 
@@ -67,11 +60,32 @@
     <string name="icon_menu">&#xf0c9;</string>
 
     //Itinerary
+    <string name="string_itinerary_table_invoicesno">Invoice No</string>
+
+
     <string name="string_itinerary_titlebar_title">Itinerary</string>
     <string name="string_itinerary_last_invoices">Last Invoices</string>
-    <string name="string_itinerary_lastinvoices_table_invoicesno">Invoice No</string>
     <string name="string_itinerary_lastinvoices_table_invoicesvalue">Invoice Value</string>
     <string name="string_itinerary_lastinvoices_table_invoicesdue">Invoice Due Date</string>
+    <string name="string_itinerary_creditinvoice">Credit Invoice</string>
+    <string name="string_itinerary_creditinvoice_table_invoicesdate">Invoice Date</string>
+    <string name="string_itinerary_creditinvoice_table_totalvalue">Total Value</string>
+    <string name="string_itinerary_creditinvoice_table_balance">Balance</string>
+    <string name="icon_itinerary_angledoubledown">&#xf103;</string>
+    <string name="icon_itinerary_angledoubleup">&#xf102;</string>
+
+
+
+
+
+
+
+    //List Itinerary Customer
+    <string name="icon_listitinerarycustomer_invoice">&#xf07a;</string>
+    <string name="string_listitinerarycustomer_invoice">Invoice</string>
+
+
+
 
 
 
