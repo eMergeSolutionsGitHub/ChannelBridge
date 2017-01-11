@@ -40,6 +40,9 @@ public class CustomerDialog extends DialogFragment {
     ImageView customerImage;
 
     int position;
+    int dialogWidth = 1200;
+    int dialogHeight = 600;
+
     ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities;
 
     @SuppressLint("ValidFragment")
@@ -75,7 +78,8 @@ public class CustomerDialog extends DialogFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Window window = getDialog().getWindow();
-        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        window.setLayout(dialogWidth, dialogHeight);
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
     }
 }
