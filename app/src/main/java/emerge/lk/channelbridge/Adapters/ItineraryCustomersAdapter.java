@@ -1,19 +1,14 @@
 package emerge.lk.channelbridge.Adapters;
 
-import android.app.Dialog;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.annotations.Nullable;
 import com.squareup.picasso.Picasso;
@@ -38,6 +33,8 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
     CustomerDialog customerDialog;
     FragmentManager fragmentManager;
 
+    int selectedPosition = -1;
+
     public ItineraryCustomersAdapter(Context mContext, ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities) {
         this.mContext = mContext;
         this.itineraryCustomersEntities = itineraryCustomersEntities;
@@ -58,12 +55,26 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
         holder.textViewCustomerCity.setText(itineraryCustomersEntities.get(position).getItineraryCustomersCity());
         Picasso.with(mContext).load(cutomerImagePath).into(holder.imageViewCustomerImage);
 
+        if (selectedPosition == position) {
+            holder.itemView.setBackgroundColor(mContext.getResources().getColor(R.color.colorNavigationBar));
+        } else {
+            holder.itemView.setBackgroundColor(mContext.getResources().getColor(R.color.appWhite));
+        }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedPosition = position;
+                notifyDataSetChanged();
+            }
+        });
+
         holder.linLayout_itinerary_item.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
 
-                if(mContext instanceof Itinerary){
-                    ((Itinerary)mContext).setupDialogFragment(position, itineraryCustomersEntities);
+                if (mContext instanceof Itinerary) {
+                    ((Itinerary) mContext).setupDialogFragment(position, itineraryCustomersEntities);
                 }
 
                 return true;

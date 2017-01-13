@@ -40,147 +40,320 @@
 
             </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:layout_alignTop="@+id/relLayout_itinerary_customer"
                 android:layout_toEndOf="@+id/relLayout_itinerary_customer"
                 android:layout_toRightOf="@+id/relLayout_itinerary_customer"
-                android:background="@drawable/shadow_borders"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/appWhite">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shadow_borders"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
 
-                    <emerge.lk.channelbridge.Font.FontTitle
-                        android:id="@+id/txtView_itinerary_customer_name"
-                        android:layout_width="wrap_content"
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:id="@+id/txtView_itinerary_customer_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="TextView"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorNavigationBar" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout_itinerary_creditinvoice"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorNavigationBar">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/string_itinerary_creditinvoice"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/appWhite" />
+
+                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                            android:id="@+id/ftxtView_itinerary_creditinvoice_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/icon_itinerary_angledoubledown"
+                            android:textColor="@color/appWhite"
+                            android:textSize="36sp" />
+                    </RelativeLayout>
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandablelayout_itinerary_creditinvoice"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="TextView"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="@color/colorNavigationBar" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/relLayout_itinerary_creditinvoice"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/colorNavigationBar">
-
-                    <emerge.lk.channelbridge.Font.FontTitle
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/string_itinerary_creditinvoice"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="@color/appWhite" />
-
-                    <emerge.lk.channelbridge.Font.TextViewFontAwesome
-                        android:id="@+id/ftxtView_itinerary_creditinvoice_arrow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="@string/icon_itinerary_angledoubledown"
-                        android:textColor="@color/appWhite"
-                        android:textSize="36sp" />
-                </RelativeLayout>
+                        app:el_duration="500"
+                        app:el_expanded="false">
 
-                <net.cachapa.expandablelayout.ExpandableLayout
-                    android:id="@+id/expandablelayout_itinerary_creditinvoice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    app:el_duration="500"
-                    app:el_expanded="false">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dip"
+                            android:background="@color/appWhite">
 
-                  <RelativeLayout
-                      android:layout_width="match_parent"
-                      android:layout_height="300dip"
-                      android:background="@color/appWhite">
+                            <RelativeLayout
+                                android:id="@+id/relLayout_itinerary_creditinvoice_header"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dip"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/colorNavigationBar">
 
-                      <RelativeLayout
-                          android:id="@+id/relLayout_itinerary_creditinvoice_header"
-                          android:layout_width="match_parent"
-                          android:layout_alignParentTop="true"
-                          android:layout_alignParentLeft="true"
-                          android:layout_alignParentStart="true"
-                          android:layout_height="50dip"
-                          android:background="@color/colorNavigationBar"
-                          android:layout_marginTop="1dp">
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/textView23"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="@string/string_itinerary_table_invoicesno"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
 
-                          <emerge.lk.channelbridge.Font.FontTitle
-                              android:text="@string/string_itinerary_table_invoicesno"
-                              android:layout_width="100dp"
-                              android:layout_height="wrap_content"
-                              android:textAppearance="?android:attr/textAppearanceMedium"
-                              android:id="@+id/textView23"
-                              android:layout_centerVertical="true"
-                              android:layout_alignParentLeft="true"
-                              android:layout_alignParentStart="true"
-                              android:layout_marginLeft="5dp"
-                              android:textColor="@color/appWhite" />
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/textView24"
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/textView23"
+                                    android:layout_toRightOf="@+id/textView23"
+                                    android:text="@string/string_itinerary_creditinvoice_table_invoicesdate"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
 
-                          <emerge.lk.channelbridge.Font.FontTitle
-                              android:text="@string/string_itinerary_creditinvoice_table_invoicesdate"
-                              android:layout_height="wrap_content"
-                              android:id="@+id/textView24"
-                              android:textAppearance="?android:attr/textAppearanceMedium"
-                              android:layout_centerVertical="true"
-                              android:layout_toRightOf="@+id/textView23"
-                              android:layout_toEndOf="@+id/textView23"
-                              android:textColor="@color/appWhite"
-                              android:layout_marginLeft="5dp"
-                              android:layout_width="120dp" />
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/textView25"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@+id/textView24"
+                                    android:layout_toRightOf="@+id/textView24"
+                                    android:text="@string/string_itinerary_creditinvoice_table_totalvalue"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
 
-                          <emerge.lk.channelbridge.Font.FontTitle
-                              android:text="@string/string_itinerary_creditinvoice_table_totalvalue"
-                              android:textAppearance="?android:attr/textAppearanceMedium"
-                              android:layout_width="150dp"
-                              android:layout_height="wrap_content"
-                              android:id="@+id/textView25"
-                              android:layout_centerVertical="true"
-                              android:layout_toRightOf="@+id/textView24"
-                              android:layout_toEndOf="@+id/textView24"
-                              android:textColor="@color/appWhite" />
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/textView26"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@+id/textView25"
+                                    android:layout_toRightOf="@+id/textView25"
+                                    android:text="@string/string_itinerary_creditinvoice_table_balance"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
 
-                          <emerge.lk.channelbridge.Font.FontTitle
-                              android:text="@string/string_itinerary_creditinvoice_table_balance"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:id="@+id/textView26"
-                              android:textColor="@color/appWhite"
-                              android:textAppearance="?android:attr/textAppearanceMedium"
-                              android:layout_centerVertical="true"
-                              android:layout_toRightOf="@+id/textView25"
-                              android:layout_toEndOf="@+id/textView25" />
-                      </RelativeLayout>
+                            </RelativeLayout>
 
-                      <android.support.v7.widget.RecyclerView
-                          android:id="@+id/recycview_itinerary_creditinvoice"
-                          android:layout_width="match_parent"
-                          android:layout_height="match_parent"
-                          android:layout_below="@+id/relLayout_itinerary_creditinvoice_header"
-                          android:layout_alignParentLeft="true"
-                          android:layout_alignParentStart="true" />
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recycview_itinerary_creditinvoice"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/relLayout_itinerary_creditinvoice_header" />
 
 
+                        </RelativeLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
 
-                  </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/relLayout_itinerary_lastinvoice"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_alignLeft="@+id/textView23"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignStart="@+id/textView23"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorNavigationBar">
 
-                </net.cachapa.expandablelayout.ExpandableLayout>
-            </LinearLayout>
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/string_itinerary_last_invoices"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/appWhite" />
 
+                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                            android:id="@+id/ftxtView_itinerary_lastinvoices_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/icon_itinerary_angledoubledown"
+                            android:textColor="@color/appWhite"
+                            android:textSize="36sp" />
+                    </RelativeLayout>
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandablelayout_itinerary_lastinvoice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        app:el_duration="500"
+                        app:el_expanded="false">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dip"
+                            android:background="@color/appWhite">
+
+                            <RelativeLayout
+                                android:id="@+id/relLayout_itinerary_lastinvoice_header"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dip"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/colorNavigationBar">
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_lastinvoiceno"
+                                    android:layout_width="100dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="@string/string_itinerary_table_invoicesno"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_lastinvoicevalue"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/txtView_itinerary_lastinvoiceno"
+                                    android:layout_toRightOf="@+id/txtView_itinerary_lastinvoiceno"
+                                    android:text="@string/string_itinerary_lastinvoices_table_invoicesvalue"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/textView11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/txtView_itinerary_lastinvoicevalue"
+                                    android:layout_toRightOf="@+id/txtView_itinerary_lastinvoicevalue"
+                                    android:text="@string/string_itinerary_lastinvoices_table_invoicesdue"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                            </RelativeLayout>
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recycview_itinerary_lastinvoice"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/relLayout_itinerary_lastinvoice_header" />
+
+                        </RelativeLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout_itinerary_declineproduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@color/colorNavigationBar"
+                        android:layout_margin="10dp">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/string_itinerary_declineproducts"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/appWhite" />
+
+                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                            android:id="@+id/ftxtView_itinerary_declineproducts_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/icon_itinerary_angledoubledown"
+                            android:textColor="@color/appWhite"
+                            android:textSize="36sp" />
+                    </RelativeLayout>
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandablelayout_itinerary_declineproduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        app:el_duration="500"
+                        app:el_expanded="false">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dip"
+                            android:background="@color/appWhite">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal" >
+
+                                    <com.github.mikephil.charting.charts.LineChart
+                                        android:id="@+id/chart_itinerary_declineproduct"
+                                        android:layout_width="1000dip"
+                                        android:layout_height="match_parent"
+                                        />
+
+                                </LinearLayout>
+
+                            </HorizontalScrollView>
+
+
+                        </RelativeLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
 
         </RelativeLayout>
 

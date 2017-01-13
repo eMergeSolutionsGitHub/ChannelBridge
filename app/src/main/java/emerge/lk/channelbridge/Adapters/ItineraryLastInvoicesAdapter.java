@@ -34,15 +34,16 @@ public class ItineraryLastInvoicesAdapter extends RecyclerView.Adapter<Itinerary
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_itinerary_customer, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_itinerary_lastinvoices, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
-        holder.txtViewlistitinerarylastinvoiceno.setText(itineraryLastInvoiceEntities.get(position).getItineraryLastInvoiceID());
-    }
+        holder.txtViewlistitinerarylastinvoiceno.setText(itineraryLastInvoiceEntities.get(position).getItineraryLastInvoiceNum());
+        holder.txtViewlistitinerarylastinvoicevalue.setText(itineraryLastInvoiceEntities.get(position).getItineraryLastInvoiceValue());
+        holder.txtViewlistitinerarylastinvoiceduedate.setText(itineraryLastInvoiceEntities.get(position).getItineraryLastInvoiceDueDate());    }
 
     @Override
     public int getItemCount() {

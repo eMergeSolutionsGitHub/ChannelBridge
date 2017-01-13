@@ -6,20 +6,20 @@ package emerge.lk.channelbridge.Entity;
 
 public class ItineraryLastInvoiceEntity {
 
-    String itineraryLastInvoiceID, itineraryLastInvoiceValue, itineraryLastInvoiceDueDate;
+    String itineraryLastInvoiceNum, itineraryLastInvoiceValue, itineraryLastInvoiceDueDate;
 
-    public ItineraryLastInvoiceEntity(String itineraryLastInvoiceID, String itineraryLastInvoiceValue, String itineraryLastInvoiceDueDate) {
-        this.itineraryLastInvoiceID = itineraryLastInvoiceID;
+    public ItineraryLastInvoiceEntity(String itineraryLastInvoiceNum, String itineraryLastInvoiceValue, String itineraryLastInvoiceDueDate) {
+        this.itineraryLastInvoiceNum = itineraryLastInvoiceNum;
         this.itineraryLastInvoiceValue = itineraryLastInvoiceValue;
         this.itineraryLastInvoiceDueDate = itineraryLastInvoiceDueDate;
     }
 
-    public String getItineraryLastInvoiceID() {
-        return itineraryLastInvoiceID;
+    public String getItineraryLastInvoiceNum() {
+        return itineraryLastInvoiceNum;
     }
 
-    public void setItineraryLastInvoiceID(String itineraryLastInvoiceID) {
-        this.itineraryLastInvoiceID = itineraryLastInvoiceID;
+    public void setItineraryLastInvoiceNum(String itineraryLastInvoiceNum) {
+        this.itineraryLastInvoiceNum = itineraryLastInvoiceNum;
     }
 
     public String getItineraryLastInvoiceValue() {

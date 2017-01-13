@@ -20,7 +20,7 @@
             android:layout_height="25dp"
             android:layout_gravity="left|top"
             android:clickable="true"
-            android:src="@drawable/close_btn2" />
+            android:src="@drawable/logo" />
 
     </LinearLayout>
 
