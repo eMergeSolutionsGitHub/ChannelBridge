@@ -9,6 +9,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
@@ -27,9 +28,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import emerge.lk.channelbridge.Adapters.ItineraryCreditInvoiceAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryCustomersAdapter;
+import emerge.lk.channelbridge.Adapters.ItineraryExpiryProductsAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryLastInvoicesAdapter;
 import emerge.lk.channelbridge.Entity.ItineraryCreditInvoicesEntity;
 import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
+import emerge.lk.channelbridge.Entity.ItineraryExpiryProductsEntity;
 import emerge.lk.channelbridge.Entity.ItineraryLastInvoiceEntity;
 import emerge.lk.channelbridge.Font.TextViewFontAwesome;
 import emerge.lk.channelbridge.Dialog.CustomerDialog;
@@ -46,20 +49,19 @@ public class Itinerary extends Activity {
     @BindView(R.id.recycview_itinerary_creditinvoice) RecyclerView recyclerViewCreditInvoice;
     @BindView(R.id.recycview_itinerary_customer) RecyclerView recyclerViewCustomers;
     @BindView(R.id.recycview_itinerary_lastinvoice) RecyclerView recyclerViewLastInvoice;
-
+    @BindView(R.id.recycview_itinerary_expiryproducts) RecyclerView recyclerViewExpiryproducts;
     @BindView(R.id.expandablelayout_itinerary_creditinvoice) ExpandableLayout expandablelayoutCreditinvoice;
     @BindView(R.id.ftxtView_itinerary_creditinvoice_arrow) TextViewFontAwesome fontAwesometxtviewCreditinvoiceArrow ;
-
-
     @BindView(R.id.expandablelayout_itinerary_lastinvoice) ExpandableLayout expandablelayoutLastinvoice;
     @BindView(R.id.ftxtView_itinerary_lastinvoices_arrow) TextViewFontAwesome fontAwesometxtviewLasttinvoiceArrow ;
-
     @BindView(R.id.expandablelayout_itinerary_declineproduct) ExpandableLayout expandablelayoutDeclineproducts;
     @BindView(R.id.ftxtView_itinerary_declineproducts_arrow) TextViewFontAwesome fontAwesometxtviewDeclineproductsArrow ;
-
-
-
+    @BindView(R.id.expandablelayout_itinerary_expiryproducts) ExpandableLayout expandablelayoutExpiryproducts;
+    @BindView(R.id.ftxtView_itinerary_expiryproducts_arrow) TextViewFontAwesome fontAwesometxtviewExpiryproductsArrow ;
+    @BindView(R.id.expandablelayout_itinerary_lastvisit) ExpandableLayout expandablelayoutLastVisit;
+    @BindView(R.id.ftxtView_itinerary_lastvisit_arrow) TextViewFontAwesome fontAwesometxtviewLastVisitArrow ;
     @BindView(R.id.chart_itinerary_declineproduct) LineChart chartDeclineproduct ;
+    @BindView(R.id.relLayout_itinerary_customer) RelativeLayout layoutCustomer;
 
 
     ItineraryCustomersAdapter itineraryCustomersAdapter;
@@ -75,14 +77,14 @@ public class Itinerary extends Activity {
         navigationDrawer.drowNavigationDrawer();
         navigationDrawer.setDrawerItem();
 
+        menuBarTitle.setText(R.string.string_itinerary_titlebar_title);
 
         setDayItinerary();
 
-        setCreditInvoice();
-        setLastInvoice();
 
 
-        menuBarTitle.setText(R.string.string_itinerary_titlebar_title);
+
+
 
     }
     @OnClick(R.id.relLayout_channelbridge_menu)
@@ -98,6 +100,7 @@ public class Itinerary extends Activity {
         }else {
             expandablelayoutCreditinvoice.expand();
             fontAwesometxtviewCreditinvoiceArrow.setText(R.string.icon_itinerary_angledoubleup);
+            setCreditInvoice();
         }
     }
 
@@ -109,6 +112,7 @@ public class Itinerary extends Activity {
         }else {
             expandablelayoutLastinvoice.expand();
             fontAwesometxtviewLasttinvoiceArrow.setText(R.string.icon_itinerary_angledoubleup);
+            setLastInvoice();
         }
     }
 
@@ -124,11 +128,31 @@ public class Itinerary extends Activity {
             setDeclineproduct();
         }
     }
+    @OnClick(R.id.relLayout_itinerary_expiryproducts)
+    public void expiryProductsClick() {
+        if(expandablelayoutExpiryproducts.isExpanded()){
+            expandablelayoutExpiryproducts.collapse();
+            fontAwesometxtviewExpiryproductsArrow.setText(R.string.icon_itinerary_angledoubledown);
+        }else {
+            expandablelayoutExpiryproducts.expand();
+            fontAwesometxtviewExpiryproductsArrow.setText(R.string.icon_itinerary_angledoubleup);
+            setExpiryProducts();
+        }
+    }
 
+    @OnClick(R.id.relLayout_itinerary_lastvisit)
+    public void LastVisitClick() {
+        if(expandablelayoutLastVisit.isExpanded()){
+            expandablelayoutLastVisit.collapse();
+            fontAwesometxtviewLastVisitArrow.setText(R.string.icon_itinerary_angledoubledown);
+        }else {
+            expandablelayoutLastVisit.expand();
+            fontAwesometxtviewLastVisitArrow.setText(R.string.icon_itinerary_angledoubleup);
+
+        }
+    }
 
     public void setDayItinerary(){
-
-
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerViewCustomers.setLayoutManager(mLayoutManager);
         recyclerViewCustomers.setItemAnimator(new DefaultItemAnimator());
@@ -146,20 +170,15 @@ public class Itinerary extends Activity {
 
         ItineraryCreditInvoiceAdapter itineraryCreditInvoiceAdapter;
         ArrayList<ItineraryCreditInvoicesEntity> itineraryCreditInvoicesEntities = new ArrayList<ItineraryCreditInvoicesEntity>();
-
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerViewCreditInvoice.setLayoutManager(mLayoutManager);
         recyclerViewCreditInvoice.setItemAnimator(new DefaultItemAnimator());
-
         itineraryCreditInvoiceAdapter = new ItineraryCreditInvoiceAdapter(this,itineraryCreditInvoicesEntities);
-
         itineraryCreditInvoicesEntities.add(new ItineraryCreditInvoicesEntity("101011","2017-01-04","256330.00","256330.00"));
         itineraryCreditInvoicesEntities.add(new ItineraryCreditInvoicesEntity("106021","2016-05-20","551522.50","551522.50"));
         itineraryCreditInvoicesEntities.add(new ItineraryCreditInvoicesEntity("103016","2016-03-06","36544.00","36544.00"));
         itineraryCreditInvoicesEntities.add(new ItineraryCreditInvoicesEntity("101022","2016-08-12","24555555.00","24555555.00"));
-
         recyclerViewCreditInvoice.setAdapter(itineraryCreditInvoiceAdapter);
-
 
     }
 
@@ -252,6 +271,27 @@ public class Itinerary extends Activity {
 
 
     }
+
+    public void setExpiryProducts(){
+
+        ItineraryExpiryProductsAdapter itineraryExpiryProductsAdapter;
+        ArrayList<ItineraryExpiryProductsEntity> itineraryExpiryProductsEntities = new ArrayList<ItineraryExpiryProductsEntity>();
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+        recyclerViewExpiryproducts.setLayoutManager(mLayoutManager);
+        recyclerViewExpiryproducts.setItemAnimator(new DefaultItemAnimator());
+
+        itineraryExpiryProductsAdapter = new ItineraryExpiryProductsAdapter(this,itineraryExpiryProductsEntities);
+
+        itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("101011","2017-01-04","HOBE02","HOBE02","2017-05-04"));
+        itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("106021","2016-05-20","EU05","EU05","2017-01-04"));
+        itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("103016","2016-03-06","B25705","B25705","2017-01-04"));
+        itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("101022","2016-08-12","G30640","G30640","2017-01-04"));
+
+        recyclerViewExpiryproducts.setAdapter(itineraryExpiryProductsAdapter);
+
+    }
+
 
     public void setupDialogFragment(int position ,ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities){
 

@@ -61,6 +61,7 @@
 
     //Itinerary
     <string name="string_itinerary_table_invoicesno">Invoice No</string>
+    <string name="string_itinerary_table_invoicesdate">Invoice Date</string>
 
 
     <string name="string_itinerary_titlebar_title">Itinerary</string>
@@ -68,16 +69,21 @@
     <string name="string_itinerary_lastinvoices_table_invoicesvalue">Invoice Value</string>
     <string name="string_itinerary_lastinvoices_table_invoicesdue">Invoice Due Date</string>
     <string name="string_itinerary_creditinvoice">Credit Invoice</string>
-    <string name="string_itinerary_creditinvoice_table_invoicesdate">Invoice Date</string>
     <string name="string_itinerary_creditinvoice_table_totalvalue">Total Value</string>
     <string name="string_itinerary_creditinvoice_table_balance">Balance</string>
     <string name="icon_itinerary_angledoubledown">&#xf103;</string>
     <string name="icon_itinerary_angledoubleup">&#xf102;</string>
 
     <string name="string_itinerary_declineproducts">Decline Products</string>
+    <string name="string_itinerary_expiryproducts">Expiry Products</string>
+    <string name="string_itinerary_expiryproducts_table_productcoade">Product</string>
+    <string name="string_itinerary_expiryproducts_table_batchno">Batch No</string>
+    <string name="string_itinerary_expiryproducts_table_expdate">Expiry Date</string>
 
-
-
+    <string name="string_itinerary_lastvisit">Last Visits</string>
+    <string name="string_itinerary_lastvisit_table_date">Visit Date</string>
+    <string name="string_itinerary_lastvisit_table_onroute">On Route</string>
+    <string name="string_itinerary_lastvisit_table_outofroute">Out Of Route</string>
 
 
 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relLayout_itinerary_expiryproducts_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="1dp"
+        android:background="@color/colorNavigationBar">
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:id="@+id/txtView_itinerary_expiryproducts_invoiceno"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="@string/string_itinerary_table_invoicesno"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/appWhite" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:id="@+id/txtView_itinerary_expiryproducts_invoicedate"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/txtView_itinerary_expiryproducts_invoiceno"
+            android:layout_toRightOf="@+id/txtView_itinerary_expiryproducts_invoiceno"
+            android:text="@string/string_itinerary_table_invoicesdate"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/appWhite"
+            android:layout_width="120dp" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:id="@+id/txtView_itinerary_expiryproducts_product"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/txtView_itinerary_expiryproducts_invoicedate"
+            android:layout_toRightOf="@+id/txtView_itinerary_expiryproducts_invoicedate"
+            android:text="@string/string_itinerary_expiryproducts_table_productcoade"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/appWhite" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:id="@+id/txtView_itinerary_expiryproducts_batchno"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/txtView_itinerary_expiryproducts_product"
+            android:layout_toRightOf="@+id/txtView_itinerary_expiryproducts_product"
+            android:text="@string/string_itinerary_expiryproducts_table_batchno"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/appWhite" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:id="@+id/txtView_itinerary_expiryproducts_expdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/txtView_itinerary_expiryproducts_batchno"
+            android:layout_toRightOf="@+id/txtView_itinerary_expiryproducts_batchno"
+            android:text="@string/string_itinerary_expiryproducts_table_expdate"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/appWhite" />
+
+    </RelativeLayout>
+
+</LinearLayout>

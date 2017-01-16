@@ -35,7 +35,7 @@
                 android:textColor="@color/appWhite" />
 
             <emerge.lk.channelbridge.Font.FontTitle
-                android:text="@string/string_itinerary_creditinvoice_table_invoicesdate"
+                android:text="@string/string_itinerary_table_invoicesdate"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtView_listitinerary_creditinvoice_date"
                 android:textAppearance="?android:attr/textAppearanceMedium"

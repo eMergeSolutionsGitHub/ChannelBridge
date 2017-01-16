@@ -46,14 +46,15 @@
                 android:layout_alignTop="@+id/relLayout_itinerary_customer"
                 android:layout_toEndOf="@+id/relLayout_itinerary_customer"
                 android:layout_toRightOf="@+id/relLayout_itinerary_customer"
-                android:orientation="vertical"
-                android:background="@color/appWhite">
+                android:background="@color/appWhite"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/shadow_borders"
                     android:orientation="vertical">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp">
@@ -142,7 +143,7 @@
                                     android:layout_marginLeft="5dp"
                                     android:layout_toEndOf="@+id/textView23"
                                     android:layout_toRightOf="@+id/textView23"
-                                    android:text="@string/string_itinerary_creditinvoice_table_invoicesdate"
+                                    android:text="@string/string_itinerary_table_invoicesdate"
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:textColor="@color/appWhite" />
 
@@ -289,8 +290,8 @@
                         android:id="@+id/relLayout_itinerary_declineproduct"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        android:background="@color/colorNavigationBar"
-                        android:layout_margin="10dp">
+                        android:layout_margin="10dp"
+                        android:background="@color/colorNavigationBar">
 
                         <emerge.lk.channelbridge.Font.FontTitle
                             android:layout_width="wrap_content"
@@ -313,6 +314,7 @@
                             android:textColor="@color/appWhite"
                             android:textSize="36sp" />
                     </RelativeLayout>
+
                     <net.cachapa.expandablelayout.ExpandableLayout
                         android:id="@+id/expandablelayout_itinerary_declineproduct"
                         android:layout_width="match_parent"
@@ -332,16 +334,16 @@
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true">
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:orientation="horizontal" >
+                                    android:orientation="horizontal">
 
                                     <com.github.mikephil.charting.charts.LineChart
                                         android:id="@+id/chart_itinerary_declineproduct"
                                         android:layout_width="1000dip"
-                                        android:layout_height="match_parent"
-                                        />
+                                        android:layout_height="match_parent" />
 
                                 </LinearLayout>
 
@@ -351,6 +353,228 @@
                         </RelativeLayout>
                     </net.cachapa.expandablelayout.ExpandableLayout>
 
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout_itinerary_expiryproducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorNavigationBar">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/string_itinerary_expiryproducts"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/appWhite" />
+
+                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                            android:id="@+id/ftxtView_itinerary_expiryproducts_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/icon_itinerary_angledoubledown"
+                            android:textColor="@color/appWhite"
+                            android:textSize="36sp" />
+                    </RelativeLayout>
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandablelayout_itinerary_expiryproducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        app:el_duration="500"
+                        app:el_expanded="false">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dip"
+                            android:background="@color/appWhite">
+
+                            <RelativeLayout
+                                android:id="@+id/relLayout_itinerary_expiryproducts_header"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dip"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/colorNavigationBar">
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_expiryproducts_invoiceno"
+                                    android:layout_width="100dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="@string/string_itinerary_table_invoicesno"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_expiryproducts_invoicedate"
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/txtView_itinerary_expiryproducts_invoiceno"
+                                    android:layout_toRightOf="@+id/txtView_itinerary_expiryproducts_invoiceno"
+                                    android:text="@string/string_itinerary_table_invoicesdate"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_expiryproducts_product"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/txtView_itinerary_expiryproducts_invoicedate"
+                                    android:layout_toRightOf="@+id/txtView_itinerary_expiryproducts_invoicedate"
+                                    android:text="@string/string_itinerary_expiryproducts_table_productcoade"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_expiryproducts_batchno"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/txtView_itinerary_expiryproducts_product"
+                                    android:layout_toRightOf="@+id/txtView_itinerary_expiryproducts_product"
+                                    android:text="@string/string_itinerary_expiryproducts_table_batchno"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_expiryproducts_expdate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/txtView_itinerary_expiryproducts_batchno"
+                                    android:layout_toRightOf="@+id/txtView_itinerary_expiryproducts_batchno"
+                                    android:text="@string/string_itinerary_expiryproducts_table_expdate"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                            </RelativeLayout>
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recycview_itinerary_expiryproducts"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/relLayout_itinerary_expiryproducts_header" />
+
+                        </RelativeLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+                    <RelativeLayout
+                        android:id="@+id/relLayout_itinerary_lastvisit"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorNavigationBar">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/string_itinerary_lastvisit"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/appWhite" />
+
+                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                            android:id="@+id/ftxtView_itinerary_lastvisit_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/icon_itinerary_angledoubledown"
+                            android:textColor="@color/appWhite"
+                            android:textSize="36sp" />
+                    </RelativeLayout>
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandablelayout_itinerary_lastvisit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        app:el_duration="500"
+                        app:el_expanded="false">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dip"
+                            android:background="@color/appWhite">
+
+                            <RelativeLayout
+                                android:id="@+id/relLayout_itinerary_lastvisit_header"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dip"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/colorNavigationBar">
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_lastvisit_Date"
+                                    android:layout_width="150dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="@string/string_itinerary_lastvisit_table_date"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_lastvisit_onroute"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/txtView_itinerary_lastvisit_Date"
+                                    android:layout_toRightOf="@+id/txtView_itinerary_lastvisit_Date"
+                                    android:text="@string/string_itinerary_lastvisit_table_onroute"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/txtView_itinerary_lastvisit_outofroute"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toEndOf="@+id/txtView_itinerary_lastvisit_onroute"
+                                    android:layout_toRightOf="@+id/txtView_itinerary_lastvisit_onroute"
+                                    android:text="@string/string_itinerary_lastvisit_table_outofroute"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/appWhite" />
+                            </RelativeLayout>
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recycview_itinerary_lastvisit"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/relLayout_itinerary_lastvisit_header" />
+
+                        </RelativeLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
 
                 </LinearLayout>
             </ScrollView>
