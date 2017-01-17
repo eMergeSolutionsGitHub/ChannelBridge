@@ -14,15 +14,16 @@
         android:layout_alignParentTop="true"
         android:orientation="vertical">
 
-        <!---->
 
-        <ImageView
-            android:id="@+id/imgView_dialogbox_close"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="left|top"
-            android:clickable="true"
-            android:src="@drawable/logo" />
+        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+            android:id="@+id/fa_dialogbox_close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal"
+            android:text="@string/icon_dialog_close"
+            android:textSize="35sp"
+            android:textColor="#e53935"
+            app:text="@string/icon_dialog_close" />
 
     </LinearLayout>
 
@@ -68,19 +69,28 @@
 
                                 <com.mikhaellopez.circularimageview.CircularImageView
                                     android:id="@+id/imgView_dialogbox_customer"
-                                    android:layout_width="200dp"
-                                    android:layout_height="200dp"
+                                    android:layout_width="250dp"
+                                    android:layout_height="250dp"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_centerVertical="true"
                                     app:civ_border_color="@color/colorPrimary"
                                     app:civ_border_width="4dp"
                                     app:civ_shadow="true" />
+
+
+                                <com.daimajia.slider.library.SliderLayout
+                                    android:id="@+id/slider"
+                                    android:layout_width="160dp"
+                                    android:layout_height="100dp"
+                                    android:layout_below="@id/imgView_dialogbox_customer"
+                                    android:layout_centerHorizontal="true"/>
+
+
 
                                 <emerge.lk.channelbridge.Font.FontTitle
                                     android:id="@+id/dialogbox_customer_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/imgView_dialogbox_customer"
+                                    android:layout_below="@id/slider"
                                     android:gravity="center"
                                     android:text="Name"
                                     android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -94,6 +104,7 @@
                                     android:gravity="center"
                                     android:text="Area"
                                     android:textAppearance="?android:attr/textAppearanceLarge" />
+
 
                             </RelativeLayout>
 
@@ -119,7 +130,7 @@
 
                                 <android.support.v7.widget.CardView
                                     android:layout_width="match_parent"
-                                    android:layout_height="200dp"
+                                    android:layout_height="220dp"
                                     android:layout_gravity="center"
                                     android:layout_margin="2dp"
                                     card_view:cardCornerRadius="2dp"
@@ -137,7 +148,7 @@
                                             android:layout_alignParentTop="true"
                                             android:layout_alignStart="@+id/textView9"
                                             android:text="Contact details"
-                                            android:textAppearance="?android:attr/textAppearanceLarge" />
+                                            android:textSize="30sp" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -160,7 +171,7 @@
                                             android:layout_alignTop="@id/textView9"
                                             android:layout_toRightOf="@id/textView9"
                                             android:text="Address:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -180,7 +191,7 @@
                                             android:layout_alignTop="@id/textView10"
                                             android:layout_toRightOf="@id/textView10"
                                             android:text="Contact Number:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge"  />
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
                                             android:id="@+id/textView11"
@@ -199,7 +210,7 @@
                                             android:layout_alignTop="@id/textView11"
                                             android:layout_toRightOf="@id/textView11"
                                             android:text="Email"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
                                             android:id="@+id/textView12"
@@ -218,7 +229,7 @@
                                             android:layout_alignTop="@id/textView12"
                                             android:layout_toRightOf="@id/textView12"
                                             android:text="Web:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
                                             android:id="@+id/textView13"
@@ -237,7 +248,7 @@
                                             android:layout_alignTop="@id/textView13"
                                             android:layout_toRightOf="@id/textView13"
                                             android:text="Fax:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                     </RelativeLayout>
@@ -246,7 +257,7 @@
 
                                 <android.support.v7.widget.CardView
                                     android:layout_width="match_parent"
-                                    android:layout_height="200dp"
+                                    android:layout_height="220dp"
                                     android:layout_gravity="center"
                                     android:layout_margin="2dp"
                                     card_view:cardCornerRadius="2dp"
@@ -261,7 +272,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="Location details"
-                                            android:textAppearance="?android:attr/textAppearanceLarge" />
+                                            android:textSize="30sp" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -282,7 +293,7 @@
                                             android:layout_alignTop="@id/textView14"
                                             android:layout_toRightOf="@id/textView14"
                                             android:text="Area:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -302,7 +313,7 @@
                                             android:layout_alignTop="@id/textView15"
                                             android:layout_toRightOf="@id/textView15"
                                             android:text="Town:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
                                             android:id="@+id/textView16"
@@ -321,7 +332,7 @@
                                             android:layout_alignTop="@id/textView16"
                                             android:layout_toRightOf="@id/textView16"
                                             android:text="District:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -341,7 +352,7 @@
                                             android:layout_alignTop="@id/textView17"
                                             android:layout_toRightOf="@id/textView17"
                                             android:text="Latitude:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -362,7 +373,7 @@
                                             android:layout_toEndOf="@+id/textView17"
                                             android:layout_toRightOf="@+id/textView17"
                                             android:text="Longitude:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                     </RelativeLayout>
@@ -371,7 +382,7 @@
 
                                 <android.support.v7.widget.CardView
                                     android:layout_width="match_parent"
-                                    android:layout_height="200dp"
+                                    android:layout_height="180dp"
                                     android:layout_gravity="center"
                                     android:layout_margin="2dp"
                                     card_view:cardCornerRadius="2dp"
@@ -389,7 +400,7 @@
                                             android:layout_alignParentStart="true"
                                             android:layout_alignParentTop="true"
                                             android:text="Owner's details"
-                                            android:textAppearance="?android:attr/textAppearanceLarge" />
+                                            android:textSize="30sp" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -402,15 +413,6 @@
                                             android:text="@string/icon_dialog_own_name"
                                             android:textSize="25sp"
                                             app:text="@string/icon_dialog_own_name" />
-
-                                        <TextView
-                                            android:id="@+id/dialog_Own_name"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignTop="@id/textView19"
-                                            android:layout_toRightOf="@id/textView19"
-                                            android:text="Owner's Name:"
-                                            android:textSize="18sp" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -430,7 +432,17 @@
                                             android:layout_alignTop="@id/textView20"
                                             android:layout_toRightOf="@id/textView20"
                                             android:text="Contact No:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                                        <TextView
+                                            android:id="@+id/dialog_Own_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Owner's Name:"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:layout_alignTop="@+id/textView19"
+                                            android:layout_toRightOf="@+id/textView19"
+                                            android:layout_toEndOf="@+id/textView19" />
 
 
                                     </RelativeLayout>
@@ -439,7 +451,7 @@
 
                                 <android.support.v7.widget.CardView
                                     android:layout_width="match_parent"
-                                    android:layout_height="200dp"
+                                    android:layout_height="180dp"
                                     android:layout_gravity="center"
                                     android:layout_margin="2dp"
                                     card_view:cardCornerRadius="2dp"
@@ -457,7 +469,7 @@
                                             android:layout_alignParentStart="true"
                                             android:layout_alignParentTop="true"
                                             android:text="Other details"
-                                            android:textAppearance="?android:attr/textAppearanceLarge" />
+                                            android:textSize="30sp" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -478,7 +490,7 @@
                                             android:layout_alignTop="@id/textView21"
                                             android:layout_toRightOf="@id/textView21"
                                             android:text="BR no:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -499,7 +511,7 @@
                                             android:layout_toEndOf="@+id/textView21"
                                             android:layout_toRightOf="@+id/textView21"
                                             android:text="Reg. no:"
-                                            android:textSize="18sp" />
+                                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                     </RelativeLayout>

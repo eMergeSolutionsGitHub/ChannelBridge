@@ -46,6 +46,9 @@
     <string name="icon_dialog_own_phone">&#xf095;</string>
     <string name="icon_dialog_own_ba_no">&#xf0f7;</string>
     <string name="icon_dialog_own_reg_no">&#xf1ad;</string>
+    <string name="icon_dialog_close">&#xf057;</string>
+    <string name="icon_dialog_angle_left">&#xf104;</string>
+    <string name="icon_dialog_angle_right">&#xf105;</string>
 
 
 

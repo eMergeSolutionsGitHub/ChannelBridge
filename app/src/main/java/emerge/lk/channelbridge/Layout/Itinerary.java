@@ -81,12 +81,8 @@ public class Itinerary extends Activity {
 
         setDayItinerary();
 
-
-
-
-
-
     }
+
     @OnClick(R.id.relLayout_channelbridge_menu)
     public void titleBarMenuClick() {
         navigationDrawer.openNavigationDrawer();
