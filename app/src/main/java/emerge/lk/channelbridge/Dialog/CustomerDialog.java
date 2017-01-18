@@ -1,13 +1,12 @@
 package emerge.lk.channelbridge.Dialog;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.DialogFragment;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,7 @@ import android.widget.TextView;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
-import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.squareup.picasso.Picasso;
 
@@ -50,8 +49,10 @@ public class CustomerDialog extends DialogFragment implements BaseSliderView.OnS
 
 
     int position;
-    int dialogWidth = 1200;
+    int dialogWidth = 1300;
     int dialogHeight = 780;
+
+    HashMap<String,Integer> file_maps;
 
     private SliderLayout mDemoSlider;
 
@@ -92,29 +93,28 @@ public class CustomerDialog extends DialogFragment implements BaseSliderView.OnS
 
         mDemoSlider = (SliderLayout)view.findViewById(R.id.slider);
 
-        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
+        file_maps = new HashMap<String, Integer>();
         file_maps.put("image 01",R.drawable.a);
         file_maps.put("image 02",R.drawable.b);
         file_maps.put("image 03",R.drawable.c);
         file_maps.put("image 04", R.drawable.d);
 
         for(String name : file_maps.keySet()){
-            TextSliderView textSliderView = new TextSliderView(view.getContext());
+            DefaultSliderView defaultSliderView = new DefaultSliderView(view.getContext());
             // initialize a SliderLayout
-            textSliderView
-                    .description(name)
+            defaultSliderView
                     .image(file_maps.get(name))
                     .setScaleType(BaseSliderView.ScaleType.Fit)
-                    .setOnSliderClickListener(null);
+                    .setOnSliderClickListener(this);
 
             //add your extra information
-            textSliderView.bundle(new Bundle());
-            textSliderView.getBundle()
+            defaultSliderView.bundle(new Bundle());
+            defaultSliderView.getBundle()
                     .putString("extra",name);
 
-            mDemoSlider.addSlider(textSliderView);
+            mDemoSlider.addSlider(defaultSliderView);
         }
-        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Fade);
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Stack);
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
         mDemoSlider.setDuration(4000);
@@ -129,12 +129,17 @@ public class CustomerDialog extends DialogFragment implements BaseSliderView.OnS
         super.onActivityCreated(savedInstanceState);
         Window window = getDialog().getWindow();
         window.setLayout(dialogWidth, dialogHeight);
-        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));/*
+        dialog.getWindow().setBackgroundDrawable(
+                new ColorDrawable(android.graphics.Color.TRANSPARENT));*/
 
     }
 
     @Override
     public void onSliderClick(BaseSliderView slider) {
+        Uri path = Uri.parse("android.resource://emerge.lk.channelbridge/drawable/"+file_maps.get(slider.getBundle().get("extra")));
+        Picasso.with(getActivity()).load(path).into(customerImage);
+
 
     }
 
