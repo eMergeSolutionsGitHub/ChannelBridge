@@ -16,12 +16,13 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
-import com.squareup.picasso.Picasso;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,9 +56,6 @@ public class CustomerDialog extends DialogFragment implements BaseSliderView.OnS
 
     private SliderLayout mDemoSlider;
 
-
-
-
     public CustomerDialog() {
     }
 
@@ -87,8 +85,8 @@ public class CustomerDialog extends DialogFragment implements BaseSliderView.OnS
 
         customerName.setText(itineraryCustomersEntities.get(position).getItineraryCustomersName());
         customerArea.setText(itineraryCustomersEntities.get(position).getItineraryCustomersCity());
-        Picasso.with(view.getContext()).load("file:///android_asset/image/" + itineraryCustomersEntities.get(position).getItineraryCustomersImageName()).into(customerImage);
 
+        Glide.with(view.getContext()).load("file:///android_asset/image/" + itineraryCustomersEntities.get(position).getItineraryCustomersImageName()).into(customerImage);
 
         mDemoSlider = (SliderLayout)view.findViewById(R.id.slider);
 

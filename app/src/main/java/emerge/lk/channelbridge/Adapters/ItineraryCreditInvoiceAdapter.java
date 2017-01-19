@@ -1,27 +1,18 @@
 package emerge.lk.channelbridge.Adapters;
 
-import android.app.Dialog;
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import emerge.lk.channelbridge.Entity.ItineraryCreditInvoicesEntity;
-import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
 import emerge.lk.channelbridge.R;
 
 

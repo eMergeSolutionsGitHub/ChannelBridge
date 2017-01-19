@@ -30,10 +30,12 @@ import emerge.lk.channelbridge.Adapters.ItineraryCreditInvoiceAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryCustomersAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryExpiryProductsAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryLastInvoicesAdapter;
+import emerge.lk.channelbridge.Adapters.ItineraryLastVisitAdapter;
 import emerge.lk.channelbridge.Entity.ItineraryCreditInvoicesEntity;
 import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
 import emerge.lk.channelbridge.Entity.ItineraryExpiryProductsEntity;
 import emerge.lk.channelbridge.Entity.ItineraryLastInvoiceEntity;
+import emerge.lk.channelbridge.Entity.ItineraryLastVisitEntity;
 import emerge.lk.channelbridge.Font.TextViewFontAwesome;
 import emerge.lk.channelbridge.Dialog.CustomerDialog;
 import emerge.lk.channelbridge.R;
@@ -49,6 +51,7 @@ public class Itinerary extends Activity {
     @BindView(R.id.recycview_itinerary_creditinvoice) RecyclerView recyclerViewCreditInvoice;
     @BindView(R.id.recycview_itinerary_customer) RecyclerView recyclerViewCustomers;
     @BindView(R.id.recycview_itinerary_lastinvoice) RecyclerView recyclerViewLastInvoice;
+    @BindView(R.id.recycview_itinerary_lastvisit) RecyclerView recyclerViewLAstVisit;
     @BindView(R.id.recycview_itinerary_expiryproducts) RecyclerView recyclerViewExpiryproducts;
     @BindView(R.id.expandablelayout_itinerary_creditinvoice) ExpandableLayout expandablelayoutCreditinvoice;
     @BindView(R.id.ftxtView_itinerary_creditinvoice_arrow) TextViewFontAwesome fontAwesometxtviewCreditinvoiceArrow ;
@@ -144,12 +147,14 @@ public class Itinerary extends Activity {
         }else {
             expandablelayoutLastVisit.expand();
             fontAwesometxtviewLastVisitArrow.setText(R.string.icon_itinerary_angledoubleup);
+            setCustomerLastVisit();
 
         }
     }
 
     public void setDayItinerary(){
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+
         recyclerViewCustomers.setLayoutManager(mLayoutManager);
         recyclerViewCustomers.setItemAnimator(new DefaultItemAnimator());
 
@@ -158,6 +163,32 @@ public class Itinerary extends Activity {
         itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
         itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
         itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
         recyclerViewCustomers.setAdapter(itineraryCustomersAdapter);
 
     }
@@ -194,7 +225,6 @@ public class Itinerary extends Activity {
         itineraryLastInvoiceEntities.add(new ItineraryLastInvoiceEntity("101022","24555555.00","2016-08-12"));
         recyclerViewLastInvoice.setAdapter(itineraryLastInvoicesAdapter);
     }
-
 
     public void setDeclineproduct(){
         chartDeclineproduct.setTouchEnabled(true);
@@ -285,6 +315,27 @@ public class Itinerary extends Activity {
         itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("101022","2016-08-12","G30640","G30640","2017-01-04"));
 
         recyclerViewExpiryproducts.setAdapter(itineraryExpiryProductsAdapter);
+
+    }
+
+    public void setCustomerLastVisit(){
+
+        ItineraryLastVisitAdapter itineraryLastVisitAdapter;
+        ArrayList<ItineraryLastVisitEntity> itineraryLastVisitEntities = new ArrayList<ItineraryLastVisitEntity>();
+
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+        recyclerViewLAstVisit.setLayoutManager(mLayoutManager);
+        recyclerViewLAstVisit.setItemAnimator(new DefaultItemAnimator());
+
+        itineraryLastVisitAdapter = new ItineraryLastVisitAdapter(this,itineraryLastVisitEntities);
+        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",0));
+        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",1));
+        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",1));
+        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",0));
+        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",1));
+
+        recyclerViewLAstVisit.setAdapter(itineraryLastVisitAdapter);
 
     }
 

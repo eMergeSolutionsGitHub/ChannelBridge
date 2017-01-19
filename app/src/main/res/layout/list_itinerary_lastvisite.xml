@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/appWhite"
+    android:layout_height="50dip">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="2dp"
+        card_view:contentPadding="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <emerge.lk.channelbridge.Font.FontTitle
+                android:id="@+id/txtView_list_itinerary_lastvisit_Date"
+                android:layout_width="150dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:text="@string/string_itinerary_lastvisit_table_date"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/appWhite" />
+
+            <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                android:id="@+id/ftxtView_list_itinerary_lastvisit_onroute"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/txtView_list_itinerary_lastvisit_Date"
+                android:layout_toRightOf="@+id/txtView_list_itinerary_lastvisit_Date"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/appWhite" />
+
+            <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                android:id="@+id/ftxtView_list_itinerary_lastvisit_outofroute"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/ftxtView_list_itinerary_lastvisit_onroute"
+                android:layout_toRightOf="@+id/ftxtView_list_itinerary_lastvisit_onroute"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/appWhite" />
+        </RelativeLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

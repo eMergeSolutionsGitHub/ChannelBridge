@@ -66,6 +66,8 @@
     <string name="string_itinerary_table_invoicesno">Invoice No</string>
     <string name="string_itinerary_table_invoicesdate">Invoice Date</string>
 
+    <string name="icon_listitinerarycustomer_invoice">&#xf0c2;</string>
+    <string name="string_listitinerarycustomer_invoice">Invoice</string>
 
     <string name="string_itinerary_titlebar_title">Itinerary</string>
     <string name="string_itinerary_last_invoices">Last Invoices</string>
@@ -87,14 +89,6 @@
     <string name="string_itinerary_lastvisit_table_date">Visit Date</string>
     <string name="string_itinerary_lastvisit_table_onroute">On Route</string>
     <string name="string_itinerary_lastvisit_table_outofroute">Out Of Route</string>
-
-
-
-    //List Itinerary Customer
-    <string name="icon_listitinerarycustomer_invoice">&#xf07a;</string>
-    <string name="string_listitinerarycustomer_invoice">Invoice</string>
-
-
 
 
 

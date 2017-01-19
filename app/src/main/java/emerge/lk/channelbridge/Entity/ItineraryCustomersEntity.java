@@ -8,8 +8,6 @@ public class ItineraryCustomersEntity {
 
 String itineraryCustomersID,itineraryCustomersName,itineraryCustomersCity,itineraryCustomersImageName;
 
-
-
     public String getItineraryCustomersID() {
         return itineraryCustomersID;
     }

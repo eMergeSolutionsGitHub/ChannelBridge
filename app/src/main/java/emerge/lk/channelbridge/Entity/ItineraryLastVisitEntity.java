@@ -6,46 +6,36 @@ package emerge.lk.channelbridge.Entity;
 
 public class ItineraryLastVisitEntity {
 
-String itineraryCreditInvoicesNum,itineraryCreditInvoicesDate,itineraryCreditInvoicesTotvalue,itineraryCreditInvoicesBalance;
+    String itineraryLastVisitCustomerNumber, itineraryLastVisitInvoicesDate;
+    int itineraryLastVisitOnRoute;
 
-
-    public ItineraryLastVisitEntity(String itineraryCreditInvoicesNum, String itineraryCreditInvoicesDate, String itineraryCreditInvoicesTotvalue, String itineraryCreditInvoicesBalance) {
-        this.itineraryCreditInvoicesNum = itineraryCreditInvoicesNum;
-        this.itineraryCreditInvoicesDate = itineraryCreditInvoicesDate;
-        this.itineraryCreditInvoicesTotvalue = itineraryCreditInvoicesTotvalue;
-        this.itineraryCreditInvoicesBalance = itineraryCreditInvoicesBalance;
+    public ItineraryLastVisitEntity(String itineraryLastVisitCustomerNumber, String itineraryLastVisitInvoicesDate, int itineraryLastVisitOnRoute) {
+        this.itineraryLastVisitCustomerNumber = itineraryLastVisitCustomerNumber;
+        this.itineraryLastVisitInvoicesDate = itineraryLastVisitInvoicesDate;
+        this.itineraryLastVisitOnRoute = itineraryLastVisitOnRoute;
     }
 
-
-    public String getItineraryCreditInvoicesNum() {
-        return itineraryCreditInvoicesNum;
+    public String getItineraryLastVisitCustomerNumber() {
+        return itineraryLastVisitCustomerNumber;
     }
 
-    public void setItineraryCreditInvoicesNum(String itineraryCreditInvoicesNum) {
-        this.itineraryCreditInvoicesNum = itineraryCreditInvoicesNum;
+    public void setItineraryLastVisitCustomerNumber(String itineraryLastVisitCustomerNumber) {
+        this.itineraryLastVisitCustomerNumber = itineraryLastVisitCustomerNumber;
     }
 
-    public String getItineraryCreditInvoicesDate() {
-        return itineraryCreditInvoicesDate;
+    public String getItineraryLastVisitInvoicesDate() {
+        return itineraryLastVisitInvoicesDate;
     }
 
-    public void setItineraryCreditInvoicesDate(String itineraryCreditInvoicesDate) {
-        this.itineraryCreditInvoicesDate = itineraryCreditInvoicesDate;
+    public void setItineraryLastVisitInvoicesDate(String itineraryLastVisitInvoicesDate) {
+        this.itineraryLastVisitInvoicesDate = itineraryLastVisitInvoicesDate;
     }
 
-    public String getItineraryCreditInvoicesTotvalue() {
-        return itineraryCreditInvoicesTotvalue;
+    public int getItineraryLastVisitOnRoute() {
+        return itineraryLastVisitOnRoute;
     }
 
-    public void setItineraryCreditInvoicesTotvalue(String itineraryCreditInvoicesTotvalue) {
-        this.itineraryCreditInvoicesTotvalue = itineraryCreditInvoicesTotvalue;
-    }
-
-    public String getItineraryCreditInvoicesBalance() {
-        return itineraryCreditInvoicesBalance;
-    }
-
-    public void setItineraryCreditInvoicesBalance(String itineraryCreditInvoicesBalance) {
-        this.itineraryCreditInvoicesBalance = itineraryCreditInvoicesBalance;
+    public void setItineraryLastVisitOnRoute(int itineraryLastVisitOnRoute) {
+        this.itineraryLastVisitOnRoute = itineraryLastVisitOnRoute;
     }
 }

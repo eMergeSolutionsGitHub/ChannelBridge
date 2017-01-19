@@ -1,6 +1,6 @@
 package emerge.lk.channelbridge.Adapters;
 
-import android.app.FragmentManager;
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,16 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.android.annotations.Nullable;
-import com.squareup.picasso.Picasso;
-
+import com.bumptech.glide.Glide;
 import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import emerge.lk.channelbridge.Dialog.CustomerDialog;
 import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
 import emerge.lk.channelbridge.Layout.Itinerary;
 import emerge.lk.channelbridge.R;
@@ -30,8 +26,7 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
 
     Context mContext;
     ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities;
-    CustomerDialog customerDialog;
-    FragmentManager fragmentManager;
+
 
     int selectedPosition = -1;
 
@@ -53,7 +48,7 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
 
         holder.textViewCustomerName.setText(itineraryCustomersEntities.get(position).getItineraryCustomersName());
         holder.textViewCustomerCity.setText(itineraryCustomersEntities.get(position).getItineraryCustomersCity());
-        Picasso.with(mContext).load(cutomerImagePath).into(holder.imageViewCustomerImage);
+        Glide.with(mContext).load(cutomerImagePath).into(holder.imageViewCustomerImage);
 
         if (selectedPosition == position) {
             holder.itemView.setBackgroundColor(mContext.getResources().getColor(R.color.colorNavigationBar));
@@ -66,18 +61,25 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
             public void onClick(View v) {
                 selectedPosition = position;
                 notifyDataSetChanged();
+
             }
         });
 
-        holder.linLayout_itinerary_item.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.linLayoutItineraryItem.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-
                 if (mContext instanceof Itinerary) {
                     ((Itinerary) mContext).setupDialogFragment(position, itineraryCustomersEntities);
-                }
-
+                }else {}
                 return true;
+            }
+        });
+        holder.linLayoutItineraryInvoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mContext instanceof Itinerary) {
+                   
+                }else {}
             }
         });
     }
@@ -101,7 +103,9 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
         @BindView(R.id.textView_itinerary_customercity)
         TextView textViewCustomerCity;
         @BindView(R.id.linLayout_itinerary_item)
-        LinearLayout linLayout_itinerary_item;
+        LinearLayout linLayoutItineraryItem;
+        @BindView(R.id.relLayout_itinerary_invoice)
+        RelativeLayout linLayoutItineraryInvoice;
 
         public MyViewHolder(View itemView) {
             super(itemView);
