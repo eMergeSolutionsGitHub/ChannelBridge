@@ -3,8 +3,6 @@ package emerge.lk.channelbridge.Layout;
 import android.app.Activity;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.widget.Button;
 import android.widget.TextView;
 
 

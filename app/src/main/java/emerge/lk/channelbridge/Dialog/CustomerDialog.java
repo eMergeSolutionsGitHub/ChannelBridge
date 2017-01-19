@@ -127,16 +127,15 @@ public class CustomerDialog extends DialogFragment implements BaseSliderView.OnS
         super.onActivityCreated(savedInstanceState);
         Window window = getDialog().getWindow();
         window.setLayout(dialogWidth, dialogHeight);
-        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));/*
-        dialog.getWindow().setBackgroundDrawable(
-                new ColorDrawable(android.graphics.Color.TRANSPARENT));*/
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
     }
 
     @Override
     public void onSliderClick(BaseSliderView slider) {
         Uri path = Uri.parse("android.resource://emerge.lk.channelbridge/drawable/"+file_maps.get(slider.getBundle().get("extra")));
-        Picasso.with(getActivity()).load(path).into(customerImage);
+
+        Glide.with(getActivity()).load(path).into(customerImage);
 
 
     }

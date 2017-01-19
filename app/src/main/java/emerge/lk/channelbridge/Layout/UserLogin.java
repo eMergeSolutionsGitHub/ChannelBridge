@@ -11,7 +11,6 @@ import butterknife.OnClick;
 import emerge.lk.channelbridge.R;
 
 
-
 /**
  * Created by Himanshu on 12/22/2016.
  */

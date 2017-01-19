@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import emerge.lk.channelbridge.Entity.ItineraryLastInvoiceEntity;
 import emerge.lk.channelbridge.Entity.ItineraryLastVisitEntity;
 import emerge.lk.channelbridge.Font.TextViewFontAwesome;
 import emerge.lk.channelbridge.R;

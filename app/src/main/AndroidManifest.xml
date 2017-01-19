@@ -8,25 +8,32 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Layout.Splash"  android:screenOrientation="landscape">
+        <activity
+            android:name=".Layout.Splash"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-     <activity android:name=".Layout.UserLogin"
-         android:screenOrientation="landscape"
-         android:windowSoftInputMode="stateHidden"/>
-
-        <activity android:name=".Layout.Dashboard"
+        <activity
+            android:name=".Layout.UserLogin"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden"/>
-
-        <activity android:name=".Layout.Itinerary"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Layout.Dashboard"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden"/>
-
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Layout.Itinerary"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Layout.Customer"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>
