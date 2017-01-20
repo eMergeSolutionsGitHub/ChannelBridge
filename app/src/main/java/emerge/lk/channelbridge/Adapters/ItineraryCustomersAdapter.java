@@ -10,11 +10,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
+import emerge.lk.channelbridge.Entity.CustomersEntity;
 import emerge.lk.channelbridge.Layout.Itinerary;
 import emerge.lk.channelbridge.R;
 
@@ -25,12 +28,12 @@ import emerge.lk.channelbridge.R;
 public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCustomersAdapter.MyViewHolder> implements View.OnClickListener {
 
     Context mContext;
-    ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities;
+    ArrayList<CustomersEntity> itineraryCustomersEntities;
 
 
     int selectedPosition = -1;
 
-    public ItineraryCustomersAdapter(Context mContext, ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities) {
+    public ItineraryCustomersAdapter(Context mContext, ArrayList<CustomersEntity> itineraryCustomersEntities) {
         this.mContext = mContext;
         this.itineraryCustomersEntities = itineraryCustomersEntities;
 
@@ -70,7 +73,8 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
             public boolean onLongClick(View view) {
                 if (mContext instanceof Itinerary) {
                     ((Itinerary) mContext).setupDialogFragment(position, itineraryCustomersEntities);
-                }else {}
+                } else {
+                }
                 return true;
             }
         });
@@ -78,8 +82,10 @@ public class ItineraryCustomersAdapter extends RecyclerView.Adapter<ItineraryCus
             @Override
             public void onClick(View v) {
                 if (mContext instanceof Itinerary) {
-                   
-                }else {}
+                    ((Itinerary) mContext).navigateToInvoices(itineraryCustomersEntities.get(position).getItineraryCustomersID());
+
+                } else {
+                }
             }
         });
     }

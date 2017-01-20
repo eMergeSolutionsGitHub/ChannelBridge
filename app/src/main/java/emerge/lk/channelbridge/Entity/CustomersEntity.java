@@ -4,7 +4,7 @@ package emerge.lk.channelbridge.Entity;
  * Created by Himanshu on 1/5/2017.
  */
 
-public class ItineraryCustomersEntity {
+public class CustomersEntity {
 
 String itineraryCustomersID,itineraryCustomersName,itineraryCustomersCity,itineraryCustomersImageName;
 
@@ -40,7 +40,7 @@ String itineraryCustomersID,itineraryCustomersName,itineraryCustomersCity,itiner
         this.itineraryCustomersImageName = itineraryCustomersImageName;
     }
 
-    public ItineraryCustomersEntity(String itineraryCustomersID, String itineraryCustomersName, String itineraryCustomersCity, String itineraryCustomersImageName) {
+    public CustomersEntity(String itineraryCustomersID, String itineraryCustomersName, String itineraryCustomersCity, String itineraryCustomersImageName) {
         this.itineraryCustomersID = itineraryCustomersID;
         this.itineraryCustomersName = itineraryCustomersName;
         this.itineraryCustomersCity = itineraryCustomersCity;

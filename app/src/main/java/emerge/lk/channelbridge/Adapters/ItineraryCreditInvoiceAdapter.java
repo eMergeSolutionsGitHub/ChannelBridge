@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import emerge.lk.channelbridge.Entity.ItineraryCreditInvoicesEntity;
+import emerge.lk.channelbridge.Entity.InvoiceEntity;
 import emerge.lk.channelbridge.R;
 
 
@@ -22,9 +22,9 @@ import emerge.lk.channelbridge.R;
 public class ItineraryCreditInvoiceAdapter extends RecyclerView.Adapter<ItineraryCreditInvoiceAdapter.MyViewHolder> implements View.OnClickListener {
 
     Context mContext;
-    ArrayList<ItineraryCreditInvoicesEntity> itineraryCreditInvoicesEntities;
+    ArrayList<InvoiceEntity> itineraryCreditInvoicesEntities;
 
-    public ItineraryCreditInvoiceAdapter(Context mContext, ArrayList<ItineraryCreditInvoicesEntity> itineraryCreditInvoicesEntities) {
+    public ItineraryCreditInvoiceAdapter(Context mContext, ArrayList<InvoiceEntity> itineraryCreditInvoicesEntities) {
         this.mContext = mContext;
         this.itineraryCreditInvoicesEntities = itineraryCreditInvoicesEntities;
     }
@@ -37,10 +37,10 @@ public class ItineraryCreditInvoiceAdapter extends RecyclerView.Adapter<Itinerar
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        holder.textViewInvoiceNum.setText(itineraryCreditInvoicesEntities.get(position).getItineraryCreditInvoicesNum());
-        holder.textViewInvoiceDate.setText(itineraryCreditInvoicesEntities.get(position).getItineraryCreditInvoicesDate());
-        holder.textViewInvoiceTotvalue.setText(itineraryCreditInvoicesEntities.get(position).getItineraryCreditInvoicesTotvalue());
-        holder.textViewInvoiceBalance.setText(itineraryCreditInvoicesEntities.get(position).getItineraryCreditInvoicesBalance());
+        holder.textViewInvoiceNum.setText(itineraryCreditInvoicesEntities.get(position).getInvoiceNumber());
+        holder.textViewInvoiceDate.setText(itineraryCreditInvoicesEntities.get(position).getInvoiceDate());
+        holder.textViewInvoiceTotvalue.setText(itineraryCreditInvoicesEntities.get(position).getInvoiceValue());
+        holder.textViewInvoiceBalance.setText(itineraryCreditInvoicesEntities.get(position).getInvoicesBalance());
     }
 
     @Override

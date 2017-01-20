@@ -1,15 +1,20 @@
 package emerge.lk.channelbridge.Layout;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.app.FragmentManager;
 import android.os.Bundle;
 
+import android.os.Handler;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
@@ -31,11 +36,10 @@ import emerge.lk.channelbridge.Adapters.ItineraryCustomersAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryExpiryProductsAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryLastInvoicesAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryLastVisitAdapter;
-import emerge.lk.channelbridge.Entity.ItineraryCreditInvoicesEntity;
-import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
-import emerge.lk.channelbridge.Entity.ItineraryExpiryProductsEntity;
-import emerge.lk.channelbridge.Entity.ItineraryLastInvoiceEntity;
-import emerge.lk.channelbridge.Entity.ItineraryLastVisitEntity;
+import emerge.lk.channelbridge.Entity.CustomersEntity;
+import emerge.lk.channelbridge.Entity.ProductsEntity;
+import emerge.lk.channelbridge.Entity.InvoiceEntity;
+import emerge.lk.channelbridge.Entity.LastVisitEntity;
 import emerge.lk.channelbridge.Font.TextViewFontAwesome;
 import emerge.lk.channelbridge.Dialog.CustomerDialog;
 import emerge.lk.channelbridge.R;
@@ -47,6 +51,7 @@ import emerge.lk.channelbridge.Service.NavigationDrawer;
 
 public class Itinerary extends Activity {
     NavigationDrawer navigationDrawer;
+
     @BindView(R.id.txtView_channelbridge_title) TextView menuBarTitle;
     @BindView(R.id.recycview_itinerary_creditinvoice) RecyclerView recyclerViewCreditInvoice;
     @BindView(R.id.recycview_itinerary_customer) RecyclerView recyclerViewCustomers;
@@ -65,10 +70,12 @@ public class Itinerary extends Activity {
     @BindView(R.id.ftxtView_itinerary_lastvisit_arrow) TextViewFontAwesome fontAwesometxtviewLastVisitArrow ;
     @BindView(R.id.chart_itinerary_declineproduct) LineChart chartDeclineproduct ;
     @BindView(R.id.relLayout_itinerary_customer) RelativeLayout layoutCustomer;
+    @BindView(R.id.scrollView_customer_details) ScrollView scrollViewCustomerDetails;
+
 
 
     ItineraryCustomersAdapter itineraryCustomersAdapter;
-    ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities = new ArrayList<ItineraryCustomersEntity>();
+    ArrayList<CustomersEntity> itineraryCustomersEntities = new ArrayList<CustomersEntity>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +132,7 @@ public class Itinerary extends Activity {
             expandablelayoutDeclineproducts.expand();
             fontAwesometxtviewDeclineproductsArrow.setText(R.string.icon_itinerary_angledoubleup);
             setDeclineproduct();
+            setScrollviewDowun();
         }
     }
     @OnClick(R.id.relLayout_itinerary_expiryproducts)
@@ -136,6 +144,7 @@ public class Itinerary extends Activity {
             expandablelayoutExpiryproducts.expand();
             fontAwesometxtviewExpiryproductsArrow.setText(R.string.icon_itinerary_angledoubleup);
             setExpiryProducts();
+            setScrollviewDowun();
         }
     }
 
@@ -148,9 +157,10 @@ public class Itinerary extends Activity {
             expandablelayoutLastVisit.expand();
             fontAwesometxtviewLastVisitArrow.setText(R.string.icon_itinerary_angledoubleup);
             setCustomerLastVisit();
-
+            setScrollviewDowun();
         }
     }
+
 
     public void setDayItinerary(){
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
@@ -159,36 +169,36 @@ public class Itinerary extends Activity {
         recyclerViewCustomers.setItemAnimator(new DefaultItemAnimator());
 
         itineraryCustomersAdapter = new ItineraryCustomersAdapter(this,itineraryCustomersEntities);
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
-        itineraryCustomersEntities.add(new ItineraryCustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Asiri Surgical","Colombo 5","15753.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Nawaloka Hospital","Colombo 02","14526.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Hemas Hospital","Wattala","18788.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Lanka Hospital","Colombo 5","25455.jpg"));
+        itineraryCustomersEntities.add(new CustomersEntity("001","Ninewells Hospital","Colombo 5","154.jpg"));
         recyclerViewCustomers.setAdapter(itineraryCustomersAdapter);
 
     }
@@ -196,22 +206,22 @@ public class Itinerary extends Activity {
     public void setCreditInvoice(){
 
         ItineraryCreditInvoiceAdapter itineraryCreditInvoiceAdapter;
-        ArrayList<ItineraryCreditInvoicesEntity> itineraryCreditInvoicesEntities = new ArrayList<ItineraryCreditInvoicesEntity>();
+        ArrayList<InvoiceEntity> itineraryCreditInvoicesEntities = new ArrayList<InvoiceEntity>();
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerViewCreditInvoice.setLayoutManager(mLayoutManager);
         recyclerViewCreditInvoice.setItemAnimator(new DefaultItemAnimator());
         itineraryCreditInvoiceAdapter = new ItineraryCreditInvoiceAdapter(this,itineraryCreditInvoicesEntities);
-        itineraryCreditInvoicesEntities.add(new ItineraryCreditInvoicesEntity("101011","2017-01-04","256330.00","256330.00"));
-        itineraryCreditInvoicesEntities.add(new ItineraryCreditInvoicesEntity("106021","2016-05-20","551522.50","551522.50"));
-        itineraryCreditInvoicesEntities.add(new ItineraryCreditInvoicesEntity("103016","2016-03-06","36544.00","36544.00"));
-        itineraryCreditInvoicesEntities.add(new ItineraryCreditInvoicesEntity("101022","2016-08-12","24555555.00","24555555.00"));
+        itineraryCreditInvoicesEntities.add(new InvoiceEntity("101011","2017-01-04","256330.00","256330.00"));
+        itineraryCreditInvoicesEntities.add(new InvoiceEntity("106021","2016-05-20","551522.50","551522.50"));
+        itineraryCreditInvoicesEntities.add(new InvoiceEntity("103016","2016-03-06","36544.00","36544.00"));
+        itineraryCreditInvoicesEntities.add(new InvoiceEntity("101022","2016-08-12","24555555.00","24555555.00"));
         recyclerViewCreditInvoice.setAdapter(itineraryCreditInvoiceAdapter);
 
     }
 
     public void setLastInvoice(){
         ItineraryLastInvoicesAdapter itineraryLastInvoicesAdapter;
-        ArrayList<ItineraryLastInvoiceEntity> itineraryLastInvoiceEntities = new ArrayList<ItineraryLastInvoiceEntity>();
+        ArrayList<InvoiceEntity> itineraryLastInvoiceEntities = new ArrayList<InvoiceEntity>();
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerViewLastInvoice.setLayoutManager(mLayoutManager);
@@ -219,10 +229,10 @@ public class Itinerary extends Activity {
 
         itineraryLastInvoicesAdapter = new ItineraryLastInvoicesAdapter(this,itineraryLastInvoiceEntities);
 
-        itineraryLastInvoiceEntities.add(new ItineraryLastInvoiceEntity("101011","256330.00","2017-01-04"));
-        itineraryLastInvoiceEntities.add(new ItineraryLastInvoiceEntity("106021","551522.50","2016-05-20"));
-        itineraryLastInvoiceEntities.add(new ItineraryLastInvoiceEntity("103016","36544.00","2016-03-06"));
-        itineraryLastInvoiceEntities.add(new ItineraryLastInvoiceEntity("101022","24555555.00","2016-08-12"));
+        itineraryLastInvoiceEntities.add(new InvoiceEntity("101011","256330.00","2017-01-04"));
+        itineraryLastInvoiceEntities.add(new InvoiceEntity("106021","551522.50","2016-05-20"));
+        itineraryLastInvoiceEntities.add(new InvoiceEntity("103016","36544.00","2016-03-06"));
+        itineraryLastInvoiceEntities.add(new InvoiceEntity("101022","24555555.00","2016-08-12"));
         recyclerViewLastInvoice.setAdapter(itineraryLastInvoicesAdapter);
     }
 
@@ -301,7 +311,7 @@ public class Itinerary extends Activity {
     public void setExpiryProducts(){
 
         ItineraryExpiryProductsAdapter itineraryExpiryProductsAdapter;
-        ArrayList<ItineraryExpiryProductsEntity> itineraryExpiryProductsEntities = new ArrayList<ItineraryExpiryProductsEntity>();
+        ArrayList<ProductsEntity> itineraryExpiryProductsEntities = new ArrayList<ProductsEntity>();
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerViewExpiryproducts.setLayoutManager(mLayoutManager);
@@ -309,10 +319,10 @@ public class Itinerary extends Activity {
 
         itineraryExpiryProductsAdapter = new ItineraryExpiryProductsAdapter(this,itineraryExpiryProductsEntities);
 
-        itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("101011","2017-01-04","HOBE02","HOBE02","2017-05-04"));
-        itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("106021","2016-05-20","EU05","EU05","2017-01-04"));
-        itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("103016","2016-03-06","B25705","B25705","2017-01-04"));
-        itineraryExpiryProductsEntities.add(new ItineraryExpiryProductsEntity("101022","2016-08-12","G30640","G30640","2017-01-04"));
+        itineraryExpiryProductsEntities.add(new ProductsEntity("101011","2017-01-04","HOBE02","HOBE02","2017-05-04"));
+        itineraryExpiryProductsEntities.add(new ProductsEntity("106021","2016-05-20","EU05","EU05","2017-01-04"));
+        itineraryExpiryProductsEntities.add(new ProductsEntity("103016","2016-03-06","B25705","B25705","2017-01-04"));
+        itineraryExpiryProductsEntities.add(new ProductsEntity("101022","2016-08-12","G30640","G30640","2017-01-04"));
 
         recyclerViewExpiryproducts.setAdapter(itineraryExpiryProductsAdapter);
 
@@ -321,7 +331,7 @@ public class Itinerary extends Activity {
     public void setCustomerLastVisit(){
 
         ItineraryLastVisitAdapter itineraryLastVisitAdapter;
-        ArrayList<ItineraryLastVisitEntity> itineraryLastVisitEntities = new ArrayList<ItineraryLastVisitEntity>();
+        ArrayList<LastVisitEntity> itineraryLastVisitEntities = new ArrayList<LastVisitEntity>();
 
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
@@ -329,22 +339,44 @@ public class Itinerary extends Activity {
         recyclerViewLAstVisit.setItemAnimator(new DefaultItemAnimator());
 
         itineraryLastVisitAdapter = new ItineraryLastVisitAdapter(this,itineraryLastVisitEntities);
-        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",0));
-        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",1));
-        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",1));
-        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",0));
-        itineraryLastVisitEntities.add(new ItineraryLastVisitEntity("101011","2017-01-04",1));
+        itineraryLastVisitEntities.add(new LastVisitEntity("101011","2017-01-04",0));
+        itineraryLastVisitEntities.add(new LastVisitEntity("101011","2017-01-04",1));
+        itineraryLastVisitEntities.add(new LastVisitEntity("101011","2017-01-04",1));
+        itineraryLastVisitEntities.add(new LastVisitEntity("101011","2017-01-04",0));
+        itineraryLastVisitEntities.add(new LastVisitEntity("101011","2017-01-04",1));
 
         recyclerViewLAstVisit.setAdapter(itineraryLastVisitAdapter);
 
     }
 
 
-    public void setupDialogFragment(int position ,ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities){
-
+    public void setupDialogFragment(int position ,ArrayList<CustomersEntity> itineraryCustomersEntities){
         FragmentManager fm = getFragmentManager();
         CustomerDialog customerDialog = new CustomerDialog (position, itineraryCustomersEntities);
         customerDialog.show(fm, "Sample Fragment");
     }
+
+    public void navigateToInvoices(String customerID){
+
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("sharedPrefCustomerIDForInvoices", 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("ItineraryCustomersID",customerID);
+        editor.commit();
+
+        Intent i = new Intent(Itinerary.this,Invoice.class);
+        Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.animation, R.anim.animation2).toBundle();
+        finish();
+        startActivity(i, bndlanimation);
+
+    }
+
+    public void setScrollviewDowun(){new Handler().postDelayed(new Runnable() {
+            public void run() {
+                scrollViewCustomerDetails.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        }, 300);
+    }
+
+
 
 }

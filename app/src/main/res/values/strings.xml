@@ -51,9 +51,6 @@
     <string name="icon_dialog_angle_right">&#xf105;</string>
 
 
-
-
-
     //Dashboard
     <string name="string_dashboard_titlebar_title">Dashboard</string>
     <string name="icon_navigation_datepick">&#xf073;</string>
@@ -90,6 +87,18 @@
     <string name="string_itinerary_lastvisit_table_onroute">On Route</string>
     <string name="string_itinerary_lastvisit_table_outofroute">Out Of Route</string>
 
+
+    //Invoice
+    <string name="string_invoice_titlebar_title">Invoice</string>
+    <string name="string_invoice_product_code">Product Code</string>
+    <string name="string_invoice_product_name">Product Name</string>
+    <string name="string_invoice_product_batch">Batch</string>
+    <string name="string_invoice_product_stock">Stock</string>
+    <string name="string_invoice_product__expdate">Exp.Date</string>
+    <string name="string_invoice_product_sellingprice">Sel.Price</string>
+    <string name="string_invoice_product_retailprice">Ret.Price</string>
+    <string name="icon_invoice_shoppingcart">&#xf07a;</string>
+    <string name="icon_invoice_circle">&#xf111;</string>
 
 
 

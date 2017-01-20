@@ -28,7 +28,7 @@ import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
+import emerge.lk.channelbridge.Entity.CustomersEntity;
 import emerge.lk.channelbridge.R;
 
 /**
@@ -61,10 +61,10 @@ public class CustomerDialog extends DialogFragment implements BaseSliderView.OnS
     }
 
 
-    ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities;
+    ArrayList<CustomersEntity> itineraryCustomersEntities;
 
     @SuppressLint("ValidFragment")
-    public CustomerDialog(int position, ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities) {
+    public CustomerDialog(int position, ArrayList<CustomersEntity> itineraryCustomersEntities) {
         this.position = position;
         this.itineraryCustomersEntities = itineraryCustomersEntities;
     }
@@ -136,8 +136,7 @@ public class CustomerDialog extends DialogFragment implements BaseSliderView.OnS
     @Override
     public void onSliderClick(BaseSliderView slider) {
         Uri path = Uri.parse("android.resource://emerge.lk.channelbridge/drawable/"+file_maps.get(slider.getBundle().get("extra")));
-        Picasso.with(getActivity()).load(path).into(customerImage);
-
+        Glide.with(getActivity()).load(path).into(customerImage);
 
     }
 

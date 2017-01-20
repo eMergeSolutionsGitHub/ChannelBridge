@@ -42,6 +42,7 @@
             </RelativeLayout>
 
             <ScrollView
+                android:id="@+id/scrollView_customer_details"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_alignTop="@+id/relLayout_itinerary_customer"
