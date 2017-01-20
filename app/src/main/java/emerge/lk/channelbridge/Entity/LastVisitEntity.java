@@ -4,12 +4,12 @@ package emerge.lk.channelbridge.Entity;
  * Created by Himanshu on 1/5/2017.
  */
 
-public class ItineraryLastVisitEntity {
+public class LastVisitEntity {
 
     String itineraryLastVisitCustomerNumber, itineraryLastVisitInvoicesDate;
     int itineraryLastVisitOnRoute;
 
-    public ItineraryLastVisitEntity(String itineraryLastVisitCustomerNumber, String itineraryLastVisitInvoicesDate, int itineraryLastVisitOnRoute) {
+    public LastVisitEntity(String itineraryLastVisitCustomerNumber, String itineraryLastVisitInvoicesDate, int itineraryLastVisitOnRoute) {
         this.itineraryLastVisitCustomerNumber = itineraryLastVisitCustomerNumber;
         this.itineraryLastVisitInvoicesDate = itineraryLastVisitInvoicesDate;
         this.itineraryLastVisitOnRoute = itineraryLastVisitOnRoute;

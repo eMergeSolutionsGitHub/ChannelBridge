@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/linLayout_itinerary_item"
+    xmlns:app="http://schemas.android.com/tools"
+    android:layout_height="70dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/relLayout_itinerary_customer"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/background_one"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp">
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:id="@+id/relLayout_list_invoice_customerimage"
+            android:layout_centerVertical="true"
+            android:layout_width="60dp"
+            android:layout_marginLeft="5dp">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imgView_list_invoice_customer"
+                android:src="@drawable/user"
+               />
+
+        </RelativeLayout>
+
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/txtView_list_invoice_productcode"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/relLayout_list_invoice_customerimage"
+            android:layout_toEndOf="@+id/relLayout_list_invoice_customerimage"
+            android:textColor="@color/colorNavigationBar"
+            android:layout_width="150dp"
+            android:layout_marginLeft="5dp" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/txtView_list_invoice_productdescription"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/txtView_list_invoice_productcode"
+            android:layout_toEndOf="@+id/txtView_list_invoice_productcode"
+            android:textColor="@color/colorNavigationBar"
+            android:layout_width="180dp" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/txtView_list_invoice_productbatch"
+            android:layout_centerVertical="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorNavigationBar"
+            android:layout_toRightOf="@+id/txtView_list_invoice_productdescription"
+            android:layout_toEndOf="@+id/txtView_list_invoice_productdescription"
+            android:layout_marginLeft="5dp"
+            android:layout_width="150dp" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/txtView_list_invoice_productstock"
+            android:layout_centerVertical="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_toRightOf="@+id/txtView_list_invoice_productbatch"
+            android:layout_toEndOf="@+id/txtView_list_invoice_productbatch"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorNavigationBar" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/string_invoice_product__expdate"
+            android:id="@+id/txtView_list_invoice_productexpdate"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/txtView_list_invoice_productstock"
+            android:layout_toEndOf="@+id/txtView_list_invoice_productstock"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorNavigationBar" />
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/txtView_list_invoice_productretailprice"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/txtView_list_invoice_productstock"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_toEndOf="@+id/txtView_list_invoice_productexpdate"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorNavigationBar"
+            android:layout_width="100dp" />
+
+
+        <emerge.lk.channelbridge.Font.FontTitle
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/txtView_list_invoice_productsellingprice"
+            android:layout_centerVertical="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_toRightOf="@+id/txtView_list_invoice_productretailprice"
+            android:layout_toEndOf="@+id/txtView_list_invoice_productretailprice"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorNavigationBar"
+            android:layout_width="wrap_content" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

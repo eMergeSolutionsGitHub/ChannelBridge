@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import emerge.lk.channelbridge.Entity.ItineraryLastInvoiceEntity;
+import emerge.lk.channelbridge.Entity.InvoiceEntity;
 import emerge.lk.channelbridge.R;
 
 
@@ -25,9 +25,9 @@ import emerge.lk.channelbridge.R;
 public class ItineraryLastInvoicesAdapter extends RecyclerView.Adapter<ItineraryLastInvoicesAdapter.MyViewHolder> implements View.OnClickListener {
 
     Context mContext;
-    ArrayList<ItineraryLastInvoiceEntity> itineraryLastInvoiceEntities;
+    ArrayList<InvoiceEntity> itineraryLastInvoiceEntities;
 
-    public ItineraryLastInvoicesAdapter(Context mContext, ArrayList<ItineraryLastInvoiceEntity> itineraryLastInvoiceEntities) {
+    public ItineraryLastInvoicesAdapter(Context mContext, ArrayList<InvoiceEntity> itineraryLastInvoiceEntities) {
         this.mContext = mContext;
         this.itineraryLastInvoiceEntities = itineraryLastInvoiceEntities;
     }
@@ -41,9 +41,9 @@ public class ItineraryLastInvoicesAdapter extends RecyclerView.Adapter<Itinerary
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
-        holder.txtViewlistitinerarylastinvoiceno.setText(itineraryLastInvoiceEntities.get(position).getItineraryLastInvoiceNum());
-        holder.txtViewlistitinerarylastinvoicevalue.setText(itineraryLastInvoiceEntities.get(position).getItineraryLastInvoiceValue());
-        holder.txtViewlistitinerarylastinvoiceduedate.setText(itineraryLastInvoiceEntities.get(position).getItineraryLastInvoiceDueDate());    }
+        holder.txtViewlistitinerarylastinvoiceno.setText(itineraryLastInvoiceEntities.get(position).getInvoiceNumber());
+        holder.txtViewlistitinerarylastinvoicevalue.setText(itineraryLastInvoiceEntities.get(position).getInvoiceValue());
+        holder.txtViewlistitinerarylastinvoiceduedate.setText(itineraryLastInvoiceEntities.get(position).getInvoiceDueDate());    }
 
     @Override
     public int getItemCount() {

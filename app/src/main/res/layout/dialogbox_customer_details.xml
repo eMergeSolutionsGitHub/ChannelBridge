@@ -44,7 +44,6 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center_horizontal">
 
-
                                 <com.mikhaellopez.circularimageview.CircularImageView
                                     android:id="@+id/imgView_customer_detailDialog_customer"
                                     android:layout_width="250dp"

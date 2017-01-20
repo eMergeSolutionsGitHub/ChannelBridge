@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import emerge.lk.channelbridge.Entity.ItineraryExpiryProductsEntity;
+import emerge.lk.channelbridge.Entity.ProductsEntity;
 import emerge.lk.channelbridge.R;
 
 
@@ -21,9 +21,9 @@ import emerge.lk.channelbridge.R;
 public class ItineraryExpiryProductsAdapter extends RecyclerView.Adapter<ItineraryExpiryProductsAdapter.MyViewHolder> implements View.OnClickListener {
 
     Context mContext;
-    ArrayList<ItineraryExpiryProductsEntity> itineraryExpiryProductsEntities;
+    ArrayList<ProductsEntity> itineraryExpiryProductsEntities;
 
-    public ItineraryExpiryProductsAdapter(Context mContext, ArrayList<ItineraryExpiryProductsEntity> itineraryExpiryProductsEntities) {
+    public ItineraryExpiryProductsAdapter(Context mContext, ArrayList<ProductsEntity> itineraryExpiryProductsEntities) {
         this.mContext = mContext;
         this.itineraryExpiryProductsEntities = itineraryExpiryProductsEntities;
     }
@@ -37,11 +37,11 @@ public class ItineraryExpiryProductsAdapter extends RecyclerView.Adapter<Itinera
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.textViewInvoiceNum.setText(itineraryExpiryProductsEntities.get(position).getItineraryExpiryInvoicesNum());
-        holder.textViewInvoiceDate.setText(itineraryExpiryProductsEntities.get(position).getItineraryExpiryInvoicesDate());
-        holder.textViewProduct.setText(itineraryExpiryProductsEntities.get(position).getItineraryExpiryProduct());
-        holder.textViewBatch.setText(itineraryExpiryProductsEntities.get(position).getItineraryExpiryBatch());
-        holder.textViewExpDate.setText(itineraryExpiryProductsEntities.get(position).getItineraryExpiryDate());
+        holder.textViewInvoiceNum.setText(itineraryExpiryProductsEntities.get(position).getInvoicesNumber());
+        holder.textViewInvoiceDate.setText(itineraryExpiryProductsEntities.get(position).getInvoicesDate());
+        holder.textViewProduct.setText(itineraryExpiryProductsEntities.get(position).getProductCode());
+        holder.textViewBatch.setText(itineraryExpiryProductsEntities.get(position).getProductBatch());
+        holder.textViewExpDate.setText(itineraryExpiryProductsEntities.get(position).getProductExpiryDate());
 
     }
 
