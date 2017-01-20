@@ -4,6 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import emerge.lk.channelbridge.Fragments.CustomerCreateFragment;
 import emerge.lk.channelbridge.Fragments.CustomerSearchFragment;
 import emerge.lk.channelbridge.Fragments.CustomerUpdateFragment;
@@ -13,46 +16,30 @@ import emerge.lk.channelbridge.Fragments.CustomerUpdateFragment;
  */
 
 public class CustomerPagerAdapter extends FragmentStatePagerAdapter {
-    int noOfTabs;
+    private final List<Fragment> mFragmentList = new ArrayList<>();
+    private final List<String> mFragmentTitleList = new ArrayList<>();
 
-    public CustomerPagerAdapter(FragmentManager fm, int noOfTabs) {
-        super(fm);
-        this.noOfTabs = noOfTabs;
+    public CustomerPagerAdapter(FragmentManager manager) {
+        super(manager);
     }
 
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                CustomerCreateFragment tab1 = new CustomerCreateFragment();
-                return tab1;
-            case 1:
-                CustomerSearchFragment tab2 = new CustomerSearchFragment();
-                return tab2;
-            case 2:
-                CustomerUpdateFragment tab3 = new CustomerUpdateFragment();
-                return tab3;
-            default:
-                return null;
-        }
-
+        return mFragmentList.get(position);
     }
 
     @Override
     public int getCount() {
-        return noOfTabs;
+        return mFragmentList.size();
+    }
+
+    public void addFrag(Fragment fragment, String title) {
+        mFragmentList.add(fragment);
+        mFragmentTitleList.add(title);
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "Add Customer";
-
-            case 1:
-                return "Search Customer";
-
-            default:
-                return "Update Customer";            }
+        return mFragmentTitleList.get(position);
     }
 }
