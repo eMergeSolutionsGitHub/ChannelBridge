@@ -13,8 +13,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/relLayout_channelbridge_bar"
         android:background="@color/appHome"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,7 +44,7 @@
 
 
                         <com.mikhaellopez.circularimageview.CircularImageView
-                            android:id="@+id/imgView_dialogbox_customer"
+                            android:id="@+id/imgView_customerCreateFragment_customer"
                             android:layout_width="250dp"
                             android:layout_height="250dp"
                             android:layout_centerHorizontal="true"
@@ -55,28 +54,28 @@
 
 
                         <com.daimajia.slider.library.SliderLayout
-                            android:id="@+id/slider"
+                            android:id="@+id/slider_customerCreateFragment"
                             android:layout_width="160dp"
                             android:layout_height="100dp"
-                            android:layout_below="@id/imgView_dialogbox_customer"
+                            android:layout_below="@id/imgView_customerCreateFragment_customer"
                             android:layout_centerHorizontal="true" />
 
 
                         <emerge.lk.channelbridge.Font.FontTitle
-                            android:id="@+id/dialogbox_customer_name"
+                            android:id="@+id/txtView_customerCreateFragment_customer_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/slider"
+                            android:layout_below="@id/slider_customerCreateFragment"
                             android:gravity="center"
                             android:text="Name"
                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                         <emerge.lk.channelbridge.Font.FontTitle
-                            android:id="@+id/dialogbox_customer_area"
+                            android:id="@+id/txtView_customerCreateFragment_customer_area"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/dialogbox_customer_name"
+                            android:layout_below="@id/txtView_customerCreateFragment_customer_name"
                             android:gravity="center"
                             android:text="Area"
                             android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -141,7 +140,7 @@
                                     app:text="@string/icon_dialog_address" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvAddress"
+                                    android:id="@+id/txtView_customerCreateFragment_address"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView9"
@@ -161,7 +160,7 @@
                                     app:text="@string/icon_dialog_phone" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvPhone"
+                                    android:id="@+id/txtView_customerCreateFragment_phone"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView10"
@@ -180,7 +179,7 @@
                                     app:text="@string/icon_dialog_email" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvEmail"
+                                    android:id="@+id/txtView_customerCreateFragment_email"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView11"
@@ -198,15 +197,6 @@
                                     android:textSize="25sp"
                                     app:text="@string/icon_dialog_web" />
 
-                                <TextView
-                                    android:id="@+id/dialog_tvWeb"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignTop="@id/textView12"
-                                    android:layout_toRightOf="@id/textView12"
-                                    android:text="Web:"
-                                    android:textAppearance="?android:attr/textAppearanceLarge" />
-
                                 <emerge.lk.channelbridge.Font.TextViewFontAwesome
                                     android:id="@+id/textView13"
                                     android:layout_width="30dp"
@@ -218,13 +208,23 @@
                                     app:text="@string/icon_dialog_town" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvFax"
+                                    android:id="@+id/txtView_customerCreateFragment_fax"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView13"
                                     android:layout_toRightOf="@id/textView13"
                                     android:text="Fax:"
                                     android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                                <TextView
+                                    android:id="@+id/txtView_customerCreateFragment_web"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Web:"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:layout_above="@+id/textView13"
+                                    android:layout_toRightOf="@+id/textView12"
+                                    android:layout_toEndOf="@+id/textView12" />
 
 
                             </RelativeLayout>
@@ -263,7 +263,7 @@
                                     app:text="@string/icon_dialog_area" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvArea"
+                                    android:id="@+id/txtView_customerCreateFragment_area"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView14"
@@ -283,7 +283,7 @@
                                     app:text="@string/icon_dialog_town" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvTown"
+                                    android:id="@+id/txtView_customerCreateFragment_town"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView15"
@@ -302,7 +302,7 @@
                                     app:text="@string/icon_dialog_district" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvDistrict"
+                                    android:id="@+id/txtView_customerCreateFragment_district"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView16"
@@ -322,7 +322,7 @@
                                     app:text="@string/icon_dialog_latitude" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvLat"
+                                    android:id="@+id/txtView_customerCreateFragment_latitude"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView17"
@@ -342,7 +342,7 @@
                                     app:text="@string/icon_dialog_longitude" />
 
                                 <TextView
-                                    android:id="@+id/dialog_tvLongitude"
+                                    android:id="@+id/txtView_customerCreateFragment_longitude"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/textView17"
@@ -393,7 +393,7 @@
                                     app:text="@string/icon_dialog_own_name" />
 
                                 <TextView
-                                    android:id="@+id/dialog_Own_name"
+                                    android:id="@+id/txtView_customerCreateFragment_own_name"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView199"
@@ -413,7 +413,7 @@
                                     android:textSize="25sp" />
 
                                 <TextView
-                                    android:id="@+id/dialog_Own_No"
+                                    android:id="@+id/txtView_customerCreateFragment_own_no"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView20"
@@ -461,7 +461,7 @@
                                     app:text="@string/icon_dialog_own_ba_no" />
 
                                 <TextView
-                                    android:id="@+id/dialog_brNo"
+                                    android:id="@+id/txtView_customerCreateFragment_brNo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignTop="@id/textView21"
@@ -481,7 +481,7 @@
                                     app:text="@string/icon_dialog_own_name" />
 
                                 <TextView
-                                    android:id="@+id/dialog_regNo"
+                                    android:id="@+id/txtView_customerCreateFragment_regNo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/textView21"

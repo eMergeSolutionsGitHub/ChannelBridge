@@ -23,6 +23,8 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -37,7 +39,7 @@ import emerge.lk.channelbridge.Entity.ItineraryExpiryProductsEntity;
 import emerge.lk.channelbridge.Entity.ItineraryLastInvoiceEntity;
 import emerge.lk.channelbridge.Entity.ItineraryLastVisitEntity;
 import emerge.lk.channelbridge.Font.TextViewFontAwesome;
-import emerge.lk.channelbridge.Dialog.CustomerDialog;
+import emerge.lk.channelbridge.Dialog.CustomerDetailsDialog;
 import emerge.lk.channelbridge.R;
 import emerge.lk.channelbridge.Service.NavigationDrawer;
 
@@ -83,6 +85,7 @@ public class Itinerary extends Activity {
         menuBarTitle.setText(R.string.string_itinerary_titlebar_title);
 
         setDayItinerary();
+
 
     }
 
@@ -343,8 +346,8 @@ public class Itinerary extends Activity {
     public void setupDialogFragment(int position ,ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities){
 
         FragmentManager fm = getFragmentManager();
-        CustomerDialog customerDialog = new CustomerDialog (position, itineraryCustomersEntities);
-        customerDialog.show(fm, "Sample Fragment");
+        CustomerDetailsDialog customerDetailsDialog = new CustomerDetailsDialog(position, itineraryCustomersEntities);
+        customerDetailsDialog.show(fm, "Sample Fragment");
     }
 
 }

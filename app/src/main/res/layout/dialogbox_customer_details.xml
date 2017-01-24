@@ -6,20 +6,6 @@
     xmlns:app="http://schemas.android.com/tools"
     android:background="@android:color/transparent">
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="50dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="horizontal" >
-
-
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,8 +15,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/appHome"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -61,7 +46,7 @@
 
 
                                 <com.mikhaellopez.circularimageview.CircularImageView
-                                    android:id="@+id/imgView_dialogbox_customer"
+                                    android:id="@+id/imgView_customer_detailDialog_customer"
                                     android:layout_width="250dp"
                                     android:layout_height="250dp"
                                     android:layout_centerHorizontal="true"
@@ -71,29 +56,30 @@
 
 
                                 <com.daimajia.slider.library.SliderLayout
-                                    android:id="@+id/slider"
-                                    android:layout_width="160dp"
+                                    android:id="@+id/slider_customer_detailDialog"
+                                    android:layout_width="200dp"
                                     android:layout_height="100dp"
-                                    android:layout_below="@id/imgView_dialogbox_customer"
+                                    android:layout_below="@id/imgView_customer_detailDialog_customer"
+                                    android:layout_marginTop="16dp"
                                     android:layout_centerHorizontal="true"/>
 
 
 
                                 <emerge.lk.channelbridge.Font.FontTitle
-                                    android:id="@+id/dialogbox_customer_name"
+                                    android:id="@+id/txtView_customer_detailDialog_customer_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/slider"
+                                    android:layout_below="@id/slider_customer_detailDialog"
                                     android:gravity="center"
                                     android:text="Name"
                                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
                                 <emerge.lk.channelbridge.Font.FontTitle
-                                    android:id="@+id/dialogbox_customer_area"
+                                    android:id="@+id/txtView_customer_detailDialog_customer_area"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/dialogbox_customer_name"
+                                    android:layout_below="@id/txtView_customer_detailDialog_customer_name"
                                     android:gravity="center"
                                     android:text="Area"
                                     android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -143,6 +129,21 @@
                                             android:text="Contact details"
                                             android:textSize="30sp" />
 
+                                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                            android:id="@+id/ftxtView_customer_detailDialog_edit"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_alignRight="@+id/dialogbox_card01_title"
+                                            android:layout_marginTop="15dp"
+                                            android:layout_marginRight="15dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:gravity="center_horizontal"
+                                            android:text="@string/icon_dialog_edit"
+                                            android:textSize="35sp"
+                                            app:text="@string/icon_dialog_edit"
+                                            android:clickable="true"
+                                            android:layout_alignParentRight="true" />
+
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
                                             android:id="@+id/textView9"
@@ -153,18 +154,20 @@
                                             android:layout_below="@+id/dialogbox_card01_title"
                                             android:layout_marginTop="10dp"
                                             android:gravity="center_horizontal"
-                                            android:text="@string/icon_home_menu"
+                                            android:text="@string/icon_dialog_address"
                                             android:textSize="25sp"
                                             app:text="@string/icon_dialog_address" />
 
+
                                         <TextView
-                                            android:id="@+id/dialog_tvAddress"
+                                            android:id="@+id/txtView_customer_detailDialog_address"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView9"
                                             android:layout_toRightOf="@id/textView9"
-                                            android:text="Address:"
+                                            android:text="Address: No.33b, School Lane, Nawla"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
+
 
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -177,15 +180,6 @@
                                             android:textSize="25sp"
                                             app:text="@string/icon_dialog_phone" />
 
-                                        <TextView
-                                            android:id="@+id/dialog_tvPhone"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_alignTop="@id/textView10"
-                                            android:layout_toRightOf="@id/textView10"
-                                            android:text="Contact Number:"
-                                            android:textAppearance="?android:attr/textAppearanceLarge"  />
-
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
                                             android:id="@+id/textView11"
                                             android:layout_width="30dp"
@@ -197,12 +191,12 @@
                                             app:text="@string/icon_dialog_email" />
 
                                         <TextView
-                                            android:id="@+id/dialog_tvEmail"
+                                            android:id="@+id/txtView_customer_detailDialog_email"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView11"
                                             android:layout_toRightOf="@id/textView11"
-                                            android:text="Email"
+                                            android:text="Email: info@emerge.lk"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -216,12 +210,12 @@
                                             app:text="@string/icon_dialog_web" />
 
                                         <TextView
-                                            android:id="@+id/dialog_tvWeb"
+                                            android:id="@+id/txtView_customer_detailDialog_web"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView12"
                                             android:layout_toRightOf="@id/textView12"
-                                            android:text="Web:"
+                                            android:text="Web: www.emerge.com"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -230,18 +224,28 @@
                                             android:layout_height="30dp"
                                             android:layout_below="@id/textView12"
                                             android:gravity="center_horizontal"
-                                            android:text="@string/icon_dialog_town"
+                                            android:text="@string/icon_dialog_fax"
                                             android:textSize="25sp"
                                             app:text="@string/icon_dialog_fax" />
 
                                         <TextView
-                                            android:id="@+id/dialog_tvFax"
+                                            android:id="@+id/txtView_customer_detailDialog_fax"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView13"
                                             android:layout_toRightOf="@id/textView13"
-                                            android:text="Fax:"
+                                            android:text="Fax: 0115927721"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                                        <TextView
+                                            android:id="@+id/txtView_customer_detailDialog_phone"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Contact Number: 0115927721"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:layout_below="@+id/textView9"
+                                            android:layout_toRightOf="@+id/textView9"
+                                            android:layout_toEndOf="@+id/textView9" />
 
 
                                     </RelativeLayout>
@@ -280,12 +284,12 @@
                                             app:text="@string/icon_dialog_area" />
 
                                         <TextView
-                                            android:id="@+id/dialog_tvArea"
+                                            android:id="@+id/txtView_customer_detailDialog_area"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView14"
                                             android:layout_toRightOf="@id/textView14"
-                                            android:text="Area:"
+                                            android:text="Area: Western"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
@@ -300,12 +304,12 @@
                                             app:text="@string/icon_dialog_town" />
 
                                         <TextView
-                                            android:id="@+id/dialog_tvTown"
+                                            android:id="@+id/txtView_customer_detailDialog_town"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView15"
                                             android:layout_toRightOf="@id/textView15"
-                                            android:text="Town:"
+                                            android:text="Town: Nawala"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
@@ -319,12 +323,12 @@
                                             app:text="@string/icon_dialog_district" />
 
                                         <TextView
-                                            android:id="@+id/dialog_tvDistrict"
+                                            android:id="@+id/txtView_customer_detailDialog_district"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView16"
                                             android:layout_toRightOf="@id/textView16"
-                                            android:text="District:"
+                                            android:text="District: Colombo"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
@@ -339,12 +343,12 @@
                                             app:text="@string/icon_dialog_latitude" />
 
                                         <TextView
-                                            android:id="@+id/dialog_tvLat"
+                                            android:id="@+id/txtView_customer_detailDialog_latitude"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView17"
                                             android:layout_toRightOf="@id/textView17"
-                                            android:text="Latitude:"
+                                            android:text="Latitude: 6.9271"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
@@ -359,14 +363,14 @@
                                             app:text="@string/icon_dialog_longitude" />
 
                                         <TextView
-                                            android:id="@+id/dialog_tvLongitude"
+                                            android:id="@+id/txtView_customer_detailDialog_longitude"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:text="Longitude: 79.8612"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
                                             android:layout_below="@+id/textView17"
-                                            android:layout_toEndOf="@+id/textView17"
                                             android:layout_toRightOf="@+id/textView17"
-                                            android:text="Longitude:"
-                                            android:textAppearance="?android:attr/textAppearanceLarge" />
+                                            android:layout_toEndOf="@+id/textView17" />
 
 
                                     </RelativeLayout>
@@ -408,17 +412,6 @@
                                             app:text="@string/icon_dialog_own_name" />
 
 
-                                        <TextView
-                                            android:id="@+id/dialog_Own_name"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Owner's Name:"
-                                            android:textAppearance="?android:attr/textAppearanceLarge"
-                                            android:layout_alignTop="@id/textView19"
-                                            android:layout_toRightOf="@id/textView19"
-                                            android:layout_toEndOf="@id/textView19" />
-
-
                                         <emerge.lk.channelbridge.Font.TextViewFontAwesome
                                             android:id="@+id/textView20"
                                             android:layout_width="30dp"
@@ -430,15 +423,23 @@
                                             app:text="@string/icon_dialog_own_phone" />
 
                                         <TextView
-                                            android:id="@+id/dialog_Own_No"
+                                            android:id="@+id/txtView_customer_detailDialog_own_no"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView20"
                                             android:layout_toRightOf="@id/textView20"
-                                            android:text="Contact No:"
+                                            android:text="Contact No: 0775448899"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-
+                                        <TextView
+                                            android:id="@+id/txtView_customer_detailDialog_own_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Owner's Name: Saman"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:layout_alignTop="@+id/textView19"
+                                            android:layout_toRightOf="@+id/textView19"
+                                            android:layout_toEndOf="@+id/textView19" />
 
 
                                     </RelativeLayout>
@@ -480,12 +481,12 @@
                                             app:text="@string/icon_dialog_own_ba_no" />
 
                                         <TextView
-                                            android:id="@+id/dialog_brNo"
+                                            android:id="@+id/txtView_customer_detailDialog_brNo"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignTop="@id/textView21"
                                             android:layout_toRightOf="@id/textView21"
-                                            android:text="BR no:"
+                                            android:text="BR no: 000000"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
@@ -500,13 +501,13 @@
                                             app:text="@string/icon_dialog_own_name" />
 
                                         <TextView
-                                            android:id="@+id/dialog_regNo"
+                                            android:id="@+id/txtView_customer_detailDialog_regNo"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/textView21"
                                             android:layout_toEndOf="@+id/textView21"
                                             android:layout_toRightOf="@+id/textView21"
-                                            android:text="Reg. no:"
+                                            android:text="Reg. no: 000000"
                                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
                                     </RelativeLayout>
@@ -525,18 +526,6 @@
             </LinearLayout>
         </FrameLayout>
 
-    </LinearLayout>
 
-    <emerge.lk.channelbridge.Font.TextViewFontAwesome
-        android:id="@+id/fa_dialogbox_close"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:gravity="center_horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/icon_dialog_close"
-        android:textSize="40sp"
-        android:textColor="#e53935"
-        app:text="@string/icon_dialog_close" />
 
 </RelativeLayout>
