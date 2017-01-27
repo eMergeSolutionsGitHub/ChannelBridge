@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relLayout_channelbridge_bar"
+        android:background="@color/appHome"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:contentPadding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
+
+
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:id="@+id/imgView_customerCreateFragment_customer"
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:layout_centerHorizontal="true"
+                            app:civ_border_color="@color/colorPrimary"
+                            app:civ_border_width="4dp"
+                            app:civ_shadow="true" />
+
+
+                        <com.daimajia.slider.library.SliderLayout
+                            android:id="@+id/slider_customerCreateFragment"
+                            android:layout_width="160dp"
+                            android:layout_height="100dp"
+                            android:layout_below="@id/imgView_customerCreateFragment_customer"
+                            android:layout_centerHorizontal="true" />
+
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:id="@+id/txtView_customerCreateFragment_customer_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/slider_customerCreateFragment"
+                            android:gravity="center"
+                            android:text="Name"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:id="@+id/txtView_customerCreateFragment_customer_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtView_customerCreateFragment_customer_name"
+                            android:gravity="center"
+                            android:text="Area"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:contentPadding="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/dialogbox_card01_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignLeft="@+id/textView9"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignStart="@+id/textView9"
+                                    android:text="Contact details"
+                                    android:textSize="30sp" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView9"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@+id/dialogbox_card01_title"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_address"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_address" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_address"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView9"
+                                    android:layout_alignTop="@id/textView9"
+                                    android:layout_toRightOf="@id/textView9"
+                                    android:hint="Address"
+                                    android:gravity="center"/>
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView10"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView9"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_phone"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_phone" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_phone"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView10"
+                                    android:layout_alignTop="@id/textView10"
+                                    android:layout_toRightOf="@id/textView10"
+                                    android:gravity="center"
+                                    android:hint="Contact No" />
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView11"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView10"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_email"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_email" />
+
+                                <EditText
+                                    android:id="@+id/editText_customerCreateFragment_email"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/textView11"
+                                    android:gravity="center"
+                                    android:layout_below="@id/edtTxt_customerCreateFragment_phone"
+                                    android:layout_toRightOf="@id/textView11"
+                                    android:hint="Email" />
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView12"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView11"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_web"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_web" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_web"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/textView12"
+                                    android:gravity="center"
+                                    android:layout_below="@id/editText_customerCreateFragment_email"
+                                    android:layout_toRightOf="@+id/textView12"
+                                    android:hint="Web" />
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView13"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView12"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_town"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_town" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_fax"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView13"
+                                    android:gravity="center"
+                                    android:layout_alignTop="@id/textView13"
+                                    android:layout_toRightOf="@id/textView13"
+                                    android:hint="Fax:" />
+
+
+                            </RelativeLayout>
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="280dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:contentPadding="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/dialogbox_card02_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Location details"
+                                    android:textSize="30sp" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView14"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@+id/dialogbox_card02_title"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_area"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_area" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_area"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/textView14"
+                                    android:gravity="center"
+                                    android:layout_toRightOf="@id/textView14"
+                                    android:hint="Area" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView15"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView14"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_town"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_town" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_town"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView15"
+                                    android:layout_alignTop="@id/textView15"
+                                    android:gravity="center"
+                                    android:layout_toRightOf="@id/textView15"
+                                    android:hint="Town" />
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView16"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView15"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_district"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_district" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_district"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/textView16"
+                                    android:gravity="center"
+                                    android:layout_toRightOf="@id/textView16"
+                                    android:hint="District" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView17"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView16"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_latitude"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_latitude" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_latitude"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView17"
+                                    android:layout_alignTop="@id/textView17"
+                                    android:gravity="center"
+                                    android:layout_toRightOf="@id/textView17"
+                                    android:hint="Latitude" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView18"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView17"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_longitude"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_longitude" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_longitude"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView18"
+                                    android:gravity="center"
+                                    android:layout_below="@+id/edtTxt_customerCreateFragment_latitude"
+                                    android:layout_toRightOf="@+id/textView18"
+                                    android:hint="Longitude" />
+
+
+                            </RelativeLayout>
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:contentPadding="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/dialogbox_card03_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:text="Owner's details"
+                                    android:textSize="30sp" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView19"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_below="@+id/dialogbox_card03_title"
+                                    android:layout_marginTop="11dp"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_own_name"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_own_name" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_own_name"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView19"
+                                    android:gravity="center"
+                                    android:layout_alignTop="@id/textView19"
+                                    android:layout_toRightOf="@id/textView19"
+                                    android:hint="Owner's Name" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView20"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@id/textView19"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_own_phone"
+                                    android:textSize="25sp" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_own_no"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="Contact No"
+                                    android:layout_below="@+id/edtTxt_customerCreateFragment_own_name"
+                                    android:layout_alignTop="@id/textView20"
+                                    android:layout_toRightOf="@id/textView20"/>
+
+
+                            </RelativeLayout>
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:contentPadding="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <emerge.lk.channelbridge.Font.FontTitle
+                                    android:id="@+id/dialogbox_card04_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:text="Other details"
+                                    android:textSize="30sp" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView21"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@+id/dialogbox_card04_title"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_own_ba_no"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_own_ba_no" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_brNo"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView21"
+                                    android:layout_alignTop="@id/textView21"
+                                    android:layout_toEndOf="@id/textView21"
+                                    android:gravity="center"
+                                    android:layout_toRightOf="@id/textView21"
+                                    android:hint="BR no" />
+
+
+                                <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                                    android:id="@+id/textView22"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_below="@+id/textView21"
+                                    android:gravity="center"
+                                    android:text="@string/icon_dialog_own_reg_no"
+                                    android:textSize="25sp"
+                                    app:text="@string/icon_dialog_own_name" />
+
+                                <EditText
+                                    android:id="@+id/edtTxt_customerCreateFragment_regNo"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@id/textView22"
+                                    android:layout_alignTop="@id/textView22"
+                                    android:gravity="center"
+                                    android:layout_below="@+id/edtTxt_customerCreateFragment_brNo"
+                                    android:layout_toRightOf="@id/textView22"
+                                    android:hint="Reg. no" />
+
+
+                                <Button
+                                    android:id="@+id/btn_customerCreateFragment_cancel"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/edtTxt_customerCreateFragment_regNo"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginTop="20dp"
+                                    android:text="Cancel" />
+
+                                <Button
+                                    android:id="@+id/btn_customerCreateFragment_save"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_below="@id/edtTxt_customerCreateFragment_regNo"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_toRightOf="@id/btn_customerCreateFragment_cancel"
+                                    android:text="Save"
+                                    android:layout_alignParentRight="true" />
+
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

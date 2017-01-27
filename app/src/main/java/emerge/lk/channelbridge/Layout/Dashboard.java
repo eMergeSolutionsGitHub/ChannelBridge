@@ -3,8 +3,6 @@ package emerge.lk.channelbridge.Layout;
 import android.app.Activity;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -20,6 +18,7 @@ import com.github.mikephil.charting.data.BubbleEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 
 import java.text.DateFormat;
@@ -39,17 +38,16 @@ import emerge.lk.channelbridge.Service.NavigationDrawer;
  * Created by Himanshu on 12/27/2016.
  */
 
-
 public class Dashboard extends Activity implements DatePickerDialog.OnDateSetListener {
 
     NavigationDrawer navigationDrawer;
-    @BindView(R.id.bar_chart) BarChart barChart;
-    @BindView(R.id.bar_chart_h) HorizontalBarChart bar_chart_h;
-    @BindView(R.id.pie_chart1) PieChart pie_chart1;
-    @BindView(R.id.pie_chart2) PieChart pie_chart2;
-    @BindView(R.id.pie_chart3) PieChart pie_chart3;
-    @BindView(R.id.pie_chart4) PieChart pie_chart4;
-    @BindView(R.id.textView_channelbridge_date) TextView textView_channelbridge_date;
+    @BindView(R.id.bar_chart_dashboard_vertical) BarChart barChartVertical;
+    @BindView(R.id.bar_chart_dashboard_horizontal) HorizontalBarChart barChartHorizontal;
+    @BindView(R.id.pie_chart_dashboard_1) PieChart pieChart1;
+    @BindView(R.id.pie_chart_dashboard_2) PieChart pieChart2;
+    @BindView(R.id.pie_chart_dashboard_3) PieChart pieChart3;
+    @BindView(R.id.pie_chart_dashboard_4) PieChart pieChart4;
+    @BindView(R.id.textView_dashboard_date) TextView textViewDate;
 
 
 
@@ -63,20 +61,12 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
         navigationDrawer.drowNavigationDrawer();
         navigationDrawer.setDrawerItem();
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        Date date = new Date();
-        textView_channelbridge_date.setText("Appointment Date: " + dateFormat.format(date));
+        setDate();
+        setBarChartData();
+        setPieChartData();
+    }
 
-
-
-
-        ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(4f, 0));
-        entries.add(new BarEntry(8f, 1));
-        entries.add(new BarEntry(6f, 2));
-        entries.add(new BarEntry(12f, 3));
-        entries.add(new BarEntry(18f, 4));
-        entries.add(new BarEntry(9f, 5));
+    private void setPieChartData() {
 
         ArrayList<Entry> entries2 = new ArrayList<>();
         entries2.add(new BubbleEntry(1, 3f, 5));
@@ -84,6 +74,13 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
         entries2.add(new BubbleEntry(3, 32f, 5));
         entries2.add(new BubbleEntry(4, 10f, 5));
         entries2.add(new BubbleEntry(5, 5f, 5));
+
+        ArrayList<Integer> colours = new ArrayList<>();
+
+        for(int i : ColorTemplate.COLORFUL_COLORS){
+            colours.add(i);
+        }
+
 
 
         ArrayList<String> labels = new ArrayList<>();
@@ -94,30 +91,72 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
         labels.add("May");
         labels.add("June");
 
+
+        PieDataSet pieDataSet = new PieDataSet(entries2, "Monthly sales");
+        pieDataSet.setColors(colours);
+        PieData pieData = new PieData(labels, pieDataSet);
+
+        pieChart1.setData(pieData);
+        pieChart1.animateXY(1000, 1000);
+        pieChart1.invalidate();
+
+        pieChart2.setData(pieData);
+        pieChart2.animateXY(1500, 1500);
+        pieChart2.invalidate();
+
+        pieChart3.setData(pieData);
+        pieChart3.animateXY(1400, 1400);
+        pieChart3.invalidate();
+
+        pieChart4.setData(pieData);
+        pieChart4.animateXY(1000, 1000);
+        pieChart4.invalidate();
+
+    }
+
+    private void setBarChartData() {
+
+        ArrayList<BarEntry> entries = new ArrayList<>();
+        entries.add(new BarEntry(4f, 0));
+        entries.add(new BarEntry(8f, 1));
+        entries.add(new BarEntry(6f, 2));
+        entries.add(new BarEntry(12f, 3));
+        entries.add(new BarEntry(18f, 4));
+        entries.add(new BarEntry(9f, 5));
+
+        ArrayList<String> labels = new ArrayList<>();
+        labels.add("January");
+        labels.add("February");
+        labels.add("March");
+        labels.add("April");
+        labels.add("May");
+        labels.add("June");
+
+
         BarDataSet dataset = new BarDataSet(entries, "Num sales");
         dataset.setColors(new int[] { android.R.color.holo_red_dark, android.R.color.holo_blue_bright, android.R.color.holo_green_dark, android.R.color.holo_blue_dark }, Dashboard.this);
         BarData data = new BarData(labels, dataset);
 
-        barChart.setData(data);
-        barChart.animateXY(2000, 2000);
-        barChart.invalidate();
+        barChartVertical.setData(data);
+        barChartVertical.animateXY(2000, 2000);
+        barChartVertical.invalidate();
 
-        bar_chart_h.setData(data);
-        bar_chart_h.animateXY(1000, 1000);
-        bar_chart_h.invalidate();
+        barChartHorizontal.setData(data);
+        barChartHorizontal.animateXY(1000, 1000);
+        barChartHorizontal.invalidate();
 
-        PieDataSet pieDataSet = new PieDataSet(entries2, "Monthly sales");
-        PieData pieData = new PieData(labels, pieDataSet);
+    }
 
-        pie_chart1.setData(pieData);
-        pie_chart2.setData(pieData);
-        pie_chart3.setData(pieData);
-        pie_chart4.setData(pieData);
+    private void setDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        textViewDate.setText("Appointment Date: " + dateFormat.format(date));
+
     }
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
-        textView_channelbridge_date.setText("Appointment Date: "+year+"/"+(monthOfYear+1)+"/"+dayOfMonth+" - "+yearEnd+"/"+(monthOfYearEnd+1)+"/"+dayOfMonthEnd);
+        textViewDate.setText("Appointment Date: "+year+"/"+(monthOfYear+1)+"/"+dayOfMonth+" - "+yearEnd+"/"+(monthOfYearEnd+1)+"/"+dayOfMonthEnd);
     }
 
 
@@ -127,7 +166,7 @@ public class Dashboard extends Activity implements DatePickerDialog.OnDateSetLis
         navigationDrawer.openNavigationDrawer();
     }
 
-    @OnClick(R.id.relLayout_channelbridge_date)
+    @OnClick(R.id.ftextView_dashboard_date)
     public void openDatepicker() {
         Calendar now = Calendar.getInstance();
         DatePickerDialog dpd = DatePickerDialog.newInstance(

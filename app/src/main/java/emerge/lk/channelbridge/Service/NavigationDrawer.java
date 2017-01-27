@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import emerge.lk.channelbridge.Adapters.NavigationAdapter;
 import emerge.lk.channelbridge.Entity.NavigationEntity;
+import emerge.lk.channelbridge.Layout.Customer;
 import emerge.lk.channelbridge.Layout.Dashboard;
 import emerge.lk.channelbridge.Layout.Itinerary;
 import emerge.lk.channelbridge.R;
@@ -79,6 +80,10 @@ public class NavigationDrawer {
                 }
                 if (position == 2) {
 
+                    Intent i = new Intent(activity, Customer.class);
+                    Bundle bndlanimation = ActivityOptions.makeCustomAnimation(activity, R.anim.animation, R.anim.animation2).toBundle();
+                    activity.finish();
+                    activity.startActivity(i, bndlanimation);
 
                 }
                 if (position == 3) {
