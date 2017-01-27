@@ -28,27 +28,27 @@
     <string name="icon_navigation_admin">&#xf0e7;</string>
     <string name="icon_navigation_return">&#xf0e2;</string>
     <string name="icon_home_menu">&#xf0c9;</string>
-    <string name="string_home_textview_title">Dashboard</string>
 
 
     //customer details dialog icon
-    <string name="icon_dialog_address">&#xf2bb;</string>
+    <string name="icon_dialog_address">&#xf003;</string>
     <string name="icon_dialog_phone">&#xf095;</string>
     <string name="icon_dialog_email">&#xf0e0;</string>
     <string name="icon_dialog_web">&#xf26b;</string>
     <string name="icon_dialog_fax">&#xf1ac;</string>
     <string name="icon_dialog_area">&#xf0ac;</string>
-    <string name="icon_dialog_town">&#xf279;</string>
-    <string name="icon_dialog_district">&#xf095;</string>
+    <string name="icon_dialog_town">&#xf21d;</string>
+    <string name="icon_dialog_district">&#xf041;</string>
     <string name="icon_dialog_latitude">&#xf124;</string>
     <string name="icon_dialog_longitude">&#xf124;</string>
-    <string name="icon_dialog_own_name">&#xf2bd;</string>
+    <string name="icon_dialog_own_name">&#xf007;</string>
     <string name="icon_dialog_own_phone">&#xf095;</string>
     <string name="icon_dialog_own_ba_no">&#xf0f7;</string>
     <string name="icon_dialog_own_reg_no">&#xf1ad;</string>
     <string name="icon_dialog_close">&#xf057;</string>
     <string name="icon_dialog_angle_left">&#xf104;</string>
     <string name="icon_dialog_angle_right">&#xf105;</string>
+    <string name="icon_dialog_edit">&#xf044;</string>
 
 
     //Dashboard
@@ -99,6 +99,10 @@
     <string name="string_invoice_product_retailprice">Ret.Price</string>
     <string name="icon_invoice_shoppingcart">&#xf07a;</string>
     <string name="icon_invoice_circle">&#xf111;</string>
+
+
+    //Customer
+    <string name="string_customer_textview_title">Customer</string>
 
 
 

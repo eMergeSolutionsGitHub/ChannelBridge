@@ -36,12 +36,12 @@ import emerge.lk.channelbridge.Adapters.ItineraryCustomersAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryExpiryProductsAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryLastInvoicesAdapter;
 import emerge.lk.channelbridge.Adapters.ItineraryLastVisitAdapter;
+import emerge.lk.channelbridge.Dialog.CustomerDetailsDialog;
 import emerge.lk.channelbridge.Entity.CustomersEntity;
 import emerge.lk.channelbridge.Entity.ProductsEntity;
 import emerge.lk.channelbridge.Entity.InvoiceEntity;
 import emerge.lk.channelbridge.Entity.LastVisitEntity;
 import emerge.lk.channelbridge.Font.TextViewFontAwesome;
-import emerge.lk.channelbridge.Dialog.CustomerDialog;
 import emerge.lk.channelbridge.R;
 import emerge.lk.channelbridge.Service.NavigationDrawer;
 
@@ -352,8 +352,8 @@ public class Itinerary extends Activity {
 
     public void setupDialogFragment(int position ,ArrayList<CustomersEntity> itineraryCustomersEntities){
         FragmentManager fm = getFragmentManager();
-        CustomerDialog customerDialog = new CustomerDialog (position, itineraryCustomersEntities);
-        customerDialog.show(fm, "Sample Fragment");
+        CustomerDetailsDialog customerDetailsDialog = new CustomerDetailsDialog(position, itineraryCustomersEntities);
+        customerDetailsDialog.show(fm, "Sample Fragment");
     }
 
     public void navigateToInvoices(String customerID){

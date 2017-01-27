@@ -26,7 +26,12 @@
         <activity android:name=".Layout.Itinerary"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden"/>
+
         <activity android:name=".Layout.Invoice"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden"/>
+
+        <activity android:name=".Layout.Customer"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden"/>
 

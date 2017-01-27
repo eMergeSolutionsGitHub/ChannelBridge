@@ -29,7 +29,8 @@ import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import emerge.lk.channelbridge.Entity.ItineraryCustomersEntity;
+import emerge.lk.channelbridge.Entity.CustomersEntity;
+
 import emerge.lk.channelbridge.R;
 
 /**
@@ -88,10 +89,10 @@ public class CustomerDetailsDialog extends DialogFragment implements BaseSliderV
     }
 
 
-    ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities;
+    ArrayList<CustomersEntity> itineraryCustomersEntities;
 
     @SuppressLint("ValidFragment")
-    public CustomerDetailsDialog(int position, ArrayList<ItineraryCustomersEntity> itineraryCustomersEntities) {
+    public CustomerDetailsDialog(int position, ArrayList<CustomersEntity> itineraryCustomersEntities) {
         this.position = position;
         this.itineraryCustomersEntities = itineraryCustomersEntities;
     }

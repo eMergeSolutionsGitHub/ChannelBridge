@@ -25,7 +25,6 @@ public class Customer extends AppCompatActivity {
     private ViewPager viewPager;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,13 +51,13 @@ public class Customer extends AppCompatActivity {
                 View tabViewChild = vgTab.getChildAt(i);
                 if (tabViewChild instanceof TextView) {
                     ((TextView) tabViewChild).setTypeface(tf);
-                    
+
                 }
             }
         }
 
 
-}
+    }
 
     private void setupViewPager(ViewPager viewPager) {
         CustomerPagerAdapter adapter = new CustomerPagerAdapter(getSupportFragmentManager(), getApplicationContext());

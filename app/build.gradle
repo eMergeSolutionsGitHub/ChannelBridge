@@ -31,6 +31,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
     testCompile 'junit:junit:4.12'
     compile project(path: ':channelbridgesdialogmodule')
     compile 'com.mikhaellopez:circularimageview:3.0.2'
@@ -45,5 +46,6 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.slider:library:1.1.5@aar'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1'
  
 }
