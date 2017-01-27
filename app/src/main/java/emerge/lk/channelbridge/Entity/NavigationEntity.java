@@ -7,7 +7,7 @@ import android.databinding.Bindable;
 public class NavigationEntity extends BaseObservable {
     public  String mTitle;
     public  int mIcon;
-
+//
     public NavigationEntity(String title, int icon) {
         mTitle = title;
         mIcon = icon;

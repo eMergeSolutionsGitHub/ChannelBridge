@@ -9,7 +9,7 @@ public class ProductsEntity {
     String productCode, productBatch, productExpiryDate,productDiscription,productStock,productRetailPrice,productSellingPrice;
     String invoicesNumber, invoicesDate;
 
-
+//
     public ProductsEntity(String productCode, String productBatch, String productExpiryDate, String productDiscription, String productStock, String productRetailPrice, String productSellingPrice) {
         this.productCode = productCode;
         this.productBatch = productBatch;

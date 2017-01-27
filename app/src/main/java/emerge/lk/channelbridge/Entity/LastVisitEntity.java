@@ -5,7 +5,7 @@ package emerge.lk.channelbridge.Entity;
  */
 
 public class LastVisitEntity {
-
+//
     String itineraryLastVisitCustomerNumber, itineraryLastVisitInvoicesDate;
     int itineraryLastVisitOnRoute;
 

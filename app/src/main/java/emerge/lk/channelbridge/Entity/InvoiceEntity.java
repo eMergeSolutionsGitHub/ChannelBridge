@@ -6,7 +6,7 @@ package emerge.lk.channelbridge.Entity;
 
 public class InvoiceEntity {
 
-
+//
     String invoiceNumber,invoiceValue,invoiceDate, invoiceDueDate,invoicesBalance;
 
 

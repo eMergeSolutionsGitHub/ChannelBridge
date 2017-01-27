@@ -5,7 +5,7 @@ package emerge.lk.channelbridge.Entity;
  */
 
 public class CustomersEntity {
-
+//
 String itineraryCustomersID,itineraryCustomersName,itineraryCustomersCity,itineraryCustomersImageName;
 
     public String getItineraryCustomersID() {
