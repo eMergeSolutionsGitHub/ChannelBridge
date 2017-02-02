@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -15,6 +17,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import emerge.lk.channelbridge.Entity.ProductsEntity;
 import emerge.lk.channelbridge.Font.FontTitle;
+import emerge.lk.channelbridge.Layout.Invoice;
+import emerge.lk.channelbridge.Layout.Itinerary;
 import emerge.lk.channelbridge.R;
 
 
@@ -25,7 +29,6 @@ public class InvoiceProductsAdapter extends RecyclerView.Adapter<InvoiceProducts
 
     Context mContext;
     ArrayList<ProductsEntity> invoiceProductsEntity;
-
 
 
     public InvoiceProductsAdapter(Context mContext, ArrayList<ProductsEntity> invoiceProductsEntity) {
@@ -49,6 +52,17 @@ public class InvoiceProductsAdapter extends RecyclerView.Adapter<InvoiceProducts
         holder.txtViewProductexpdate.setText(invoiceProductsEntity.get(position).getProductExpiryDate());
         holder.textViewRetailPrice.setText(invoiceProductsEntity.get(position).getProductRetailPrice());
         holder.textViewSellingPrice.setText(invoiceProductsEntity.get(position).getProductSellingPrice());
+
+        holder.relLayoutnvoiceProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mContext instanceof Invoice) {
+                    ((Invoice) mContext).openSelectedProductDialog(invoiceProductsEntity.get(position).getProductCode());
+                } else {
+                }
+            }
+        });
+
 
     }
 
@@ -78,18 +92,14 @@ public class InvoiceProductsAdapter extends RecyclerView.Adapter<InvoiceProducts
         @BindView(R.id.txtView_list_invoice_productexpdate)
         TextView txtViewProductexpdate;
 
-
-
-      /*
-        @BindView(R.id.txtView_list_invoice_productbatch)
-        LinearLayout linLayoutItineraryItem;
-        @BindView(R.id.relLayout_itinerary_invoice)
-        RelativeLayout linLayoutItineraryInvoice;*/
+        @BindView(R.id.relLayout_invoices_products)
+        RelativeLayout relLayoutnvoiceProducts;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+
     }
 
 }

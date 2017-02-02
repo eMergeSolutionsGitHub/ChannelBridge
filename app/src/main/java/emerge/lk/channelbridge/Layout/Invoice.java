@@ -1,11 +1,15 @@
 package emerge.lk.channelbridge.Layout;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.xiaofeng.flowlayoutmanager.FlowLayoutManager;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
@@ -15,6 +19,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import emerge.lk.channelbridge.Adapters.InvoiceProductsAdapter;
+import emerge.lk.channelbridge.Adapters.InvoiceProductsCategoryAdapter;
+import emerge.lk.channelbridge.Dialog.InvoiceProductDialog;
 import emerge.lk.channelbridge.Entity.ProductsEntity;
 import emerge.lk.channelbridge.R;
 import emerge.lk.channelbridge.Service.NavigationDrawer;
@@ -31,10 +37,17 @@ public class Invoice extends Activity {
     TextView menuBarTitle;
     @BindView(R.id.expandablelayout_invoice_shoppingcart_product)
     ExpandableLayout expandablelayoutShoppingcartProduct;
+    @BindView(R.id.expandablelayout_invoice_productcategory)
+    ExpandableLayout expandablelayoutProductCategory;
+    @BindView(R.id.expandablelayout_invoice_productserach)
+    ExpandableLayout expandablelayoutProductSerach;
+
     @BindView(R.id.recycview_invoice_product)
     RecyclerView recycviewInvoiceProduct;
+    @BindView(R.id.recycview_invoice_productcategory)
+    RecyclerView recycviewInvoiceProductCategory;
 
-    //test
+
 
 
     @Override
@@ -62,7 +75,51 @@ public class Invoice extends Activity {
         if (expandablelayoutShoppingcartProduct.isExpanded()) {
             expandablelayoutShoppingcartProduct.collapse();
         } else {
+            if(expandablelayoutProductCategory.isExpanded()){
+                expandablelayoutProductCategory.setDuration(200);
+                expandablelayoutProductCategory.collapse();
+            }if(expandablelayoutProductSerach.isExpanded()){
+                expandablelayoutProductSerach.setDuration(400);
+                expandablelayoutProductSerach.collapse();
+            }else {}
+            expandablelayoutShoppingcartProduct.setDuration(1000);
             expandablelayoutShoppingcartProduct.expand();
+
+        }
+    }
+    @OnClick(R.id.relLayout_invoice_productcategory)
+    public void productCategoryClick() {
+        if (expandablelayoutProductCategory.isExpanded()) {
+            expandablelayoutProductCategory.collapse();
+        } else {
+            setProductsCategory();
+            if(expandablelayoutShoppingcartProduct.isExpanded()){
+                expandablelayoutShoppingcartProduct.setDuration(200);
+                expandablelayoutShoppingcartProduct.collapse();
+            }if(expandablelayoutProductSerach.isExpanded()){
+                expandablelayoutProductSerach.setDuration(400);
+                expandablelayoutProductSerach.collapse();
+            }else {}
+            expandablelayoutProductCategory.setDuration(1000);
+            expandablelayoutProductCategory.expand();
+        }
+    }
+
+    @OnClick(R.id.relLayout_invoice_productserach)
+    public void productSerachClick() {
+        if (expandablelayoutProductSerach.isExpanded()) {
+            expandablelayoutProductSerach.collapse();
+        } else {
+            setProductsCategory();
+            if(expandablelayoutShoppingcartProduct.isExpanded()){
+                expandablelayoutShoppingcartProduct.setDuration(200);
+                expandablelayoutShoppingcartProduct.collapse();
+            }if(expandablelayoutProductCategory.isExpanded()){
+                expandablelayoutProductCategory.setDuration(400);
+                expandablelayoutProductCategory.collapse();
+            }else {}
+            expandablelayoutProductSerach.setDuration(1000);
+            expandablelayoutProductSerach.expand();
 
         }
     }
@@ -109,4 +166,38 @@ public class Invoice extends Activity {
 
         recycviewInvoiceProduct.setAdapter(invoiceProductsAdapter);
     }
+
+    public void setProductsCategory() {
+
+        InvoiceProductsCategoryAdapter invoiceProductsCategoryAdapter;
+        ArrayList<ProductsEntity> invoiceProductsEntities = new ArrayList<ProductsEntity>();
+
+        FlowLayoutManager flowLayoutManager = new FlowLayoutManager();
+        flowLayoutManager.setAutoMeasureEnabled(true);
+        recycviewInvoiceProductCategory.setLayoutManager(flowLayoutManager);
+
+
+        invoiceProductsCategoryAdapter = new InvoiceProductsCategoryAdapter(this,invoiceProductsEntities);
+
+        invoiceProductsEntities.add(new ProductsEntity("COROLENE"));
+        invoiceProductsEntities.add(new ProductsEntity("CARDIOXYL"));
+        invoiceProductsEntities.add(new ProductsEntity("MONOTIME"));
+        invoiceProductsEntities.add(new ProductsEntity("ADVANTIME"));
+        invoiceProductsEntities.add(new ProductsEntity("HOE Pharmaceuticals"));
+        invoiceProductsEntities.add(new ProductsEntity("ADON"));
+        invoiceProductsEntities.add(new ProductsEntity("ANNE FRENCH"));
+        invoiceProductsEntities.add(new ProductsEntity("SAROME"));
+        invoiceProductsEntities.add(new ProductsEntity("EVER YOUTH"));
+        invoiceProductsEntities.add(new ProductsEntity("HOLLYWOOD STYLE"));
+        recycviewInvoiceProductCategory.setAdapter(invoiceProductsCategoryAdapter);
+    }
+
+    public void openSelectedProductDialog(String productCode){
+        FragmentManager fm = getFragmentManager();
+        InvoiceProductDialog invoiceProductDialog = new InvoiceProductDialog();
+        invoiceProductDialog.show(fm, "Dialog Fragment");
+
+
+    }
+
 }

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="800dp"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="800dp"
+        android:layout_height="200dp"
+        android:background="@color/appHome">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            card_view:cardBackgroundColor="@color/mdtp_date_picker_month_day_dark_theme"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="2dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPadding="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorNavigationBar">
+
+                <emerge.lk.channelbridge.Font.FontTitle
+                    android:id="@+id/txtView_invoicedialog_prouctcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="18R35A"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/appWhite" />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="100dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/card_view"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="2dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPadding="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/appWhite">
+
+                <emerge.lk.channelbridge.Font.FontTitle
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/string_invoice_product_batch"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorNavigationBar" />
+
+                <ListView
+                    android:id="@+id/listView_invoicesproductdialog_batches"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textView30" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/card_view"
+            android:layout_toEndOf="@+id/card_view2"
+            android:layout_toRightOf="@+id/card_view2"
+            android:background="@color/appWhite"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="2dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPadding="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/appWhite">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="70dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout23"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:id="@+id/txtView_invoicesproductdialog_shelf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginRight="5dp"
+                            android:text="Shelf :0"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorNavigationBar" />
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:id="@+id/txtView_invoicesproductdialog_request"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_toEndOf="@+id/txtView_invoicesproductdialog_shelf"
+                            android:layout_toRightOf="@+id/txtView_invoicesproductdialog_shelf"
+                            android:text="Request : 0"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorNavigationBar" />
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:id="@+id/txtView_invoicesproductdialog_order"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/txtView_invoicesproductdialog_request"
+                            android:layout_toRightOf="@+id/txtView_invoicesproductdialog_request"
+                            android:text="Order : 0"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorNavigationBar"
+                            android:layout_marginRight="5dp" />
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:id="@+id/txtView_invoicesproductdialog_free"
+                            android:text="Free : 0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorNavigationBar"
+                            android:layout_toRightOf="@+id/txtView_invoicesproductdialog_order"
+                            android:layout_toEndOf="@+id/txtView_invoicesproductdialog_order"
+                            android:layout_marginRight="5dp" />
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:id="@+id/txtView_invoicesproductdialog_dscount"
+                            android:text="Discount : 0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorNavigationBar"
+                            android:layout_toRightOf="@+id/txtView_invoicesproductdialog_free"
+                            android:layout_toEndOf="@+id/txtView_invoicesproductdialog_free"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/relLayout23">
+
+                        <EditText
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/editText"
+                            android:layout_marginRight="10dp"
+                            android:hint="@string/string_invoice_product_shelf" />
+
+                        <EditText
+                            android:layout_height="40dp"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/editText"
+                            android:layout_toEndOf="@+id/editText"
+                            android:id="@+id/editText2"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="100dp"
+                            android:hint="@string/string_invoice_product_request" />
+
+                        <EditText
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/editText2"
+                            android:layout_toEndOf="@+id/editText2"
+                            android:layout_marginRight="10dp"
+                            android:id="@+id/editText3"
+                            android:hint="@string/string_invoice_product_order" />
+
+                        <EditText
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_toRightOf="@+id/editText3"
+                            android:layout_toEndOf="@+id/editText3"
+                            android:id="@+id/editText4"
+                            android:hint="@string/string_invoice_product_free" />
+
+                        <EditText
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:inputType="numberDecimal"
+                            android:ems="10"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/editText4"
+                            android:layout_toEndOf="@+id/editText4"
+                            android:id="@+id/editText5"
+                            android:hint="@string/string_invoice_product_discount" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </RelativeLayout>
+</LinearLayout>

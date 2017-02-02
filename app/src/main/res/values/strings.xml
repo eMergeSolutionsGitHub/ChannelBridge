@@ -97,11 +97,24 @@
     <string name="string_invoice_product__expdate">Exp.Date</string>
     <string name="string_invoice_product_sellingprice">Sel.Price</string>
     <string name="string_invoice_product_retailprice">Ret.Price</string>
+    <string name="string_invoice_product_category">Product Categories</string>
+    <string name="string_invoice_product_search">Product Search</string>
+    <string name="string_invoice_product_yourcart">Your Cart</string>
+    <string name="string_invoice_product_shelf">Shelf</string>
+    <string name="string_invoice_product_request">Request</string>
+    <string name="string_invoice_product_order">Order</string>
+    <string name="string_invoice_product_free">Free</string>
+    <string name="string_invoice_product_discount">Discount</string>
     <string name="icon_invoice_shoppingcart">&#xf07a;</string>
     <string name="icon_invoice_circle">&#xf111;</string>
     <string name="icon_invoice_product_category"> &#xf187;</string>
+    <string name="icon_invoice_product_search">&#xf002;</string>
+
+
+
      --//product tag view
     <string name="icon_invoiceproducttagview_product">&#xf02c;</string>
+
 
 
     //Customer
