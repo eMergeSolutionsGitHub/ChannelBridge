@@ -75,7 +75,7 @@ public class InvoiceProductsAdapter extends RecyclerView.Adapter<InvoiceProducts
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        @BindView(R.id.imgView_list_invoice_customer)
+        @BindView(R.id.imgView_list_invoice_product)
         ImageView imageViewCustomerImage;
         @BindView(R.id.txtView_list_invoice_productcode)
         TextView textViewProductcode;

@@ -75,7 +75,7 @@
                                 android:textColor="@color/colorAccent"
                                 android:textSize="30sp" />
 
-                            <TextView
+                            <emerge.lk.channelbridge.Font.FontTitle
                                 android:id="@+id/textView31"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -173,12 +173,67 @@
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/recycview_invoice_shoppingcart"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="250dip"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/relLayout_invoice_shoppingcarttitel">
-
                     </android.support.v7.widget.RecyclerView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/recycview_invoice_shoppingcart"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <emerge.lk.channelbridge.Font.FontButton
+                            android:text="@string/string_invoice_button_checkout"
+                            android:layout_width="150dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:id="@+id/btn_invoice_checkout"
+                            android:background="@color/colorNavigationBar"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/appWhite"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_height="50dp"
+                            android:layout_marginRight="10dp" />
+
+                        <emerge.lk.channelbridge.Font.FontButton
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:id="@+id/btn_invoice_clear"
+                            android:background="@color/colorGreen"
+                            android:textColor="@color/appWhite"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:text="@string/string_invoice_button_clear"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/btn_invoice_checkout"
+                            android:layout_toStartOf="@+id/btn_invoice_checkout" />
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:text="Total Value : 1563.20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/txtView_invoices_shoppingcart_totalvalue"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/colorNavigationBar" />
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:text="Total Quantity : 4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/txtView_invoices_shoppingcart_totalvalue"
+                            android:layout_toEndOf="@+id/txtView_invoices_shoppingcart_totalvalue"
+                            android:id="@+id/txtView_invoices_shoppingcart_totalqty"
+                            android:layout_marginLeft="10dp" />
+
+
+                    </RelativeLayout>
 
 
                 </RelativeLayout>
@@ -264,7 +319,7 @@
                         android:layout_height="50dp"
                         android:layout_below="@+id/relLayout_invoice_productserachtitel">
 
-                        <AutoCompleteTextView
+                        <emerge.lk.channelbridge.Font.FontAutoComplete
                             android:id="@+id/atoComTxtView_invoice_product_serach"
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"

@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import emerge.lk.channelbridge.Adapters.InvoiceProductsAdapter;
 import emerge.lk.channelbridge.Adapters.InvoiceProductsCategoryAdapter;
+import emerge.lk.channelbridge.Adapters.InvoiceShoppingCartAdapter;
 import emerge.lk.channelbridge.Dialog.InvoiceProductDialog;
 import emerge.lk.channelbridge.Entity.ProductsEntity;
 import emerge.lk.channelbridge.R;
@@ -46,6 +47,8 @@ public class Invoice extends Activity {
     RecyclerView recycviewInvoiceProduct;
     @BindView(R.id.recycview_invoice_productcategory)
     RecyclerView recycviewInvoiceProductCategory;
+    @BindView(R.id.recycview_invoice_shoppingcart)
+    RecyclerView recycviewInvoiceProductShoppingCart;
 
 
 
@@ -82,6 +85,7 @@ public class Invoice extends Activity {
                 expandablelayoutProductSerach.setDuration(400);
                 expandablelayoutProductSerach.collapse();
             }else {}
+            showShoppingCrat();
             expandablelayoutShoppingcartProduct.setDuration(1000);
             expandablelayoutShoppingcartProduct.expand();
 
@@ -197,7 +201,24 @@ public class Invoice extends Activity {
         InvoiceProductDialog invoiceProductDialog = new InvoiceProductDialog();
         invoiceProductDialog.show(fm, "Dialog Fragment");
 
+    }
 
+    public void showShoppingCrat(){
+
+        InvoiceShoppingCartAdapter invoiceShoppingCartAdapter;
+        ArrayList<ProductsEntity> shoppingCartEntity = new ArrayList<ProductsEntity>();
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+        recycviewInvoiceProductShoppingCart.setLayoutManager(mLayoutManager);
+        recycviewInvoiceProductShoppingCart.setItemAnimator(new DefaultItemAnimator());
+
+        invoiceShoppingCartAdapter = new InvoiceShoppingCartAdapter(this,shoppingCartEntity);
+
+        shoppingCartEntity.add(new ProductsEntity("18R35A","18R35A",10,50,50,0,0.0));
+        shoppingCartEntity.add(new ProductsEntity("18R35A","18R35A",10,50,50,0,0.0));
+        shoppingCartEntity.add(new ProductsEntity("18R35A","318R35A",10,50,50,0,0.0));
+        shoppingCartEntity.add(new ProductsEntity("18R35A","18R35A",10,50,50,0,0.0));
+        recycviewInvoiceProductShoppingCart.setAdapter(invoiceShoppingCartAdapter);
     }
 
 }

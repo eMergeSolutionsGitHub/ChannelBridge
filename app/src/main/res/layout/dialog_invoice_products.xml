@@ -74,7 +74,9 @@
                     android:id="@+id/listView_invoicesproductdialog_batches"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@+id/textView30" />
+                    android:layout_below="@+id/textView30"
+                    android:layout_marginTop="20dp"
+                    android:divider="@color/appWhite" />
             </RelativeLayout>
 
         </android.support.v7.widget.CardView>
@@ -182,7 +184,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/relLayout23">
 
-                        <EditText
+                        <emerge.lk.channelbridge.Font.FontEdittext
                             android:layout_width="100dp"
                             android:layout_height="40dp"
                             android:inputType="number"
@@ -194,7 +196,7 @@
                             android:layout_marginRight="10dp"
                             android:hint="@string/string_invoice_product_shelf" />
 
-                        <EditText
+                        <emerge.lk.channelbridge.Font.FontEdittext
                             android:layout_height="40dp"
                             android:inputType="number"
                             android:ems="10"
@@ -206,7 +208,7 @@
                             android:layout_width="100dp"
                             android:hint="@string/string_invoice_product_request" />
 
-                        <EditText
+                        <emerge.lk.channelbridge.Font.FontEdittext
                             android:layout_width="100dp"
                             android:layout_height="40dp"
                             android:inputType="number"
@@ -218,7 +220,7 @@
                             android:id="@+id/editText3"
                             android:hint="@string/string_invoice_product_order" />
 
-                        <EditText
+                        <emerge.lk.channelbridge.Font.FontEdittext
                             android:layout_width="100dp"
                             android:layout_height="40dp"
                             android:inputType="number"
@@ -230,7 +232,7 @@
                             android:id="@+id/editText4"
                             android:hint="@string/string_invoice_product_free" />
 
-                        <EditText
+                        <emerge.lk.channelbridge.Font.FontEdittext
                             android:layout_width="100dp"
                             android:layout_height="40dp"
                             android:inputType="numberDecimal"
@@ -242,6 +244,19 @@
                             android:hint="@string/string_invoice_product_discount" />
                     </RelativeLayout>
                 </RelativeLayout>
+
+                <emerge.lk.channelbridge.Font.FontButton
+                    android:layout_height="50dp"
+                    android:id="@+id/button"
+                    android:background="@color/colorNavigationBar"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:textColor="@color/appWhite"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/string_invoice_button_add"
+                    android:layout_width="150dp" />
             </RelativeLayout>
 
 

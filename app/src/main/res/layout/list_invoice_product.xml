@@ -1,7 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:id="@+id/linLayout_itinerary_item"
-    xmlns:app="http://schemas.android.com/tools"
     android:layout_height="70dp">
 
 
@@ -25,7 +24,7 @@
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/imgView_list_invoice_customer"
+                android:id="@+id/imgView_list_invoice_product"
                 android:src="@drawable/user"
                />
 

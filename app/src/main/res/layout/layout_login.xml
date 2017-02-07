@@ -30,7 +30,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
-            <EditText
+            <emerge.lk.channelbridge.Font.FontEdittext
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -70,7 +70,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginTop="20dip">
 
-            <EditText
+            <emerge.lk.channelbridge.Font.FontEdittext
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:id="@+id/edtTxt_login_username"
@@ -110,20 +110,20 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
-            <Button
+            <emerge.lk.channelbridge.Font.FontButton
                 android:text="@string/string_login_button_passwordforgot"
                 android:id="@+id/btn_login_passwordforgot"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 style="?android:borderlessButtonStyle"
-                android:layout_width="250dip"
                 android:layout_height="40dip"
                 android:textColor="@color/colorNavigationBar"
                 android:textSize="18sp"
-                android:layout_marginBottom="10dip"/>
+                android:layout_marginBottom="10dip"
+                android:layout_width="300dp" />
 
-            <Button
+            <emerge.lk.channelbridge.Font.FontButton
                 android:text="@string/string_login_button_login"
                 android:layout_height="50dip"
                 android:id="@+id/btn_login_login"
@@ -133,8 +133,7 @@
                 android:layout_width="250dip"
                 android:textSize="18sp"
                 android:layout_alignParentTop="true"
-                android:layout_alignLeft="@+id/btn_login_passwordforgot"
-                android:layout_alignStart="@+id/btn_login_passwordforgot"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dip"
                 android:textColor="@color/appWhite" />
         </RelativeLayout>
