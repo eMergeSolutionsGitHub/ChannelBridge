@@ -113,13 +113,6 @@
     <string name="icon_invoice_product_category"> &#xf187;</string>
     <string name="icon_invoice_product_search">&#xf002;</string>
     <string name="icon_invoice_product_delete">&#xf014;</string>
-
-
-
-
-
-
-     --//product tag view
     <string name="icon_invoiceproducttagview_product">&#xf02c;</string>
 
 
@@ -128,6 +121,22 @@
     <string name="string_customer_textview_title">Customer</string>
 
 
+    //Invoice checkout
+    <string name="string_invoicecheckout_titlebar_title">Checkout</string>
+    <string name="string_invoicecheckout_textview_grossvalue">Invoice(Gross) Rs</string>
+    <string name="string_invoicecheckout_textview_netvalue">Invoice(Net) Rs</string>
+    <string name="string_invoicecheckout_textview_totalqty">Total Quantity</string>
+    <string name="string_invoicecheckout_textview_returenvalue">Return Value</string>
+    <string name="string_invoicecheckout_textview_cash">Cash</string>
+    <string name="string_invoicecheckout_textview_credit">Credit</string>
+    <string name="string_invoicecheckout_textview_cheque">Cheque</string>
+    <string name="string_invoicecheckout_textview_chequeamount">Cheque Amount</string>
+    <string name="string_invoicecheckout_textview_creditcard">Credit Card</string>
+    <string name="string_invoicecheckout_button_next">Next</string>
+    <string name="string_invoicecheckout_button_return">Return</string>
+    <string name="string_invoicecheckout_button_discard">Discard</string>
+    <string name="icon_invoicecheckout_textview_cheque">&#xf20a;</string>
+    <string name="icon_invoicecheckout_textview_creditcard">&#xf1f0;</string>
 
 
 

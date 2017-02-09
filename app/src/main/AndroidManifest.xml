@@ -48,6 +48,11 @@
             android:windowSoftInputMode="stateHidden" />
 
         <activity
+            android:name=".Layout.InvoiceCheckout"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
             android:name=".Layout.CustomerPhotoGallery"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

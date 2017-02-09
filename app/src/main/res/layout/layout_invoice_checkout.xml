@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/appWhite">
+
+        <include
+            android:id="@+id/relLayout_channelbridge_bar"
+            layout="@layout/commen_title_bar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relLayout_channelbridge_bar"
+            android:background="#f9f9f9">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:id="@+id/txtView_invoicecheckout_customername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Asiri Surgical"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/colorNavigationBar" />
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:id="@+id/txtView_invoicecheckout_invoiceno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="Invoice No : 07022017011852"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_view"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout33"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/string_invoicecheckout_textview_grossvalue"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorNavigationBar" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="200dp"
+                            android:background="@drawable/green_round_borders"
+                            android:minWidth="70dp">
+
+                            <emerge.lk.channelbridge.Font.FontTitle
+                                android:id="@+id/txtView_invoicecheckout_invoicegrossvalue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="1500.56"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/orange_round_borders"
+                            android:minWidth="70dp">
+
+                            <emerge.lk.channelbridge.Font.FontTitle
+                                android:id="@+id/txtView_invoicecheckout_invoicereturenvalue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="00.00"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                        </RelativeLayout>
+
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="200dp"
+                            android:text="@string/string_invoicecheckout_textview_returenvalue"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorNavigationBar" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout23"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/relativeLayout33">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/string_invoicecheckout_textview_netvalue"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorNavigationBar" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/relativeLayout3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="200dp"
+                            android:background="@drawable/red_round_borders"
+                            android:minWidth="70dp">
+
+                            <emerge.lk.channelbridge.Font.FontTitle
+                                android:id="@+id/txtView_invoicecheckout_invoicenetvalue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="1500.56"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout25"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/relativeLayout23">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/string_invoicecheckout_textview_totalqty"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorNavigationBar" />
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="200dp"
+                            android:background="@drawable/wisteria_round_borders"
+                            android:minWidth="70dp">
+
+                            <emerge.lk.channelbridge.Font.FontTitle
+                                android:id="@+id/txtView_invoicecheckout_invoiceqty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="04"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout12"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/relativeLayout25">
+
+                        <emerge.lk.channelbridge.Font.FontTitle
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/string_invoice_product_discount"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorNavigationBar" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/relativeLayout13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="200dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/asbestos_round_borders"
+                            android:minWidth="70dp">
+
+                            <emerge.lk.channelbridge.Font.FontTitle
+                                android:id="@+id/txtView_invoicecheckout_invoicediscountpercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="10 %"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/relativeLayout13"
+                            android:layout_toRightOf="@+id/relativeLayout13"
+                            android:background="@drawable/asbestos_round_borders"
+                            android:minWidth="70dp">
+
+                            <emerge.lk.channelbridge.Font.FontTitle
+                                android:id="@+id/txtView_invoicecheckout_invoicediscountvalue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="500.00"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view3"
+                android:layout_height="100dp"
+                android:layout_below="@+id/card_view2"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="0dp"
+                android:layout_width="150dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@+id/textView32"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/colorNavigationBar"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <emerge.lk.channelbridge.Font.FontEdittext
+                        android:id="@+id/edtTxt_invoicecheckout_invoicediscount"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_width="120dp" />
+
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:id="@+id/textView32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/string_invoice_product_discount"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorNavigationBar" />
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view4"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/card_view3"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_toEndOf="@+id/card_view3"
+                android:layout_toRightOf="@+id/card_view3"
+                card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="0dp"
+                android:layout_width="150dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:id="@+id/textView34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/string_invoicecheckout_textview_cash"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorNavigationBar" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@+id/textView34"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/colorNavigationBar"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <emerge.lk.channelbridge.Font.FontEdittext
+                        android:id="@+id/edtTxt_invoicecheckout_invoicecashvalue"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_width="match_parent" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view5"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/card_view4"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_toEndOf="@+id/card_view4"
+                android:layout_toRightOf="@+id/card_view4"
+                card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="0dp"
+                android:layout_width="240dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:id="@+id/textView35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/string_invoicecheckout_textview_credit"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorNavigationBar" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@+id/textView35"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/colorNavigationBar"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spinner_invoicecheckout_creditduration"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/edtTxt_invoicecheckout_invoicecredithvalue"
+                        android:layout_toRightOf="@+id/edtTxt_invoicecheckout_invoicecredithvalue" />
+
+                    <emerge.lk.channelbridge.Font.FontEdittext
+                        android:id="@+id/edtTxt_invoicecheckout_invoicecredithvalue"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_alignTop="@+id/spinner_invoicecheckout_creditduration"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view6"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/card_view5"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_toEndOf="@+id/card_view5"
+                android:layout_toRightOf="@+id/card_view5"
+                card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:id="@+id/textView36"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/string_invoicecheckout_textview_cheque"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorNavigationBar" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@+id/textView36"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/colorNavigationBar"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:text="00.00"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtView_invoicecheckout_chequeamount"
+                        android:layout_width="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_below="@+id/relLayout_invoicecheckout_addcheque"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout_invoicecheckout_addcheque"
+                        android:layout_width="100dp"
+                        android:layout_below="@+id/textView36"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="40dp">
+
+
+                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                            android:text="@string/icon_invoicecheckout_textview_cheque"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorNavigationBar"
+                            android:textSize="35sp" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view7"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/card_view6"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_toEndOf="@+id/card_view6"
+                android:layout_toRightOf="@+id/card_view6"
+                card_view:cardBackgroundColor="@color/colorNavigationBarLite"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:id="@+id/textView37"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/string_invoicecheckout_textview_creditcard"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorNavigationBar" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@+id/textView37"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/colorNavigationBar"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <emerge.lk.channelbridge.Font.FontTitle
+                        android:text="00.00"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtView_invoicecheckout_creditcard"
+                        android:layout_width="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_below="@+id/relLayout_invoicecheckout_addcreditcard"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/relLayout_invoicecheckout_addcreditcard"
+                        android:layout_width="100dp"
+                        android:layout_below="@+id/textView37"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="40dp">
+
+
+                        <emerge.lk.channelbridge.Font.TextViewFontAwesome
+                            android:text="@string/icon_invoicecheckout_textview_creditcard"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorNavigationBar"
+                            android:textSize="35sp" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/card_view3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <emerge.lk.channelbridge.Font.FontButton
+                    android:text="@string/string_invoicecheckout_button_next"
+                    android:layout_width="150dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/btn_invoicecheckout_next"
+                    android:background="@color/colorNavigationBar"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/appWhite"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="10dp" />
+
+                <emerge.lk.channelbridge.Font.FontButton
+                    android:text="@string/string_invoicecheckout_button_return"
+                    android:layout_width="150dp"
+                    android:id="@+id/btn_invoicecheckout_return"
+                    android:background="@color/colorGreen"
+                    android:textColor="@color/appWhite"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/btn_invoicecheckout_next"
+                    android:layout_toStartOf="@+id/btn_invoicecheckout_next" />
+
+                <emerge.lk.channelbridge.Font.FontButton
+                    android:text="@string/string_invoicecheckout_button_discard"
+                    android:layout_width="150dp"
+                    android:id="@+id/btn_invoicecheckout_discard"
+                    android:background="@color/colorRed"
+                    android:textColor="@color/appWhite"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/btn_invoicecheckout_return"
+                    android:layout_toStartOf="@+id/btn_invoicecheckout_return" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <include
+        android:id="@+id/drawer"
+        layout="@layout/commen_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout>

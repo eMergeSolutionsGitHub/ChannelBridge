@@ -1,7 +1,9 @@
 package emerge.lk.channelbridge.Layout;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -71,6 +73,16 @@ public class Invoice extends Activity {
     @OnClick(R.id.relLayout_channelbridge_menu)
     public void titleBarMenuClick() {
         navigationDrawer.openNavigationDrawer();
+    }
+
+
+    @OnClick(R.id.btn_invoice_checkout)
+    public void invoiceCheckoutClick() {
+        Intent i = new Intent(Invoice.this,InvoiceCheckout.class);
+        Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.animation, R.anim.animation2).toBundle();
+        finish();
+        startActivity(i, bndlanimation);
+
     }
 
     @OnClick(R.id.relLayout_invoice_shoppingcart)

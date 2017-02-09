@@ -1,6 +1,5 @@
 package emerge.lk.channelbridge.Dialog;
 
-import android.app.Dialog;
 import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,27 +20,16 @@ import emerge.lk.channelbridge.R;
  * Created by Himanshu on 2/1/2017.
  */
 
-public class InvoiceProductDialog extends DialogFragment {
-
-    @BindView(R.id.listView_invoicesproductdialog_batches)
-    ListView listViewProductBatches;
-
-
-
+public class InvoicePrintDialog extends DialogFragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        View invoiceProductView = inflater.inflate(R.layout.dialog_invoice_products, container, false);
+        View invoiceProductView = inflater.inflate(R.layout.dialog_invoice_print, container, false);
         ButterKnife.bind(this, invoiceProductView);
 
-        setProductsBatches();
         return invoiceProductView;
     }
 
 
-    public void setProductsBatches(){
-        String[] list = {"EX0151", "EX0152"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.list_invoies_productbatches, list);
-        listViewProductBatches.setAdapter(adapter);
-    }
+
 }
